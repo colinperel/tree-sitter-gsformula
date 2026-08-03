@@ -148,20 +148,23 @@ module.exports = grammar({
     // Table1[Column 1], Table1[#ALL], Table1[[#HEADERS],[Col A]:[Col C]].
     // Column names may contain spaces, so the column is one token up to the
     // closing bracket; specifiers start with `#`. Chip extraction is the
-    // optional `.[field]` postfix — Table1[Column 1].[file name] — and the
-    // field is always bracketed, matching the one form Google documents;
-    // a bare `.field` stays an ERROR.
+    // optional `.[field]` postfix — Table1[Column 1].[file name] — and only
+    // on the plain-column form, always bracketed: the one shape Google
+    // documents. A bare `.field`, or a chip on a specifier or compound
+    // base, stays an ERROR.
     table_reference: ($) =>
       seq(
         field('table', $.identifier),
         '[',
         choice(
-          field('column', $.table_column),
-          field('specifier', $.table_specifier),
-          seq($._table_part, repeat(seq(',', $._table_part))),
+          seq(
+            field('column', $.table_column),
+            ']',
+            optional(seq('.', '[', field('chip', $.chip_field), ']')),
+          ),
+          seq(field('specifier', $.table_specifier), ']'),
+          seq($._table_part, repeat(seq(',', $._table_part)), ']'),
         ),
-        ']',
-        optional(seq('.', '[', field('chip', $.chip_field), ']')),
       ),
 
     // One bracketed selector inside the compound form, optionally a column
