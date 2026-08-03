@@ -1,0 +1,147 @@
+================================================================================
+let with one binding
+================================================================================
+=LET(x, 1, x + 1)
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_expression
+    (function_name)
+    (let_binding
+      (identifier)
+      (number))
+    (binary_expression
+      (identifier)
+      (number))))
+
+================================================================================
+let with several bindings
+================================================================================
+=LET(x, 1, y, x + 1, x * y)
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_expression
+    (function_name)
+    (let_binding
+      (identifier)
+      (number))
+    (let_binding
+      (identifier)
+      (binary_expression
+        (identifier)
+        (number)))
+    (binary_expression
+      (identifier)
+      (identifier))))
+
+================================================================================
+lowercase let still binds
+================================================================================
+=let(total, SUM(A:A), total)
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_expression
+    (function_name)
+    (let_binding
+      (identifier)
+      (call_expression
+        (identifier)
+        (arguments
+          (binary_expression
+            (identifier)
+            (identifier)))))
+    (identifier)))
+
+================================================================================
+lambda with one parameter
+================================================================================
+=LAMBDA(v, v * 2)
+--------------------------------------------------------------------------------
+
+(source_file
+  (lambda_expression
+    (function_name)
+    (identifier)
+    (binary_expression
+      (identifier)
+      (number))))
+
+================================================================================
+lambda with several parameters
+================================================================================
+=LAMBDA(a, b, a & b)
+--------------------------------------------------------------------------------
+
+(source_file
+  (lambda_expression
+    (function_name)
+    (identifier)
+    (identifier)
+    (binary_expression
+      (identifier)
+      (identifier))))
+
+================================================================================
+lambda as an argument
+================================================================================
+=MAP(A1:A9, LAMBDA(v, v * 2))
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_expression
+    (identifier)
+    (arguments
+      (binary_expression
+        (reference)
+        (reference))
+      (lambda_expression
+        (function_name)
+        (identifier)
+        (binary_expression
+          (identifier)
+          (number))))))
+
+================================================================================
+let binding a lambda
+================================================================================
+=LET(double, LAMBDA(v, v * 2), double(21))
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_expression
+    (function_name)
+    (let_binding
+      (identifier)
+      (lambda_expression
+        (function_name)
+        (identifier)
+        (binary_expression
+          (identifier)
+          (number))))
+    (call_expression
+      (identifier)
+      (arguments
+        (number)))))
+
+================================================================================
+nested let inside lambda body
+================================================================================
+=LAMBDA(v, LET(w, v + 1, w * w))
+--------------------------------------------------------------------------------
+
+(source_file
+  (lambda_expression
+    (function_name)
+    (identifier)
+    (let_expression
+      (function_name)
+      (let_binding
+        (identifier)
+        (binary_expression
+          (identifier)
+          (number)))
+      (binary_expression
+        (identifier)
+        (identifier)))))

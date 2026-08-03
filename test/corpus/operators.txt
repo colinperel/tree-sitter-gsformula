@@ -1,0 +1,119 @@
+================================================================================
+multiplication binds tighter than addition
+================================================================================
+=1 + 2 * 3
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (number)
+    (binary_expression
+      (number)
+      (number))))
+
+================================================================================
+power is right-associative
+================================================================================
+=2 ^ 2 ^ 3
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (number)
+    (binary_expression
+      (number)
+      (number))))
+
+================================================================================
+unary minus binds tighter than power (sheets: -2^2 = 4)
+================================================================================
+=-2 ^ 2
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (unary_expression
+      (number))
+    (number)))
+
+================================================================================
+comparisons including not-equal
+================================================================================
+=IF(A1 <> B1, A1 <= 3, A1 >= 4)
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_expression
+    (identifier)
+    (arguments
+      (binary_expression
+        (reference)
+        (reference))
+      (binary_expression
+        (reference)
+        (number))
+      (binary_expression
+        (reference)
+        (number)))))
+
+================================================================================
+concatenation binds looser than arithmetic
+================================================================================
+="total: " & 1 + 2
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (string)
+    (binary_expression
+      (number)
+      (number))))
+
+================================================================================
+percent is a postfix operator
+================================================================================
+=A1 % * 2
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (postfix_expression
+      (reference))
+    (number)))
+
+================================================================================
+range colon is a binary operator, not part of the reference token
+================================================================================
+=SUM(B6:INDEX(A:A, 4))
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_expression
+    (identifier)
+    (arguments
+      (binary_expression
+        (reference)
+        (call_expression
+          (identifier)
+          (arguments
+            (binary_expression
+              (identifier)
+              (identifier))
+            (number)))))))
+
+================================================================================
+comparison of parenthesized groups multiplied
+================================================================================
+=(A1 < B1) * (C1 > D1)
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (parenthesized_expression
+      (binary_expression
+        (reference)
+        (reference)))
+    (parenthesized_expression
+      (binary_expression
+        (reference)
+        (reference)))))

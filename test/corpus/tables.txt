@@ -1,0 +1,85 @@
+================================================================================
+table column with a space in its name
+================================================================================
+=SUM(Sales_Tracker[Sales Amount])
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_expression
+    (identifier)
+    (arguments
+      (table_reference
+        (identifier)
+        (table_column)))))
+
+================================================================================
+table specifier
+================================================================================
+=COUNTA(Table1[#ALL])
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_expression
+    (identifier)
+    (arguments
+      (table_reference
+        (identifier)
+        (table_specifier)))))
+
+================================================================================
+compound specifier plus column range
+================================================================================
+=Table1[[#ALL],[Column 1]:[Column 3]]
+--------------------------------------------------------------------------------
+
+(source_file
+  (table_reference
+    (identifier)
+    (table_specifier)
+    (table_column)
+    (table_column)))
+
+================================================================================
+compound headers plus data
+================================================================================
+=Table1[[#HEADERS],[#DATA]]
+--------------------------------------------------------------------------------
+
+(source_file
+  (table_reference
+    (identifier)
+    (table_specifier)
+    (table_specifier)))
+
+================================================================================
+whole table is a plain identifier
+================================================================================
+=SUM(Table1)
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_expression
+    (identifier)
+    (arguments
+      (identifier))))
+
+================================================================================
+table reference in an expression
+================================================================================
+=SUM(DeptSales[Amount]) / COUNTA(DeptSales[Region])
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (call_expression
+      (identifier)
+      (arguments
+        (table_reference
+          (identifier)
+          (table_column))))
+    (call_expression
+      (identifier)
+      (arguments
+        (table_reference
+          (identifier)
+          (table_column))))))

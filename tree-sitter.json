@@ -1,0 +1,16 @@
+{
+  "grammars": [
+    {
+      "name": "gsformula",
+      "camelcase": "GsFormula",
+      "scope": "source.gsformula",
+      "file-types": ["gsf"],
+      "injection-regex": "^gsformula$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter grammar for Google Sheets formulas"
+  }
+}
