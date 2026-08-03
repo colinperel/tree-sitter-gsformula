@@ -226,11 +226,16 @@ module.exports = grammar({
     reference: ($) =>
       token(
         choice(
-          // A sheet prefix makes even a bare column unambiguous, because a
-          // function is never sheet-qualified: stock_data!P:P
-          seq(SHEET, choice(CELL, ABS_COL, /[A-Za-z]{1,3}/)),
+          // A sheet prefix makes even a bare column or row unambiguous,
+          // because a function is never sheet-qualified: stock_data!P:P,
+          // Sheet1!1:2. A bare row (`2` in `Sheet1!1:2`) stays a number,
+          // exactly like the bare column that stays an identifier; only
+          // `$`-anchored ones are unambiguous tokens.
+          seq(SHEET, choice(CELL, ABS_COL, /[A-Za-z]{1,3}/, /\$?[0-9]+/)),
           CELL,
           ABS_COL,
+          // `$3` in `Sheet1!$1:$3` — the anchor disambiguates from a number.
+          /\$[0-9]+/,
         ),
       ),
 
