@@ -56,6 +56,7 @@ module.exports = grammar({
         $.let_expression,
         $.lambda_expression,
         $.call_expression,
+        $.invocation_expression,
         $.array,
         $.table_reference,
         $.reference,
@@ -77,7 +78,7 @@ module.exports = grammar({
       seq(
         field('function', $._let_keyword),
         '(',
-        repeat(seq(field('binding', $.let_binding), ',')),
+        repeat1(seq(field('binding', $.let_binding), ',')),
         field('result', $._expression),
         ')',
       ),
@@ -86,11 +87,14 @@ module.exports = grammar({
       seq(field('name', $.identifier), ',', field('value', $._expression)),
 
     // ── LAMBDA ─────────────────────────────────────────────────────────
+    // At least one parameter, matching Sheets: LAMBDA(body) alone is a
+    // #N/A. `repeat1` (and LET's above) also means LET(1)/LAMBDA(1) parse
+    // as errors rather than silently as empty declaration lists.
     lambda_expression: ($) =>
       seq(
         field('function', $._lambda_keyword),
         '(',
-        repeat(seq(field('parameter', $.identifier), ',')),
+        repeat1(seq(field('parameter', $.identifier), ',')),
         field('body', $._expression),
         ')',
       ),
@@ -104,6 +108,25 @@ module.exports = grammar({
     call_expression: ($) =>
       seq(
         field('function', choice($.identifier, $.reference)),
+        '(',
+        optional($.arguments),
+        ')',
+      ),
+
+    // Immediately-invoked callables: LAMBDA(x, x * 0.3)(1000), a LET that
+    // returns a lambda, a call whose result is called again. The base is
+    // restricted to expressions that can produce a callable — letting any
+    // expression sit there would make every ordinary call ambiguous with an
+    // invocation over a bare identifier.
+    invocation_expression: ($) =>
+      seq(
+        field('function', choice(
+          $.lambda_expression,
+          $.let_expression,
+          $.parenthesized_expression,
+          $.call_expression,
+          $.invocation_expression,
+        )),
         '(',
         optional($.arguments),
         ')',
@@ -239,10 +262,10 @@ module.exports = grammar({
     _lambda_keyword: ($) =>
       alias(token(prec(3, /[Ll][Aa][Mm][Bb][Dd][Aa]/)), $.function_name),
 
-    // `\` and `.` stay in the identifier set for parity with gsfmt's lexer
-    // (tools/gsfmt/src/lib.rs `is_ident_start`/`is_ident_body`): the two
-    // tools must tokenize the same text the same way or a formatted file
-    // could highlight differently than it parses.
-    identifier: ($) => token(/[A-Za-z_\\][A-Za-z0-9_.\\]*/),
+    // Letters, digits, `_`, `.` — what Sheets actually permits in names.
+    // gsfmt's lexer additionally tolerates `\` (a formatter must never
+    // crash on garbage, only preserve it); a highlighter has the opposite
+    // contract, an ERROR node on invalid input is the feature.
+    identifier: ($) => token(/[A-Za-z_][A-Za-z0-9_.]*/),
   },
 });

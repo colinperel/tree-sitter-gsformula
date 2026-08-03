@@ -145,3 +145,83 @@ nested let inside lambda body
       (binary_expression
         (identifier)
         (identifier)))))
+
+================================================================================
+immediately invoked lambda
+================================================================================
+=LAMBDA(salary, salary * 0.3)(1000)
+--------------------------------------------------------------------------------
+
+(source_file
+  (invocation_expression
+    (lambda_expression
+      (function_name)
+      (identifier)
+      (binary_expression
+        (identifier)
+        (number)))
+    (arguments
+      (number))))
+
+================================================================================
+let returning a lambda, invoked
+================================================================================
+=LET(f, LAMBDA(v, v * 2), f)(21)
+--------------------------------------------------------------------------------
+
+(source_file
+  (invocation_expression
+    (let_expression
+      (function_name)
+      (let_binding
+        (identifier)
+        (lambda_expression
+          (function_name)
+          (identifier)
+          (binary_expression
+            (identifier)
+            (number))))
+      (identifier))
+    (arguments
+      (number))))
+
+================================================================================
+chained invocation
+================================================================================
+=LAMBDA(a, LAMBDA(b, a + b))(1)(2)
+--------------------------------------------------------------------------------
+
+(source_file
+  (invocation_expression
+    (invocation_expression
+      (lambda_expression
+        (function_name)
+        (identifier)
+        (lambda_expression
+          (function_name)
+          (identifier)
+          (binary_expression
+            (identifier)
+            (identifier))))
+      (arguments
+        (number)))
+    (arguments
+      (number))))
+
+================================================================================
+lambda without a parameter is an error
+:error
+================================================================================
+=LAMBDA(1)
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+let without a binding is an error
+:error
+================================================================================
+=LET(1)
+--------------------------------------------------------------------------------
+
+
