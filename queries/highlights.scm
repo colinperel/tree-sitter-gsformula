@@ -43,6 +43,12 @@
 
 (table_column) @property
 
+; Chip extraction: the `[field]` after the dot reads like a property access.
+(chip_field) @property
+
+(table_reference
+  "." @punctuation.delimiter)
+
 ; ── calls ───────────────────────────────────────────────────────────────
 ; `function` may hold a reference token: a name like LOG10 is lexically a
 ; cell reference and the lexer cannot look ahead for the `(`.

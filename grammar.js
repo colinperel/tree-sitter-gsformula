@@ -147,9 +147,10 @@ module.exports = grammar({
     // ── table references ───────────────────────────────────────────────
     // Table1[Column 1], Table1[#ALL], Table1[[#HEADERS],[Col A]:[Col C]].
     // Column names may contain spaces, so the column is one token up to the
-    // closing bracket; specifiers start with `#`. Chip extraction
-    // (`Table1[Col].[field]`) is deliberately not modeled — deferred in
-    // docs/proposals/tree-sitter-gsformula.md.
+    // closing bracket; specifiers start with `#`. Chip extraction is the
+    // optional `.[field]` postfix — Table1[Column 1].[file name] — and the
+    // field is always bracketed, matching the one form Google documents;
+    // a bare `.field` stays an ERROR.
     table_reference: ($) =>
       seq(
         field('table', $.identifier),
@@ -160,6 +161,7 @@ module.exports = grammar({
           seq($._table_part, repeat(seq(',', $._table_part))),
         ),
         ']',
+        optional(seq('.', '[', field('chip', $.chip_field), ']')),
       ),
 
     // One bracketed selector inside the compound form, optionally a column
@@ -179,6 +181,10 @@ module.exports = grammar({
 
     table_specifier: ($) => token(/#[A-Za-z]+/),
     table_column: ($) => token(/[^#\[\]][^\[\]]*/),
+
+    // Same shape as a column name (spaces allowed, `#` excluded so a
+    // specifier in chip position is an ERROR, not a silent match).
+    chip_field: ($) => token(/[^#\[\]][^\[\]]*/),
 
     array: ($) =>
       seq('{', optional(seq($._array_row, repeat(seq(';', $._array_row)))), '}'),
