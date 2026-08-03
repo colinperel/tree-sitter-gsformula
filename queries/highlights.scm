@@ -15,8 +15,9 @@
 ; ── references ──────────────────────────────────────────────────────────
 (reference) @variable.builtin
 
-; A bare column is lexically an identifier (`B` in `B6:B`, `A` in `A:A`);
-; only `$`-anchored or sheet-qualified columns are unambiguous tokens. Colour
+; A bare column is lexically an identifier (`B` in `B6:B`, `A` in `A:A`) and
+; a bare row is a number (`2` in `Sheet1!1:2`, both endpoints of `1:2`);
+; only `$`-anchored or sheet-qualified ones are unambiguous tokens. Colour
 ; the operands of a range like references so the whole range reads uniformly.
 (binary_expression
   left: (identifier) @variable.builtin
@@ -25,6 +26,14 @@
 (binary_expression
   operator: ":"
   right: (identifier) @variable.builtin)
+
+(binary_expression
+  left: (number) @variable.builtin
+  operator: ":")
+
+(binary_expression
+  operator: ":"
+  right: (number) @variable.builtin)
 
 ; ── table references ─────────────────────────────────────────────────────
 (table_reference
