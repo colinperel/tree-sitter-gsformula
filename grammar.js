@@ -160,7 +160,14 @@ module.exports = grammar({
           seq(
             field('column', $.table_column),
             ']',
-            optional(seq('.', '[', field('chip', $.chip_field), ']')),
+            optional(
+              seq(
+                '.',
+                '[',
+                field('chip', alias($.table_column, $.chip_field)),
+                ']',
+              ),
+            ),
           ),
           seq(field('specifier', $.table_specifier), ']'),
           seq($._table_part, repeat(seq(',', $._table_part)), ']'),
@@ -183,11 +190,12 @@ module.exports = grammar({
       ),
 
     table_specifier: ($) => token(/#[A-Za-z]+/),
+    // A chip field has exactly this shape too (spaces allowed, `#` excluded
+    // so a specifier in chip position is an ERROR), so the chip site aliases
+    // this rule to `chip_field` rather than declaring a second identical
+    // token — tree-sitter collapses duplicate token rules into one nullable
+    // auxiliary token, which made `Table1[]` parse with a zero-width column.
     table_column: ($) => token(/[^#\[\]][^\[\]]*/),
-
-    // Same shape as a column name (spaces allowed, `#` excluded so a
-    // specifier in chip position is an ERROR, not a silent match).
-    chip_field: ($) => token(/[^#\[\]][^\[\]]*/),
 
     array: ($) =>
       seq('{', optional(seq($._array_row, repeat(seq(';', $._array_row)))), '}'),
