@@ -1,7 +1,7 @@
 # Examples
 
 Real-world Google Sheets formulas the grammar must parse with zero
-`ERROR`/`MISSING` nodes. CI validates `queries/highlights.scm` against
+`ERROR`/`MISSING` nodes. CI validates every `queries/*.scm` against
 these files via `tree-sitter query`.
 
 Copied from `tools/gsfmt/tests/data/` (the formatter's fixtures) so the
