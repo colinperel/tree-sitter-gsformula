@@ -2,14 +2,16 @@
 ;
 ; Ordering matters: Neovim lets a later pattern win, so the broad
 ; `(identifier)` capture comes first and the specific roles override it.
-
 ; ── fallback ────────────────────────────────────────────────────────────
 (identifier) @variable
 
 ; ── literals ────────────────────────────────────────────────────────────
 (string) @string
+
 (number) @number
+
 (boolean) @boolean.builtin
+
 (error) @error
 
 ; ── references ──────────────────────────────────────────────────────────

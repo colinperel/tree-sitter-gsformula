@@ -2,7 +2,6 @@
 ; indents its interior one level; the closing delimiter dedents back
 ; (@indent.branch). gsfmt re-aligns on save, so this only has to keep
 ; typing pleasant, not reproduce the formatter's column alignment.
-
 [
   (call_expression)
   (invocation_expression)

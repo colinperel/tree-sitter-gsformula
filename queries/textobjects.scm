@@ -1,7 +1,6 @@
 ; Textobjects for mini.ai's gen_spec.treesitter (af/if via @function.*).
 ; A formula has no named function definitions, so "function" maps to the
 ; call-shaped constructs: af selects the whole call, if its interior.
-
 (call_expression) @function.outer
 
 (call_expression
