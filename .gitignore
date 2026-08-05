@@ -1,7 +1,16 @@
-src/
 build/
+dist/
+target/
 node_modules/
+.venv/
 *.wasm
 *.so
 *.dylib
+*.dll
+*.o
 log.html
+package-lock.json
+Cargo.lock
+__pycache__/
+*.egg-info/
+.build/

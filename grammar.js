@@ -39,7 +39,7 @@ const SHEET = /(?:[A-Za-z_][A-Za-z0-9_.]*|'(?:[^']|'')*')!/;
 const CELL = /\$?[A-Za-z]{1,3}\$?[0-9]+/;
 const ABS_COL = /\$[A-Za-z]{1,3}/;
 
-module.exports = grammar({
+export default grammar({
   name: 'gsformula',
 
   extras: ($) => [/\s+/],

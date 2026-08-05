@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
   "grammars": [
     {
       "name": "gsformula",
@@ -11,6 +12,14 @@
   "metadata": {
     "version": "0.1.0",
     "license": "MIT",
-    "description": "Tree-sitter grammar for Google Sheets formulas"
+    "description": "Tree-sitter grammar for Google Sheets formulas",
+    "authors": [
+      {
+        "name": "Colin Perel"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/colinperel/tree-sitter-gsformula"
+    }
   }
 }
