@@ -11,6 +11,8 @@ on:
       - test/**
       - bindings/**
       - binding.gyp
+      - queries/**
+      - examples/**
       - .github/workflows/ci.yml
   pull_request:
     paths:
@@ -19,6 +21,8 @@ on:
       - test/**
       - bindings/**
       - binding.gyp
+      - queries/**
+      - examples/**
       - .github/workflows/ci.yml
 
 concurrency:
