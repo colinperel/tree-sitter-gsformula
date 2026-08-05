@@ -1,6 +1,9 @@
 name: CI
 
 on:
+  # Manual runs: paths-filtered push events don't fire on force-pushes of
+  # rewritten history, which left rewritten heads unverified.
+  workflow_dispatch:
   push:
     branches:
       - master
