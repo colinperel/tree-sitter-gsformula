@@ -4,7 +4,7 @@ Real-shaped Google Sheets formulas the grammar must parse with zero
 `ERROR`/`MISSING` nodes. CI validates every `queries/*.scm` against
 these files via `tree-sitter query`.
 
-Each `.gsf` is formatted by `gsfmt` (the formatter this grammar was
+Each `.gsfx` is formatted by `gsfmt` (the formatter this grammar was
 built alongside) and paired with a `--minify` variant of the same
 formula. The content is synthetic but mirrors the structural complexity
 of production formulas: deep LET/LAMBDA nesting, immediately-invoked

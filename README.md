@@ -40,11 +40,11 @@ inside `ERROR` nodes still indent while you type.
 ```sh
 tree-sitter generate   # grammar.js → src/
 tree-sitter test       # corpus tests (test/corpus/)
-tree-sitter parse examples/*.gsf
+tree-sitter parse examples/*.gsfx
 ```
 
-`examples/` holds real-world formulas that must parse with zero
-`ERROR`/`MISSING` nodes; CI validates every query file against them.
+`examples/` holds real-shaped synthetic formulas that must parse with
+zero `ERROR`/`MISSING` nodes; CI validates every query file against them.
 
 ## Provenance
 
