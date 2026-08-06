@@ -57,8 +57,12 @@ branch=$(git rev-parse --abbrev-ref HEAD)
 test "$branch" = main || { echo "on $branch, not main"; exit 1; }
 git fetch origin main
 head_sha=$(git rev-parse HEAD)
-main_sha=$(git rev-parse origin/main)
-test "$head_sha" = "$main_sha" || { echo "main not in sync with origin/main"; exit 1; }
+# FETCH_HEAD, not origin/main: the fetch above always writes FETCH_HEAD, but it
+# only updates the remote-tracking ref when remote.origin.fetch maps that
+# branch. Against a narrowed refspec, origin/main can be stale — and comparing
+# against a stale ref would wave through a push that resurrects rewound commits.
+main_sha=$(git rev-parse FETCH_HEAD)
+test "$head_sha" = "$main_sha" || { echo "main not in sync with origin"; exit 1; }
 dirty=$(git status --porcelain)
 test -z "$dirty" || { echo "dirty worktree"; exit 1; }
 # Signing preflight. These assert the tag will be SSH-signed rather than
