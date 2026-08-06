@@ -38,13 +38,25 @@ before keeping it — it will happily bless a regression.
 
 Order matters. The tag is the expensive thing to move, so it goes last.
 
-```sh
-V=0.3.1
+Run it as a **fail-fast subshell**, not as lines pasted one at a time. Half this
+block is checks, and a check whose non-zero exit doesn't stop the sequence is
+decoration.
 
-# Preflight: refuse to release from a dirty tree, and prove signing works
-# before the tag step rather than after.
+```sh
+( set -eu
+
+V=0.3.1                           # ← the release you are cutting, not the last one
+
+# Preflight. Release from main only: the run lookup below matches any CI run for
+# the SHA, and a green `pull_request` run on a feature branch would otherwise let
+# you tag a commit that never landed on main.
+test "$(git rev-parse --abbrev-ref HEAD)" = main || { echo "not on main"; exit 1; }
+git fetch origin main
+test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)" || { echo "main not in sync"; exit 1; }
 test -z "$(git status --porcelain)" || { echo "dirty worktree"; exit 1; }
-git config --get user.signingkey >/dev/null || { echo "no signing key"; exit 1; }
+# Cheap early hint only — it proves a config value exists, not that the key is
+# usable. `git tag -s` below is the real check, and under `set -e` it aborts.
+git config --get user.signingkey >/dev/null || { echo "no signing key configured"; exit 1; }
 
 tree-sitter version "$V"          # rewrites six manifests, NOT src/parser.c
 tree-sitter generate              # regenerate so parser.c metadata matches
@@ -70,11 +82,20 @@ gh run watch "$id" --exit-status
 git tag -s -m "v$V — <summary>" "v$V"   # -s: don't rely on global tag.gpgsign
 git push origin "v$V"                    # not --tags: pushes only this tag
 gh release create "v$V" --verify-tag --title "v$V" --notes "…"
+)
 ```
 
-Four things in that block are load-bearing, and all four are about not trusting
+Five things in that block are load-bearing, and all five are about not trusting
 ambient state:
 
+- **`set -eu` and the subshell.** Without fail-fast, a red `gh run watch
+  --exit-status`, a failed test, a rejected push, or a signing failure just
+  scrolls past and the next command tags anyway — the block would check
+  everything and enforce nothing. The subshell keeps `set -e` out of your
+  interactive shell.
+- **It releases from `main` only.** The run lookup matches any CI run for the
+  SHA, including a `pull_request` run, so without the branch and upstream
+  assertions a green PR check could license a tag on a commit that never merged.
 - **`git add` names the release surface.** `git add -A` would sweep in whatever
   else is lying around — a stray `uv.lock`, a build artifact, an unrelated edit.
 - **`git tag -s`, not bare `git tag -m`.** Signing here comes from a *global*
@@ -94,7 +115,8 @@ ambient state:
 `queries/` against the parser, and `examples/**` appears in the workflow only as
 a `paths` trigger. If you skip that command, nothing checks them.
 
-Then bump the consumer pin: `REF="v0.3.1"` in the dotfiles hook
+Then bump the consumer pin to the version you just cut — `REF="v$V"` — in the
+dotfiles hook
 `.chezmoiscripts/run_onchange_after_treesitter-gsformula.sh.tmpl`, and
 `chezmoi apply`. The hook does `git clone --branch <tag>`, so the tag must be on
 GitHub first or the apply fails.
@@ -136,10 +158,11 @@ any real Tree-sitter consumer (the Neovim install), which is where to look.
 - **`Cargo.lock` is gitignored.** Use plain `cargo test` — never `--locked`, it
   fails with no lockfile to honor.
 - **Tags are SSH-signed annotated objects** (`tag.gpgsign=true`,
-  `gpg.format=ssh`). A bare `git tag v0.3.1` dies with
-  `fatal: no tag message?` in a non-interactive shell. Always pass `-m`. And
+  `gpg.format=ssh`). A bare `git tag vX.Y.Z` dies with
+  `fatal: no tag message?` in a non-interactive shell — pass `-m`, and prefer
+  `-s` so signing doesn't depend on that global being set. And
   `git ls-remote --tags` returns the *tag object* sha — peel with
-  `git ls-remote origin 'refs/tags/v0.3.1^{}'` to compare against a commit.
+  `git ls-remote origin 'refs/tags/vX.Y.Z^{}'` to compare against a commit.
 - **This repo root has a `pyproject.toml`** (the Python binding). `uv run --with
   <pkg> …` therefore treats it as the enclosing project and writes a stray
   `uv.lock`. Use `uv run --no-project` for throwaway scripts.
