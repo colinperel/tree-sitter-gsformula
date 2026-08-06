@@ -60,6 +60,11 @@
 (call_expression
   function: (reference) @function.call)
 
+; …or a boolean token: TRUE()/FALSE() are zero-argument Sheets functions and
+; `boolean` beats `identifier` in the lexer.
+(call_expression
+  function: (boolean) @function.call)
+
 (let_expression
   function: (function_name) @function.builtin)
 

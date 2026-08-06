@@ -362,6 +362,10 @@
         "required": true,
         "types": [
           {
+            "type": "boolean",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
