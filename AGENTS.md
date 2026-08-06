@@ -12,7 +12,9 @@ force-moved tag.
 an editor, not to evaluate it or prove it valid. So:
 
 - Accepting a formula Sheets would reject is fine. Rejecting one Sheets accepts
-  is a bug — an `ERROR` node kills highlighting for the whole line.
+  is a bug — queries still capture inside an `ERROR` node, but the node
+  structure they match against is gone, so highlighting degrades to noise
+  around the misparse.
 - Don't add semantic validation (arity checks, type rules, name resolution).
   That belongs in `gsfmt`, if anywhere.
 - Dot-decimal locale only (`1.5`, `,` separators). `;`-separated input is
@@ -40,13 +42,24 @@ Order matters. The tag is the expensive thing to move, so it goes last.
 tree-sitter version 0.3.1         # rewrites six manifests, NOT src/parser.c
 tree-sitter generate              # regenerate so parser.c metadata matches
 tree-sitter test                  # 81/81
+tree-sitter parse -q examples/*.gsfx   # no CI job parses these — see below
 git add -A && git commit -m "chore: release v0.3.1"
 git push                          # let CI speak BEFORE tagging
-gh run watch "$(gh run list --limit 1 --json databaseId --jq '.[0].databaseId')" --exit-status
+gh run watch "$(gh run list -w CI -c "$(git rev-parse HEAD)" --limit 1 \
+  --json databaseId --jq '.[0].databaseId')" --exit-status
 git tag -m "v0.3.1 — <summary>" v0.3.1
 git push --tags
 gh release create v0.3.1 --verify-tag --title v0.3.1 --notes "…"
 ```
+
+Two details in that block are load-bearing. The `gh run list` call is filtered by
+workflow **and** commit because this repo also has a `Copilot` workflow — an
+unfiltered `--limit 1` will happily hand you a green Copilot run and let you tag
+a red CI head. And `tree-sitter parse` on the examples is a **local-only** gate:
+no CI job parses `examples/*.gsfx`. The corpus job reads `test/corpus/`,
+`ts_query_ls` checks `queries/` against the parser, and `examples/**` appears in
+the workflow only as a `paths` trigger. If you skip that command, nothing checks
+them.
 
 Then bump the consumer pin: `REF="v0.3.1"` in the dotfiles hook
 `.chezmoiscripts/run_onchange_after_treesitter-gsformula.sh.tmpl`, and
@@ -74,12 +87,16 @@ which is why you push and wait before tagging.
 
 `examples/*.gsfx` are **not** free to edit. `gsfmt`'s CI has a `Fixture sync`
 job that diffs six files — `gnarly`, `monthly`, `payperiods` and their `.min`
-variants — against `gsfmt`'s `tests/data/`, which is **canonical**. It checks
-out this repo's default branch unpinned, so a change here turns `gsfmt`'s main
-red immediately. Change `tests/data/` in `gsfmt` first, then mirror it here.
+variants — against `gsfmt`'s `tests/data/`, which is **canonical**. It checks out
+this repo's default branch *unpinned*, so drift here fails `gsfmt`'s next CI run
+— not at the moment you push, but on its next push, PR, or manual run, which
+makes it look like an unrelated break. Change `tests/data/` in `gsfmt` first,
+then mirror it here.
 
-`gsfmt` also consumes the grammar's shape via its own fixtures; a node-name or
-structure change is a breaking change for it even though nothing here fails.
+That fixture diff is the whole contract. `gsfmt` does **not** depend on this
+grammar: its `[dependencies]` is empty and it has its own lexer and parser, so
+node renames and tree-shape changes cannot break it. They break query files and
+any real Tree-sitter consumer (the Neovim install), which is where to look.
 
 ## Traps
 
@@ -93,11 +110,14 @@ structure change is a breaking change for it even though nothing here fails.
 - **This repo root has a `pyproject.toml`** (the Python binding). `uv run --with
   <pkg> …` therefore treats it as the enclosing project and writes a stray
   `uv.lock`. Use `uv run --no-project` for throwaway scripts.
-- **CI `paths` filters gate every trigger.** Adding a top-level file that should
-  gate CI means adding it to *both* the `push` and `pull_request` lists in
-  `.github/workflows/ci.yml`.
-- **The `Fuzz scanner` job only runs when `src/scanner.c` changed.** There is no
-  scanner in this grammar today, so it self-skips; don't read its green as
+- **CI `paths` filters gate both automatic triggers.** Adding a top-level file
+  that should gate CI means adding it to *both* the `push` and `pull_request`
+  lists in `.github/workflows/ci.yml`. `workflow_dispatch` is unfiltered — it is
+  the escape hatch for verifying a head the filters skipped, not a substitute
+  for listing the path.
+- **The `Fuzz scanner` job runs on every CI trigger, but its fuzzer step is
+  conditional** on `src/scanner.c` having changed. There is no scanner in this
+  grammar today, so that step never fires; don't read the job's green as
   coverage.
 
 ## Conventions
