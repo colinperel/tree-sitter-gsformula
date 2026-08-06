@@ -54,8 +54,11 @@ test "$(git rev-parse --abbrev-ref HEAD)" = main || { echo "not on main"; exit 1
 git fetch origin main
 test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)" || { echo "main not in sync"; exit 1; }
 test -z "$(git status --porcelain)" || { echo "dirty worktree"; exit 1; }
-# Cheap early hint only — it proves a config value exists, not that the key is
-# usable. `git tag -s` below is the real check, and under `set -e` it aborts.
+# Signing preflight. These two assert the tag will be SSH-signed rather than
+# OpenPGP-signed or unsigned; neither proves the key is usable. `git tag -s`
+# below is the authoritative check, and under `set -e` a signing failure aborts
+# before anything is pushed.
+test "$(git config --get gpg.format)" = ssh || { echo "gpg.format is not ssh"; exit 1; }
 git config --get user.signingkey >/dev/null || { echo "no signing key configured"; exit 1; }
 
 tree-sitter version "$V"          # rewrites six manifests, NOT src/parser.c
@@ -67,7 +70,7 @@ tree-sitter parse -q examples/*.gsfx   # no CI job parses these — see below
 git add tree-sitter.json Cargo.toml package.json pyproject.toml \
         CMakeLists.txt Makefile src/
 git commit -m "chore: release v$V"
-git push                          # let CI speak BEFORE tagging
+git push origin main              # explicit ref; don't trust push.default
 
 # Poll: the run is not registered the instant the push returns.
 sha=$(git rev-parse HEAD)
