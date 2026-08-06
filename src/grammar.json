@@ -969,7 +969,7 @@
             "members": [
               {
                 "type": "PATTERN",
-                "value": "(?:[A-Za-z_][A-Za-z0-9_.]*|'(?:[^']|'')*')!"
+                "value": "(?:[\\p{L}_][\\p{L}\\p{N}_.]*|'(?:[^']|'')*')!"
               },
               {
                 "type": "CHOICE",
@@ -1139,7 +1139,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[A-Za-z_][A-Za-z0-9_.]*"
+        "value": "[\\p{L}_][\\p{L}\\p{N}_.]*"
       }
     }
   },
