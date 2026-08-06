@@ -19,9 +19,9 @@ with `=`, in the **dot-decimal locale** (`1.5`, arguments separated by
   (`Table1[Column 1]`, `Table1[#ALL]`,
   `Table1[[#HEADERS],[Col A]:[Col C]]`) and chip extraction
   (`Table1[Col].[file name]`)
-- array literals (`{1, 2; 3, 4}`), the full operator set (arithmetic,
-  comparison, `&` concatenation, `%` postfix, `^` exponentiation, range
-  intersection/union), string/number/boolean/error literals
+- array literals (`{1, 2; 3, 4}`), the operator set (arithmetic,
+  comparison, `&` concatenation, `%` postfix, `^` exponentiation, `:`
+  range), string/number/boolean/error literals
 
 Comma-decimal locales (`1,5` / `;` separators) are out of scope; the
 same formula text is lexically ambiguous between locales, so a variant
