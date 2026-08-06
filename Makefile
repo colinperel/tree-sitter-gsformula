@@ -1,6 +1,6 @@
 LANGUAGE_NAME := tree-sitter-gsformula
 HOMEPAGE_URL := https://github.com/colinperel/tree-sitter-gsformula
-VERSION := 0.1.0
+VERSION := 0.3.0
 DESCRIPTION := Tree-sitter grammar for Google Sheets formulas
 
 # repository
