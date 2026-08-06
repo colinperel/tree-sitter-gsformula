@@ -24,7 +24,7 @@ an editor, not to evaluate it or prove it valid. So:
 
 ```sh
 tree-sitter generate              # grammar.js → src/ (parser.c, grammar.json, node-types.json)
-tree-sitter test                  # corpus tests, test/corpus/*.txt — 81 parses
+tree-sitter test                  # corpus tests, test/corpus/*.txt — must be all green
 tree-sitter parse examples/*.gsfx # must be zero ERROR/MISSING nodes
 tree-sitter build                 # build the shared object
 npm test                          # Node binding test (needs npm install first)
@@ -39,27 +39,60 @@ before keeping it — it will happily bless a regression.
 Order matters. The tag is the expensive thing to move, so it goes last.
 
 ```sh
-tree-sitter version 0.3.1         # rewrites six manifests, NOT src/parser.c
+V=0.3.1
+
+# Preflight: refuse to release from a dirty tree, and prove signing works
+# before the tag step rather than after.
+test -z "$(git status --porcelain)" || { echo "dirty worktree"; exit 1; }
+git config --get user.signingkey >/dev/null || { echo "no signing key"; exit 1; }
+
+tree-sitter version "$V"          # rewrites six manifests, NOT src/parser.c
 tree-sitter generate              # regenerate so parser.c metadata matches
-tree-sitter test                  # 81/81
+tree-sitter test                  # must pass
 tree-sitter parse -q examples/*.gsfx   # no CI job parses these — see below
-git add -A && git commit -m "chore: release v0.3.1"
+
+# Stage exactly the release surface; never `git add -A` here.
+git add tree-sitter.json Cargo.toml package.json pyproject.toml \
+        CMakeLists.txt Makefile src/
+git commit -m "chore: release v$V"
 git push                          # let CI speak BEFORE tagging
-gh run watch "$(gh run list -w CI -c "$(git rev-parse HEAD)" --limit 1 \
-  --json databaseId --jq '.[0].databaseId')" --exit-status
-git tag -m "v0.3.1 — <summary>" v0.3.1
-git push --tags
-gh release create v0.3.1 --verify-tag --title v0.3.1 --notes "…"
+
+# Poll: the run is not registered the instant the push returns.
+sha=$(git rev-parse HEAD)
+for _ in $(seq 1 30); do
+  id=$(gh run list -w CI -c "$sha" --limit 1 --json databaseId --jq '.[0].databaseId')
+  [ -n "$id" ] && break
+  sleep 5
+done
+[ -n "$id" ] || { echo "no CI run for $sha — do not tag"; exit 1; }
+gh run watch "$id" --exit-status
+
+git tag -s -m "v$V — <summary>" "v$V"   # -s: don't rely on global tag.gpgsign
+git push origin "v$V"                    # not --tags: pushes only this tag
+gh release create "v$V" --verify-tag --title "v$V" --notes "…"
 ```
 
-Two details in that block are load-bearing. The `gh run list` call is filtered by
-workflow **and** commit because this repo also has a `Copilot` workflow — an
-unfiltered `--limit 1` will happily hand you a green Copilot run and let you tag
-a red CI head. And `tree-sitter parse` on the examples is a **local-only** gate:
-no CI job parses `examples/*.gsfx`. The corpus job reads `test/corpus/`,
-`ts_query_ls` checks `queries/` against the parser, and `examples/**` appears in
-the workflow only as a `paths` trigger. If you skip that command, nothing checks
-them.
+Four things in that block are load-bearing, and all four are about not trusting
+ambient state:
+
+- **`git add` names the release surface.** `git add -A` would sweep in whatever
+  else is lying around — a stray `uv.lock`, a build artifact, an unrelated edit.
+- **`git tag -s`, not bare `git tag -m`.** Signing here comes from a *global*
+  `tag.gpgsign=true`; on any machine without it, `-m` alone silently produces an
+  unsigned tag that looks fine locally. `-s` fails loudly instead.
+- **`git push origin "v$V"`, not `--tags`.** The latter publishes every local
+  tag, including experiments you never meant to release.
+- **The run lookup polls and aborts.** A single `gh run list` immediately after
+  `git push` can return empty because the run isn't registered yet — and an
+  empty id means the watch is skipped and the red head gets tagged anyway. It is
+  also filtered by workflow *and* commit: this repo has a second active `Copilot`
+  workflow, so an unfiltered `--limit 1` can hand back a green run for something
+  else entirely.
+
+`tree-sitter parse` on the examples is a **local-only** gate: no CI job parses
+`examples/*.gsfx`. The corpus job reads `test/corpus/`, `ts_query_ls` checks
+`queries/` against the parser, and `examples/**` appears in the workflow only as
+a `paths` trigger. If you skip that command, nothing checks them.
 
 Then bump the consumer pin: `REF="v0.3.1"` in the dotfiles hook
 `.chezmoiscripts/run_onchange_after_treesitter-gsformula.sh.tmpl`, and
@@ -74,7 +107,7 @@ GitHub first or the apply fails.
 its own `major/minor/patch`. Skip `tree-sitter generate` and you ship a parser
 that reports the previous version.
 
-`tree-sitter test` passes 81/81 in that state — the corpus doesn't check
+`tree-sitter test` passes clean in that state — the corpus doesn't check
 generated-file freshness. Only CI catches it, via
 `tree-sitter/parser-test-action`'s `git diff --exit-code -- src/parser.c`. This
 happened on v0.3.0: manifests weren't in the CI `paths` filter, so the release
