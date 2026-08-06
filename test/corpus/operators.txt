@@ -117,3 +117,21 @@ comparison of parenthesized groups multiplied
       (binary_expression
         (reference)
         (reference)))))
+
+================================================================================
+adjacent operands are an error (sheets has no intersection operator)
+================================================================================
+=SUM(A1:B2 C1:D2)
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_expression
+    (identifier)
+    (arguments
+      (binary_expression
+        (binary_expression
+          (reference)
+          (reference))
+        (ERROR
+          (reference))
+        (reference)))))
