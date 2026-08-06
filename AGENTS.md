@@ -124,7 +124,8 @@ push:
 
 - **Red CI.** Commit the fix **and push it** before re-running — the preflight
   refuses a dirty tree, and refuses a local commit that isn't on the remote, so
-  a half-finished fix cannot get through. Then re-run with the same `$V`. The
+  a half-finished fix cannot get through. Then re-run the whole block, setting
+  `V` to the same version you were cutting. The
   commit step is conditional precisely so this works: on the re-run the version
   and generated files are already correct, nothing stages, and the block falls
   through to re-verifying and tagging the fixed head.
@@ -142,12 +143,14 @@ push:
   ```
 
 - **After the tag was created.** Re-running the whole block does *not* recover
-  these — it would abort on the existing tag — so retry the failed step alone:
+  these — it would abort on the existing tag — so retry the failed step alone.
+  Write the values out literally: `$V` and `$R` died with the subshell, and in a
+  fresh shell they expand to nothing (under `set -u` they abort instead).
 
   | Failed at | State | Retry |
   | --- | --- | --- |
-  | `git push origin "v$V"` | tag exists locally only | `git push origin "v$V"` |
-  | `gh release create` | tag is on GitHub, no release | `gh release create "v$V" -R "$R" --verify-tag …` |
+  | `git push origin vX.Y.Z` | tag exists locally only | `git push origin vX.Y.Z` |
+  | `gh release create` | tag is on GitHub, no release | `gh release create vX.Y.Z -R colinperel/tree-sitter-gsformula --verify-tag …` |
 
   Only delete and re-cut a tag if it points at the wrong commit, and only if
   nothing has consumed it yet — the dotfiles hook clones by tag, so a moved tag
