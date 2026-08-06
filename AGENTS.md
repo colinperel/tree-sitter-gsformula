@@ -75,9 +75,10 @@ fmt=$(git config --get gpg.format || true)
 test "$fmt" = ssh || { echo "gpg.format is '$fmt', not ssh"; exit 1; }
 key=$(git config --get user.signingkey || true)
 test -n "$key" || { echo "no signing key configured"; exit 1; }
-git tag -d _signing-probe 2>/dev/null || true   # leftover from an aborted run
-git tag -s -m probe _signing-probe              # exercises the real signing path
-git tag -d _signing-probe >/dev/null
+# Ref-free: signs a dangling commit object rather than a throwaway tag, so it
+# can't collide with or delete a tag you own. The object is unreachable and gets
+# garbage-collected. Same signing path as `git tag -s`.
+git commit-tree -S -m probe "$(git rev-parse 'HEAD^{tree}')" >/dev/null
 
 tree-sitter version "$V"          # rewrites six manifests, NOT src/parser.c
 tree-sitter generate              # regenerate so parser.c metadata matches
@@ -87,7 +88,14 @@ tree-sitter parse -q examples/*.gsfx   # no CI job parses these — see below
 # Stage exactly the release surface; never `git add -A` here.
 git add tree-sitter.json Cargo.toml package.json pyproject.toml \
         CMakeLists.txt Makefile src/
-git commit -m "chore: release v$V"
+# Conditional so a re-run after fixing forward doesn't die here: if the version
+# and generated files are already correct, nothing is staged and `git commit`
+# would exit 1.
+if git diff --cached --quiet; then
+  echo "nothing staged — re-verifying the existing head"
+else
+  git commit -m "chore: release v$V"
+fi
 git push origin HEAD:main         # explicit src:dst; ignores push.default et al
 
 # Poll: the run is not registered the instant the push returns.
@@ -114,14 +122,36 @@ The block publishes the release commit before it tags, so an abort after the
 a recoverable state, not a broken one, and it does not need an amend or a force
 push:
 
-- **Red CI.** Fix forward on `main` and re-run the block with the same `$V`.
-  `tree-sitter version` is idempotent for a version already set, so the second
-  run just re-verifies and tags the fixed head.
+- **Red CI.** Commit the fix **and push it** before re-running — the preflight
+  refuses a dirty tree, and refuses a local commit that isn't on the remote, so
+  a half-finished fix cannot get through. Then re-run with the same `$V`. The
+  commit step is conditional precisely so this works: on the re-run the version
+  and generated files are already correct, nothing stages, and the block falls
+  through to re-verifying and tagging the fixed head.
 - **Signing failed at the tag step** (the probe should have caught it — if it
   didn't, say why in a commit so the probe can be tightened). Repair signing,
   then tag and push that same SHA directly; nothing else needs redoing.
-- **Anything before the push.** Nothing was published. `git reset --hard
-  origin/main` and start over.
+- **Anything before the push.** Nothing was published, so you can discard local
+  work — but do it against a *freshly fetched* ref, not `origin/main`, which may
+  be stale for exactly the reason the preflight fetches to `FETCH_HEAD`:
+
+  ```sh
+  git fetch origin main
+  git reset --hard FETCH_HEAD   # DESTRUCTIVE: discards local commits and
+                                # uncommitted changes. Check `git status` first.
+  ```
+
+- **After the tag was created.** Re-running the whole block does *not* recover
+  these — it would abort on the existing tag — so retry the failed step alone:
+
+  | Failed at | State | Retry |
+  | --- | --- | --- |
+  | `git push origin "v$V"` | tag exists locally only | `git push origin "v$V"` |
+  | `gh release create` | tag is on GitHub, no release | `gh release create "v$V" -R "$R" --verify-tag …` |
+
+  Only delete and re-cut a tag if it points at the wrong commit, and only if
+  nothing has consumed it yet — the dotfiles hook clones by tag, so a moved tag
+  silently changes what an already-applied machine would fetch next.
 
 Six things in that block are load-bearing, and all six are about not trusting
 ambient state — the shell's, git's config, or GitHub's timing:
