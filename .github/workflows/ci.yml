@@ -4,6 +4,11 @@ on:
   # Manual runs: paths-filtered push events don't fire on force-pushes of
   # rewritten history, which left rewritten heads unverified.
   workflow_dispatch:
+  # The version manifests appear in both filters below because
+  # `tree-sitter version` rewrites exactly those six files and nothing else.
+  # Without them a release commit touches no filtered path and gets no CI at
+  # all — which is how a src/parser.c whose embedded metadata version was
+  # still 0.2.0 reached the v0.3.0 tag unverified.
   push:
     branches:
       - master
@@ -17,6 +22,12 @@ on:
       - queries/**
       - examples/**
       - .github/workflows/ci.yml
+      - tree-sitter.json
+      - Cargo.toml
+      - package.json
+      - pyproject.toml
+      - CMakeLists.txt
+      - Makefile
   pull_request:
     paths:
       - grammar.js
@@ -27,6 +38,12 @@ on:
       - queries/**
       - examples/**
       - .github/workflows/ci.yml
+      - tree-sitter.json
+      - Cargo.toml
+      - package.json
+      - pyproject.toml
+      - CMakeLists.txt
+      - Makefile
 
 concurrency:
   group: ${{github.workflow}}-${{github.ref}}
