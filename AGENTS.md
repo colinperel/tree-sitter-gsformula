@@ -65,14 +65,19 @@ main_sha=$(git rev-parse FETCH_HEAD)
 test "$head_sha" = "$main_sha" || { echo "main not in sync with origin"; exit 1; }
 dirty=$(git status --porcelain)
 test -z "$dirty" || { echo "dirty worktree"; exit 1; }
-# Signing preflight. These assert the tag will be SSH-signed rather than
-# OpenPGP-signed or unsigned; neither proves the key is usable. `git tag -s`
-# below is the authoritative check, and under `set -e` a signing failure aborts
-# before anything is pushed. `|| true` because "unset" is a normal answer here.
+# Signing preflight. The config checks assert the signature *kind*; they cannot
+# prove the key is usable (wrong path, absent agent, locked key). So actually
+# sign something. This matters for ordering: the real `git tag -s` happens after
+# the release commit is already pushed, so without a probe here a signing
+# failure would strand a published commit. `|| true` on the lookups because
+# "unset" is a normal answer there.
 fmt=$(git config --get gpg.format || true)
 test "$fmt" = ssh || { echo "gpg.format is '$fmt', not ssh"; exit 1; }
 key=$(git config --get user.signingkey || true)
 test -n "$key" || { echo "no signing key configured"; exit 1; }
+git tag -d _signing-probe 2>/dev/null || true   # leftover from an aborted run
+git tag -s -m probe _signing-probe              # exercises the real signing path
+git tag -d _signing-probe >/dev/null
 
 tree-sitter version "$V"          # rewrites six manifests, NOT src/parser.c
 tree-sitter generate              # regenerate so parser.c metadata matches
@@ -101,6 +106,22 @@ git push origin "v$V"                    # not --tags: pushes only this tag
 gh release create "v$V" -R "$R" --verify-tag --title "v$V" --notes "…"
 )
 ```
+
+### If it aborts partway
+
+The block publishes the release commit before it tags, so an abort after the
+`git push origin HEAD:main` step leaves a commit on `main` with no tag. That is
+a recoverable state, not a broken one, and it does not need an amend or a force
+push:
+
+- **Red CI.** Fix forward on `main` and re-run the block with the same `$V`.
+  `tree-sitter version` is idempotent for a version already set, so the second
+  run just re-verifies and tags the fixed head.
+- **Signing failed at the tag step** (the probe should have caught it — if it
+  didn't, say why in a commit so the probe can be tightened). Repair signing,
+  then tag and push that same SHA directly; nothing else needs redoing.
+- **Anything before the push.** Nothing was published. `git reset --hard
+  origin/main` and start over.
 
 Six things in that block are load-bearing, and all six are about not trusting
 ambient state — the shell's, git's config, or GitHub's timing:
