@@ -35,7 +35,7 @@ const PREC = {
 // A bare column (`B` in `B6:B`, `A` in `A:A`) is lexically an identifier;
 // only `$`-anchored columns are unambiguous. The highlight query colours
 // identifiers sitting under a `:` as references so a range reads uniformly.
-const SHEET = /(?:[A-Za-z_][A-Za-z0-9_.]*|'(?:[^']|'')*')!/;
+const SHEET = /(?:[\p{L}_][\p{L}\p{N}_.]*|'(?:[^']|'')*')!/;
 const CELL = /\$?[A-Za-z]{1,3}\$?[0-9]+/;
 const ABS_COL = /\$[A-Za-z]{1,3}/;
 
@@ -288,9 +288,14 @@ export default grammar({
       alias(token(prec(3, /[Ll][Aa][Mm][Bb][Dd][Aa]/)), $.function_name),
 
     // Letters, digits, `_`, `.` — what Sheets actually permits in names.
+    // Letters and digits are Unicode-wide (`\p{L}`/`\p{N}`): Sheets binds
+    // named ranges like `Umsätze` or `日本語`, and gsfmt's lexer already
+    // accepts them, so an ASCII-only token here would flag as an ERROR what
+    // the formatter happily formats. Column letters and the LET/LAMBDA
+    // keywords stay ASCII — Sheets spells those in ASCII only.
     // gsfmt's lexer additionally tolerates `\` (a formatter must never
     // crash on garbage, only preserve it); a highlighter has the opposite
     // contract, an ERROR node on invalid input is the feature.
-    identifier: ($) => token(/[A-Za-z_][A-Za-z0-9_.]*/),
+    identifier: ($) => token(/[\p{L}_][\p{L}\p{N}_.]*/),
   },
 });
