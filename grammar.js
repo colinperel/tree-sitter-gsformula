@@ -104,10 +104,13 @@ export default grammar({
     // like LOG10 is lexically indistinguishable from a cell reference
     // (three letters plus digits) and the lexer cannot look ahead for the
     // `(`. Accepting both keeps such calls parsing, and the highlight query
-    // colours whatever fills the `function` field as a function.
+    // colours whatever fills the `function` field as a function. `boolean`
+    // is accepted for the same reason: TRUE and FALSE are real zero-argument
+    // Sheets functions, and the `boolean` token beats `identifier` lexically,
+    // so `=TRUE()` only parses if the call site accepts a boolean here.
     call_expression: ($) =>
       seq(
-        field('function', choice($.identifier, $.reference)),
+        field('function', choice($.identifier, $.reference, $.boolean)),
         '(',
         optional($.arguments),
         ')',

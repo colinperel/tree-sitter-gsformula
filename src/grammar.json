@@ -239,6 +239,10 @@
               {
                 "type": "SYMBOL",
                 "name": "reference"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "boolean"
               }
             ]
           }
