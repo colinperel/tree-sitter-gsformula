@@ -47,19 +47,28 @@ decoration.
 
 V=0.3.1                           # ← the release you are cutting, not the last one
 
-# Preflight. Release from main only: the run lookup below matches any CI run for
-# the SHA, and a green `pull_request` run on a feature branch would otherwise let
-# you tag a commit that never landed on main.
-test "$(git rev-parse --abbrev-ref HEAD)" = main || { echo "not on main"; exit 1; }
+R=colinperel/tree-sitter-gsformula # pin `gh`; don't let it infer from remotes
+
+# Preflight. Every check assigns first and tests second: `set -e` cannot see a
+# command failing *inside* `$(…)` used as a test argument, so `test -z "$(git
+# status --porcelain)"` would read a broken `git` as a clean tree and release
+# anyway. Assignment failure aborts.
+branch=$(git rev-parse --abbrev-ref HEAD)
+test "$branch" = main || { echo "on $branch, not main"; exit 1; }
 git fetch origin main
-test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)" || { echo "main not in sync"; exit 1; }
-test -z "$(git status --porcelain)" || { echo "dirty worktree"; exit 1; }
-# Signing preflight. These two assert the tag will be SSH-signed rather than
+head_sha=$(git rev-parse HEAD)
+main_sha=$(git rev-parse origin/main)
+test "$head_sha" = "$main_sha" || { echo "main not in sync with origin/main"; exit 1; }
+dirty=$(git status --porcelain)
+test -z "$dirty" || { echo "dirty worktree"; exit 1; }
+# Signing preflight. These assert the tag will be SSH-signed rather than
 # OpenPGP-signed or unsigned; neither proves the key is usable. `git tag -s`
 # below is the authoritative check, and under `set -e` a signing failure aborts
-# before anything is pushed.
-test "$(git config --get gpg.format)" = ssh || { echo "gpg.format is not ssh"; exit 1; }
-git config --get user.signingkey >/dev/null || { echo "no signing key configured"; exit 1; }
+# before anything is pushed. `|| true` because "unset" is a normal answer here.
+fmt=$(git config --get gpg.format || true)
+test "$fmt" = ssh || { echo "gpg.format is '$fmt', not ssh"; exit 1; }
+key=$(git config --get user.signingkey || true)
+test -n "$key" || { echo "no signing key configured"; exit 1; }
 
 tree-sitter version "$V"          # rewrites six manifests, NOT src/parser.c
 tree-sitter generate              # regenerate so parser.c metadata matches
@@ -70,26 +79,27 @@ tree-sitter parse -q examples/*.gsfx   # no CI job parses these — see below
 git add tree-sitter.json Cargo.toml package.json pyproject.toml \
         CMakeLists.txt Makefile src/
 git commit -m "chore: release v$V"
-git push origin main              # explicit ref; don't trust push.default
+git push origin HEAD:main         # explicit src:dst; ignores push.default et al
 
 # Poll: the run is not registered the instant the push returns.
 sha=$(git rev-parse HEAD)
+id=""
 for _ in $(seq 1 30); do
-  id=$(gh run list -w CI -c "$sha" --limit 1 --json databaseId --jq '.[0].databaseId')
+  id=$(gh run list -R "$R" -w CI -c "$sha" --limit 1 --json databaseId --jq '.[0].databaseId')
   [ -n "$id" ] && break
   sleep 5
 done
 [ -n "$id" ] || { echo "no CI run for $sha — do not tag"; exit 1; }
-gh run watch "$id" --exit-status
+gh run watch -R "$R" "$id" --exit-status
 
 git tag -s -m "v$V — <summary>" "v$V"   # -s: don't rely on global tag.gpgsign
 git push origin "v$V"                    # not --tags: pushes only this tag
-gh release create "v$V" --verify-tag --title "v$V" --notes "…"
+gh release create "v$V" -R "$R" --verify-tag --title "v$V" --notes "…"
 )
 ```
 
-Five things in that block are load-bearing, and all five are about not trusting
-ambient state:
+Six things in that block are load-bearing, and all six are about not trusting
+ambient state — the shell's, git's config, or GitHub's timing:
 
 - **`set -eu` and the subshell.** Without fail-fast, a red `gh run watch
   --exit-status`, a failed test, a rejected push, or a signing failure just
@@ -118,7 +128,9 @@ ambient state:
 `queries/` against the parser, and `examples/**` appears in the workflow only as
 a `paths` trigger. If you skip that command, nothing checks them.
 
-Then bump the consumer pin to the version you just cut — `REF="v$V"` — in the
+Then bump the consumer pin to the tag you just pushed, written out as a literal
+(`REF="v1.2.3"`, not `REF="v$V"` — `$V` lived only in the subshell above, and
+the hook is a separate `set -u` script that would abort on it), in the
 dotfiles hook
 `.chezmoiscripts/run_onchange_after_treesitter-gsformula.sh.tmpl`, and
 `chezmoi apply`. The hook does `git clone --branch <tag>`, so the tag must be on
@@ -147,8 +159,9 @@ which is why you push and wait before tagging.
 job that diffs six files — `gnarly`, `monthly`, `payperiods` and their `.min`
 variants — against `gsfmt`'s `tests/data/`, which is **canonical**. It checks out
 this repo's default branch *unpinned*, so drift here fails `gsfmt`'s next CI run
-— not at the moment you push, but on its next push, PR, or manual run, which
-makes it look like an unrelated break. Change `tests/data/` in `gsfmt` first,
+— not at the moment you push, but on its next push to `main` (the only branch
+its push trigger covers), PR run, or manual dispatch, which makes it look like
+an unrelated break. Change `tests/data/` in `gsfmt` first,
 then mirror it here.
 
 That fixture diff is the whole contract. `gsfmt` does **not** depend on this
