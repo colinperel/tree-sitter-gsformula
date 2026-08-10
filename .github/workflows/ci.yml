@@ -90,6 +90,64 @@ jobs:
         uses: tree-sitter/fuzz-action@v4
         if: steps.scanner-check.outputs.changed == 'true'
 
+  # Real formulas must parse clean and every query must run against them —
+  # this is the gate README.md promises. `tree-sitter parse -q` exits
+  # nonzero on any ERROR/MISSING node; the query step catches patterns
+  # that lint clean but no longer match the tree.
+  examples:
+    name: Parse examples
+    runs-on: ubuntu-latest
+    if: >-
+      !github.event.repository.is_template &&
+      github.event.head_commit.message != 'Initial commit'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Set up tree-sitter
+        uses: tree-sitter/setup-action/cli@v2
+      - name: Build parser
+        run: tree-sitter build
+      - name: Parse examples
+        run: tree-sitter parse -q examples/*.gsfx
+      - name: Run queries over examples
+        run: |
+          for q in queries/*.scm; do
+            tree-sitter query "$q" examples/*.gsfx > /dev/null
+          done
+
+  # examples/ mirrors six goldens whose canonical copies live in gsfmt's
+  # tests/data/. gsfmt's own CI pins its checkout of this repo to a release
+  # tag, so drift introduced *here* would otherwise go unnoticed until the
+  # next release pair — this is the reciprocal guard. Canonical repo is
+  # checked out at its default branch on purpose: if gsfmt's goldens moved,
+  # this repo is stale and red is the correct signal.
+  fixtures:
+    name: Fixture sync
+    runs-on: ubuntu-latest
+    if: >-
+      !github.event.repository.is_template &&
+      github.event.head_commit.message != 'Initial commit'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Checkout gsfmt (canonical)
+        uses: actions/checkout@v6
+        with:
+          repository: colinperel/gsfmt
+          path: gsfmt
+      - name: Diff examples against canonical goldens
+        run: |
+          status=0
+          for f in gnarly gnarly.min monthly monthly.min payperiods payperiods.min; do
+            if ! diff -u "gsfmt/tests/data/$f.gsfx" "examples/$f.gsfx"; then
+              status=1
+            fi
+          done
+          if [ "$status" -ne 0 ]; then
+            echo "::error::fixtures drifted — gsfmt tests/data/ is canonical; sync examples/ to match"
+          fi
+          exit "$status"
+
   query:
     name: Validate queries
     runs-on: ubuntu-latest

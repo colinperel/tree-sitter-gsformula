@@ -181,10 +181,11 @@ ambient state — the shell's, git's config, or GitHub's timing:
   workflow, so an unfiltered `--limit 1` can hand back a green run for something
   else entirely.
 
-`tree-sitter parse` on the examples is a **local-only** gate: no CI job parses
-`examples/*.gsfx`. The corpus job reads `test/corpus/`, `ts_query_ls` checks
-`queries/` against the parser, and `examples/**` appears in the workflow only as
-a `paths` trigger. If you skip that command, nothing checks them.
+`tree-sitter parse` on the examples is also enforced in CI: the `Parse
+examples` job runs `tree-sitter parse -q examples/*.gsfx` and executes every
+`queries/*.scm` against them, and the `Fixture sync` job diffs the six
+mirrored goldens against `gsfmt`'s canonical `tests/data/`. Running the parse
+locally before pushing still saves a CI round-trip.
 
 Then bump the consumer pin to the tag you just pushed, written out as a literal
 (`REF="v1.2.3"`, not `REF="v$V"` — `$V` lived only in the subshell above, and
@@ -215,12 +216,10 @@ which is why you push and wait before tagging.
 
 `examples/*.gsfx` are **not** free to edit. `gsfmt`'s CI has a `Fixture sync`
 job that diffs six files — `gnarly`, `monthly`, `payperiods` and their `.min`
-variants — against `gsfmt`'s `tests/data/`, which is **canonical**. It checks out
-this repo's default branch *unpinned*, so drift here fails `gsfmt`'s next CI run
-— not at the moment you push, but on its next push to `main` (the only branch
-its push trigger covers), PR run, or manual dispatch, which makes it look like
-an unrelated break. Change `tests/data/` in `gsfmt` first,
-then mirror it here.
+variants — against `gsfmt`'s `tests/data/`, which is **canonical**. It checks out this
+repo at a **pinned release tag** (bumped with each synced release pair), so
+day-to-day drift is caught by *this* repo's `Fixture sync` job instead, at the
+moment you push. Change `tests/data/` in `gsfmt` first, then mirror it here.
 
 That fixture diff is the whole contract. `gsfmt` does **not** depend on this
 grammar: its `[dependencies]` is empty and it has its own lexer and parser, so
