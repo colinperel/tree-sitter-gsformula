@@ -29,7 +29,8 @@ grammar rather than runtime detection would be required.
 
 ## Queries
 
-`queries/` ships highlights, indents, folds, and textobjects — written
+`queries/` ships highlights, indents, folds, locals, and textobjects —
+written
 for Neovim's capture conventions (`@function.builtin`,
 `@variable.parameter` on LET/LAMBDA binding sites, `@property` on chip
 fields). The indent query handles incomplete input: unclosed delimiters

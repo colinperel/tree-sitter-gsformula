@@ -111,11 +111,16 @@ jobs:
       - name: Parse examples
         run: tree-sitter parse -q examples/*.gsfx
       - name: Diff query captures against goldens
+        # Regenerate into a temp dir and compare recursively so a missing
+        # golden for a new query, or a stale golden for a deleted one,
+        # fails alongside content drift — an in-place `git diff` sees
+        # neither.
         run: |
+          tmp="$(mktemp -d)"
           for q in queries/*.scm; do
-            tree-sitter query "$q" examples/*.gsfx > "test/query-goldens/$(basename "$q" .scm).txt"
+            tree-sitter query "$q" examples/*.gsfx > "$tmp/$(basename "$q" .scm).txt"
           done
-          git diff --exit-code -- test/query-goldens/
+          diff -ru -x README.md test/query-goldens "$tmp"
 
   # examples/ mirrors six goldens whose canonical copies live in gsfmt's
   # tests/data/. gsfmt's own CI pins its checkout of this repo to a release
