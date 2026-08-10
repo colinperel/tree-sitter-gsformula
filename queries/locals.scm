@@ -22,8 +22,8 @@
 ;     the value's `sum` is really the builtin.
 ;   - Sheets bindings are case-insensitive, but tree-sitter consumers
 ;     compare definition/reference text exactly, so `foo` does not
-;     resolve to a `Foo` binding. Consistently-cased formulas (what
-;     gsfmt-formatted files are in practice) resolve fully.
+;     resolve to a `Foo` binding. Consistently-cased formulas resolve
+;     fully.
 ; ── scopes ──────────────────────────────────────────────────────────────
 (let_expression) @local.scope
 
