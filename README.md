@@ -44,7 +44,8 @@ tree-sitter parse examples/*.gsfx
 ```
 
 `examples/` holds real-shaped synthetic formulas that must parse with
-zero `ERROR`/`MISSING` nodes; CI validates every query file against them.
+zero `ERROR`/`MISSING` nodes; CI parses them and runs every query file
+against them on each push.
 
 ## Provenance
 
