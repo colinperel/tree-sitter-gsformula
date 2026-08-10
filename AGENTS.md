@@ -182,10 +182,11 @@ ambient state — the shell's, git's config, or GitHub's timing:
   else entirely.
 
 `tree-sitter parse` on the examples is also enforced in CI: the `Parse
-examples` job runs `tree-sitter parse -q examples/*.gsfx` and executes every
-`queries/*.scm` against them, and the `Fixture sync` job diffs the six
-mirrored goldens against `gsfmt`'s canonical `tests/data/`. Running the parse
-locally before pushing still saves a CI round-trip.
+examples` job runs `tree-sitter parse -q examples/*.gsfx` and diffs every
+`queries/*.scm`'s captures over them against `test/query-goldens/`
+(regeneration recipe in that directory's README), and the `Fixture sync` job
+diffs the six mirrored goldens against `gsfmt`'s canonical `tests/data/`.
+Running the parse locally before pushing still saves a CI round-trip.
 
 Then bump the consumer pin to the tag you just pushed, written out as a literal
 (`REF="v1.2.3"`, not `REF="v$V"` — `$V` lived only in the subshell above, and

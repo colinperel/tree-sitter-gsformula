@@ -1,0 +1,686 @@
+examples/gnarly.gsfx
+  pattern: 0
+    capture: indent.begin, start: (0, 1), end: (10, 1)
+  pattern: 0
+    capture: 0 - indent.begin, start: (1, 12), end: (1, 58), text: `FILTER(intake_log!E4:E, intake_log!C4:C <> "")`
+  pattern: 3
+    capture: 1 - indent.branch, start: (1, 57), end: (1, 58), text: `)`
+    capture: 2 - indent.end, start: (1, 57), end: (1, 58), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (4, 12), end: (4, 43), text: `IF(COUNTA(raw) = 0, , SUM(raw))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (4, 15), end: (4, 26), text: `COUNTA(raw)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (4, 25), end: (4, 26), text: `)`
+    capture: 2 - indent.end, start: (4, 25), end: (4, 26), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (4, 34), end: (4, 42), text: `SUM(raw)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (4, 41), end: (4, 42), text: `)`
+    capture: 2 - indent.end, start: (4, 41), end: (4, 42), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (4, 42), end: (4, 43), text: `)`
+    capture: 2 - indent.end, start: (4, 42), end: (4, 43), text: `)`
+  pattern: 0
+    capture: indent.begin, start: (5, 2), end: (9, 3)
+  pattern: 0
+    capture: 0 - indent.begin, start: (6, 4), end: (6, 15), text: `COUNTA(raw)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (6, 14), end: (6, 15), text: `)`
+    capture: 2 - indent.end, start: (6, 14), end: (6, 15), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (7, 4), end: (7, 12), text: `SUM(raw)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (7, 11), end: (7, 12), text: `)`
+    capture: 2 - indent.end, start: (7, 11), end: (7, 12), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (8, 21), end: (8, 56), text: `TEXT(SUM(raw) * (1 + rate), "0.00")`
+  pattern: 0
+    capture: 0 - indent.begin, start: (8, 26), end: (8, 34), text: `SUM(raw)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (8, 33), end: (8, 34), text: `)`
+    capture: 2 - indent.end, start: (8, 33), end: (8, 34), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (8, 37), end: (8, 47), text: `(1 + rate)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (8, 46), end: (8, 47), text: `)`
+    capture: 2 - indent.end, start: (8, 46), end: (8, 47), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (8, 55), end: (8, 56), text: `)`
+    capture: 2 - indent.end, start: (8, 55), end: (8, 56), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (9, 2), end: (9, 3), text: `)`
+    capture: 2 - indent.end, start: (9, 2), end: (9, 3), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (10, 0), end: (10, 1), text: `)`
+    capture: 2 - indent.end, start: (10, 0), end: (10, 1), text: `)`
+examples/gnarly.min.gsfx
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 1), end: (0, 240), text: `LET(raw,FILTER(intake_log!E4:E,intake_log!C4:C<>""),label,"subtotal (rounded), excl. fees",rate,4.25%,fallback,IF(COUNTA(raw)=0,,SUM(raw)),IFS(COUNTA(raw)=0,"no rows",SUM(raw)>9^99,"overflow",TRUE,TEXT(SUM(raw)*(1+rate),"0.00")&" "&label))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 9), end: (0, 52), text: `FILTER(intake_log!E4:E,intake_log!C4:C<>"")`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 51), end: (0, 52), text: `)`
+    capture: 2 - indent.end, start: (0, 51), end: (0, 52), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 112), end: (0, 139), text: `IF(COUNTA(raw)=0,,SUM(raw))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 115), end: (0, 126), text: `COUNTA(raw)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 125), end: (0, 126), text: `)`
+    capture: 2 - indent.end, start: (0, 125), end: (0, 126), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 130), end: (0, 138), text: `SUM(raw)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 137), end: (0, 138), text: `)`
+    capture: 2 - indent.end, start: (0, 137), end: (0, 138), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 138), end: (0, 139), text: `)`
+    capture: 2 - indent.end, start: (0, 138), end: (0, 139), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 140), end: (0, 239), text: `IFS(COUNTA(raw)=0,"no rows",SUM(raw)>9^99,"overflow",TRUE,TEXT(SUM(raw)*(1+rate),"0.00")&" "&label)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 144), end: (0, 155), text: `COUNTA(raw)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 154), end: (0, 155), text: `)`
+    capture: 2 - indent.end, start: (0, 154), end: (0, 155), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 168), end: (0, 176), text: `SUM(raw)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 175), end: (0, 176), text: `)`
+    capture: 2 - indent.end, start: (0, 175), end: (0, 176), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 198), end: (0, 228), text: `TEXT(SUM(raw)*(1+rate),"0.00")`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 203), end: (0, 211), text: `SUM(raw)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 210), end: (0, 211), text: `)`
+    capture: 2 - indent.end, start: (0, 210), end: (0, 211), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 212), end: (0, 220), text: `(1+rate)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 219), end: (0, 220), text: `)`
+    capture: 2 - indent.end, start: (0, 219), end: (0, 220), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 227), end: (0, 228), text: `)`
+    capture: 2 - indent.end, start: (0, 227), end: (0, 228), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 238), end: (0, 239), text: `)`
+    capture: 2 - indent.end, start: (0, 238), end: (0, 239), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 239), end: (0, 240), text: `)`
+    capture: 2 - indent.end, start: (0, 239), end: (0, 240), text: `)`
+examples/monthly.gsfx
+  pattern: 0
+    capture: indent.begin, start: (0, 1), end: (42, 1)
+  pattern: 0
+    capture: indent.begin, start: (1, 2), end: (40, 3)
+  pattern: 0
+    capture: 0 - indent.begin, start: (4, 20), end: (4, 70), text: `INDEX(C:C, LOOKUP(2, 1 / (C4:C <> ""), ROW(C4:C)))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (4, 31), end: (4, 69), text: `LOOKUP(2, 1 / (C4:C <> ""), ROW(C4:C))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (4, 45), end: (4, 57), text: `(C4:C <> "")`
+  pattern: 3
+    capture: 1 - indent.branch, start: (4, 56), end: (4, 57), text: `)`
+    capture: 2 - indent.end, start: (4, 56), end: (4, 57), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (4, 59), end: (4, 68), text: `ROW(C4:C)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (4, 67), end: (4, 68), text: `)`
+    capture: 2 - indent.end, start: (4, 67), end: (4, 68), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (4, 68), end: (4, 69), text: `)`
+    capture: 2 - indent.end, start: (4, 68), end: (4, 69), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (4, 69), end: (4, 70), text: `)`
+    capture: 2 - indent.end, start: (4, 69), end: (4, 70), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (6, 31), end: (6, 61), text: `INDEX(stock_data!F:F, lastRow)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (6, 60), end: (6, 61), text: `)`
+    capture: 2 - indent.end, start: (6, 60), end: (6, 61), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (7, 31), end: (7, 61), text: `INDEX(stock_data!H:H, lastRow)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (7, 60), end: (7, 61), text: `)`
+    capture: 2 - indent.end, start: (7, 60), end: (7, 61), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (8, 17), end: (8, 80), text: `ARRAYFORMULA((weights > 0) * ISERROR(SEARCH("archived", tags)))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (8, 30), end: (8, 43), text: `(weights > 0)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (8, 42), end: (8, 43), text: `)`
+    capture: 2 - indent.end, start: (8, 42), end: (8, 43), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (8, 46), end: (8, 79), text: `ISERROR(SEARCH("archived", tags))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (8, 54), end: (8, 78), text: `SEARCH("archived", tags)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (8, 77), end: (8, 78), text: `)`
+    capture: 2 - indent.end, start: (8, 77), end: (8, 78), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (8, 78), end: (8, 79), text: `)`
+    capture: 2 - indent.end, start: (8, 78), end: (8, 79), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (8, 79), end: (8, 80), text: `)`
+    capture: 2 - indent.end, start: (8, 79), end: (8, 80), text: `)`
+  pattern: 0
+    capture: indent.begin, start: (10, 17), end: (16, 18)
+  pattern: 0
+    capture: indent.begin, start: (11, 19), end: (14, 20)
+  pattern: 0
+    capture: 0 - indent.begin, start: (12, 35), end: (12, 65), text: `INDEX(stock_data!C:C, lastRow)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (12, 64), end: (12, 65), text: `)`
+    capture: 2 - indent.end, start: (12, 64), end: (12, 65), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (13, 35), end: (13, 65), text: `INDEX(stock_data!U:U, lastRow)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (13, 64), end: (13, 65), text: `)`
+    capture: 2 - indent.end, start: (13, 64), end: (13, 65), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (14, 19), end: (14, 20), text: `)`
+    capture: 2 - indent.end, start: (14, 19), end: (14, 20), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (16, 17), end: (16, 18), text: `)`
+    capture: 2 - indent.end, start: (16, 17), end: (16, 18), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (18, 17), end: (18, 41), text: `CHOOSECOLS(shipments, 1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (18, 40), end: (18, 41), text: `)`
+    capture: 2 - indent.end, start: (18, 40), end: (18, 41), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (19, 17), end: (19, 41), text: `CHOOSECOLS(shipments, 2)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (19, 40), end: (19, 41), text: `)`
+    capture: 2 - indent.end, start: (19, 40), end: (19, 41), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (21, 17), end: (21, 68), text: `CHOOSECOLS(shipments, SEQUENCE(binCount * 2, 1, 3))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (21, 39), end: (21, 67), text: `SEQUENCE(binCount * 2, 1, 3)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (21, 66), end: (21, 67), text: `)`
+    capture: 2 - indent.end, start: (21, 66), end: (21, 67), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (21, 67), end: (21, 68), text: `)`
+    capture: 2 - indent.end, start: (21, 67), end: (21, 68), text: `)`
+  pattern: 0
+    capture: indent.begin, start: (22, 17), end: (27, 18)
+  pattern: 0
+    capture: indent.begin, start: (23, 19), end: (26, 20)
+  pattern: 0
+    capture: 0 - indent.begin, start: (25, 21), end: (25, 52), text: `SEQUENCE(binCount, 1, startCol)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (25, 51), end: (25, 52), text: `)`
+    capture: 2 - indent.end, start: (25, 51), end: (25, 52), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (26, 19), end: (26, 20), text: `)`
+    capture: 2 - indent.end, start: (26, 19), end: (26, 20), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (27, 17), end: (27, 18), text: `)`
+    capture: 2 - indent.end, start: (27, 17), end: (27, 18), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (29, 17), end: (29, 44), text: `SEQUENCE(binCount, 1, 1, 0)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (29, 43), end: (29, 44), text: `)`
+    capture: 2 - indent.end, start: (29, 43), end: (29, 44), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (30, 17), end: (30, 58), text: `BYCOL(binSlice(1), LAMBDA(col, SUM(col)))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (30, 23), end: (30, 34), text: `binSlice(1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (30, 33), end: (30, 34), text: `)`
+    capture: 2 - indent.end, start: (30, 33), end: (30, 34), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (30, 36), end: (30, 57), text: `LAMBDA(col, SUM(col))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (30, 48), end: (30, 56), text: `SUM(col)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (30, 55), end: (30, 56), text: `)`
+    capture: 2 - indent.end, start: (30, 55), end: (30, 56), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (30, 56), end: (30, 57), text: `)`
+    capture: 2 - indent.end, start: (30, 56), end: (30, 57), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (30, 57), end: (30, 58), text: `)`
+    capture: 2 - indent.end, start: (30, 57), end: (30, 58), text: `)`
+  pattern: 0
+    capture: indent.begin, start: (32, 17), end: (35, 18)
+  pattern: 0
+    capture: 0 - indent.begin, start: (33, 19), end: (33, 53), text: `(arrivals < EDATE(datesCapped, 1))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (33, 31), end: (33, 52), text: `EDATE(datesCapped, 1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (33, 51), end: (33, 52), text: `)`
+    capture: 2 - indent.end, start: (33, 51), end: (33, 52), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (33, 52), end: (33, 53), text: `)`
+    capture: 2 - indent.end, start: (33, 52), end: (33, 53), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (34, 23), end: (34, 50), text: `(departures >= datesCapped)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (34, 49), end: (34, 50), text: `)`
+    capture: 2 - indent.end, start: (34, 49), end: (34, 50), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (35, 17), end: (35, 18), text: `)`
+    capture: 2 - indent.end, start: (35, 17), end: (35, 18), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (36, 17), end: (36, 55), text: `MMULT(TRANSPOSE(overlap * 1), onesCol)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (36, 23), end: (36, 45), text: `TRANSPOSE(overlap * 1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (36, 44), end: (36, 45), text: `)`
+    capture: 2 - indent.end, start: (36, 44), end: (36, 45), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (36, 54), end: (36, 55), text: `)`
+    capture: 2 - indent.end, start: (36, 54), end: (36, 55), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (38, 4), end: (38, 42), text: `LAMBDA(x, ROUND(SUM(x), 2))(binTotals)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (38, 4), end: (38, 31), text: `LAMBDA(x, ROUND(SUM(x), 2))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (38, 14), end: (38, 30), text: `ROUND(SUM(x), 2)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (38, 20), end: (38, 26), text: `SUM(x)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (38, 25), end: (38, 26), text: `)`
+    capture: 2 - indent.end, start: (38, 25), end: (38, 26), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (38, 29), end: (38, 30), text: `)`
+    capture: 2 - indent.end, start: (38, 29), end: (38, 30), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (38, 30), end: (38, 31), text: `)`
+    capture: 2 - indent.end, start: (38, 30), end: (38, 31), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (38, 41), end: (38, 42), text: `)`
+    capture: 2 - indent.end, start: (38, 41), end: (38, 42), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (39, 8), end: (39, 48), text: `SUMPRODUCT(Inventory[Weight kg], perBin)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (39, 47), end: (39, 48), text: `)`
+    capture: 2 - indent.end, start: (39, 47), end: (39, 48), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (40, 2), end: (40, 3), text: `)`
+    capture: 2 - indent.end, start: (40, 2), end: (40, 3), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (42, 0), end: (42, 1), text: `)`
+    capture: 2 - indent.end, start: (42, 0), end: (42, 1), text: `)`
+examples/monthly.min.gsfx
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 1), end: (0, 884), text: `IFNA(LET(lastRow,stock_data!A1,binCount,12,datesCapped,C4:INDEX(C:C,LOOKUP(2,1/(C4:C<>""),ROW(C4:C))),weights,stock_data!F2:INDEX(stock_data!F:F,lastRow),tags,stock_data!H2:INDEX(stock_data!H:H,lastRow),isLive,ARRAYFORMULA((weights>0)*ISERROR(SEARCH("archived",tags))),shipments,FILTER(HSTACK(stock_data!B2:INDEX(stock_data!C:C,lastRow),stock_data!J2:INDEX(stock_data!U:U,lastRow)),isLive),arrivals,CHOOSECOLS(shipments,1),departures,CHOOSECOLS(shipments,2),binData,CHOOSECOLS(shipments,SEQUENCE(binCount*2,1,3)),binSlice,LAMBDA(startCol,CHOOSECOLS(binData,SEQUENCE(binCount,1,startCol))),onesCol,SEQUENCE(binCount,1,1,0),binTotals,BYCOL(binSlice(1),LAMBDA(col,SUM(col))),overlap,ARRAYFORMULA((arrivals<EDATE(datesCapped,1))*(departures>=datesCapped)),perBin,MMULT(TRANSPOSE(overlap*1),onesCol),LAMBDA(x,ROUND(SUM(x),2))(binTotals)+SUMPRODUCT(Inventory[Weight kg],perBin)),"no data")`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 6), end: (0, 873), text: `LET(lastRow,stock_data!A1,binCount,12,datesCapped,C4:INDEX(C:C,LOOKUP(2,1/(C4:C<>""),ROW(C4:C))),weights,stock_data!F2:INDEX(stock_data!F:F,lastRow),tags,stock_data!H2:INDEX(stock_data!H:H,lastRow),isLive,ARRAYFORMULA((weights>0)*ISERROR(SEARCH("archived",tags))),shipments,FILTER(HSTACK(stock_data!B2:INDEX(stock_data!C:C,lastRow),stock_data!J2:INDEX(stock_data!U:U,lastRow)),isLive),arrivals,CHOOSECOLS(shipments,1),departures,CHOOSECOLS(shipments,2),binData,CHOOSECOLS(shipments,SEQUENCE(binCount*2,1,3)),binSlice,LAMBDA(startCol,CHOOSECOLS(binData,SEQUENCE(binCount,1,startCol))),onesCol,SEQUENCE(binCount,1,1,0),binTotals,BYCOL(binSlice(1),LAMBDA(col,SUM(col))),overlap,ARRAYFORMULA((arrivals<EDATE(datesCapped,1))*(departures>=datesCapped)),perBin,MMULT(TRANSPOSE(overlap*1),onesCol),LAMBDA(x,ROUND(SUM(x),2))(binTotals)+SUMPRODUCT(Inventory[Weight kg],perBin))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 59), end: (0, 102), text: `INDEX(C:C,LOOKUP(2,1/(C4:C<>""),ROW(C4:C)))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 69), end: (0, 101), text: `LOOKUP(2,1/(C4:C<>""),ROW(C4:C))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 80), end: (0, 90), text: `(C4:C<>"")`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 89), end: (0, 90), text: `)`
+    capture: 2 - indent.end, start: (0, 89), end: (0, 90), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 91), end: (0, 100), text: `ROW(C4:C)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 99), end: (0, 100), text: `)`
+    capture: 2 - indent.end, start: (0, 99), end: (0, 100), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 100), end: (0, 101), text: `)`
+    capture: 2 - indent.end, start: (0, 100), end: (0, 101), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 101), end: (0, 102), text: `)`
+    capture: 2 - indent.end, start: (0, 101), end: (0, 102), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 125), end: (0, 154), text: `INDEX(stock_data!F:F,lastRow)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 153), end: (0, 154), text: `)`
+    capture: 2 - indent.end, start: (0, 153), end: (0, 154), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 174), end: (0, 203), text: `INDEX(stock_data!H:H,lastRow)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 202), end: (0, 203), text: `)`
+    capture: 2 - indent.end, start: (0, 202), end: (0, 203), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 211), end: (0, 269), text: `ARRAYFORMULA((weights>0)*ISERROR(SEARCH("archived",tags)))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 224), end: (0, 235), text: `(weights>0)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 234), end: (0, 235), text: `)`
+    capture: 2 - indent.end, start: (0, 234), end: (0, 235), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 236), end: (0, 268), text: `ISERROR(SEARCH("archived",tags))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 244), end: (0, 267), text: `SEARCH("archived",tags)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 266), end: (0, 267), text: `)`
+    capture: 2 - indent.end, start: (0, 266), end: (0, 267), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 267), end: (0, 268), text: `)`
+    capture: 2 - indent.end, start: (0, 267), end: (0, 268), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 268), end: (0, 269), text: `)`
+    capture: 2 - indent.end, start: (0, 268), end: (0, 269), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 280), end: (0, 390), text: `FILTER(HSTACK(stock_data!B2:INDEX(stock_data!C:C,lastRow),stock_data!J2:INDEX(stock_data!U:U,lastRow)),isLive)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 287), end: (0, 382), text: `HSTACK(stock_data!B2:INDEX(stock_data!C:C,lastRow),stock_data!J2:INDEX(stock_data!U:U,lastRow))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 308), end: (0, 337), text: `INDEX(stock_data!C:C,lastRow)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 336), end: (0, 337), text: `)`
+    capture: 2 - indent.end, start: (0, 336), end: (0, 337), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 352), end: (0, 381), text: `INDEX(stock_data!U:U,lastRow)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 380), end: (0, 381), text: `)`
+    capture: 2 - indent.end, start: (0, 380), end: (0, 381), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 381), end: (0, 382), text: `)`
+    capture: 2 - indent.end, start: (0, 381), end: (0, 382), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 389), end: (0, 390), text: `)`
+    capture: 2 - indent.end, start: (0, 389), end: (0, 390), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 400), end: (0, 423), text: `CHOOSECOLS(shipments,1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 422), end: (0, 423), text: `)`
+    capture: 2 - indent.end, start: (0, 422), end: (0, 423), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 435), end: (0, 458), text: `CHOOSECOLS(shipments,2)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 457), end: (0, 458), text: `)`
+    capture: 2 - indent.end, start: (0, 457), end: (0, 458), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 467), end: (0, 513), text: `CHOOSECOLS(shipments,SEQUENCE(binCount*2,1,3))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 488), end: (0, 512), text: `SEQUENCE(binCount*2,1,3)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 511), end: (0, 512), text: `)`
+    capture: 2 - indent.end, start: (0, 511), end: (0, 512), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 512), end: (0, 513), text: `)`
+    capture: 2 - indent.end, start: (0, 512), end: (0, 513), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 523), end: (0, 589), text: `LAMBDA(startCol,CHOOSECOLS(binData,SEQUENCE(binCount,1,startCol)))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 539), end: (0, 588), text: `CHOOSECOLS(binData,SEQUENCE(binCount,1,startCol))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 558), end: (0, 587), text: `SEQUENCE(binCount,1,startCol)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 586), end: (0, 587), text: `)`
+    capture: 2 - indent.end, start: (0, 586), end: (0, 587), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 587), end: (0, 588), text: `)`
+    capture: 2 - indent.end, start: (0, 587), end: (0, 588), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 588), end: (0, 589), text: `)`
+    capture: 2 - indent.end, start: (0, 588), end: (0, 589), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 598), end: (0, 622), text: `SEQUENCE(binCount,1,1,0)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 621), end: (0, 622), text: `)`
+    capture: 2 - indent.end, start: (0, 621), end: (0, 622), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 633), end: (0, 672), text: `BYCOL(binSlice(1),LAMBDA(col,SUM(col)))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 639), end: (0, 650), text: `binSlice(1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 649), end: (0, 650), text: `)`
+    capture: 2 - indent.end, start: (0, 649), end: (0, 650), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 651), end: (0, 671), text: `LAMBDA(col,SUM(col))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 662), end: (0, 670), text: `SUM(col)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 669), end: (0, 670), text: `)`
+    capture: 2 - indent.end, start: (0, 669), end: (0, 670), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 670), end: (0, 671), text: `)`
+    capture: 2 - indent.end, start: (0, 670), end: (0, 671), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 671), end: (0, 672), text: `)`
+    capture: 2 - indent.end, start: (0, 671), end: (0, 672), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 681), end: (0, 752), text: `ARRAYFORMULA((arrivals<EDATE(datesCapped,1))*(departures>=datesCapped))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 694), end: (0, 725), text: `(arrivals<EDATE(datesCapped,1))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 704), end: (0, 724), text: `EDATE(datesCapped,1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 723), end: (0, 724), text: `)`
+    capture: 2 - indent.end, start: (0, 723), end: (0, 724), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 724), end: (0, 725), text: `)`
+    capture: 2 - indent.end, start: (0, 724), end: (0, 725), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 726), end: (0, 751), text: `(departures>=datesCapped)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 750), end: (0, 751), text: `)`
+    capture: 2 - indent.end, start: (0, 750), end: (0, 751), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 751), end: (0, 752), text: `)`
+    capture: 2 - indent.end, start: (0, 751), end: (0, 752), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 760), end: (0, 795), text: `MMULT(TRANSPOSE(overlap*1),onesCol)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 766), end: (0, 786), text: `TRANSPOSE(overlap*1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 785), end: (0, 786), text: `)`
+    capture: 2 - indent.end, start: (0, 785), end: (0, 786), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 794), end: (0, 795), text: `)`
+    capture: 2 - indent.end, start: (0, 794), end: (0, 795), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 796), end: (0, 832), text: `LAMBDA(x,ROUND(SUM(x),2))(binTotals)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 796), end: (0, 821), text: `LAMBDA(x,ROUND(SUM(x),2))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 805), end: (0, 820), text: `ROUND(SUM(x),2)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 811), end: (0, 817), text: `SUM(x)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 816), end: (0, 817), text: `)`
+    capture: 2 - indent.end, start: (0, 816), end: (0, 817), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 819), end: (0, 820), text: `)`
+    capture: 2 - indent.end, start: (0, 819), end: (0, 820), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 820), end: (0, 821), text: `)`
+    capture: 2 - indent.end, start: (0, 820), end: (0, 821), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 831), end: (0, 832), text: `)`
+    capture: 2 - indent.end, start: (0, 831), end: (0, 832), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 833), end: (0, 872), text: `SUMPRODUCT(Inventory[Weight kg],perBin)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 871), end: (0, 872), text: `)`
+    capture: 2 - indent.end, start: (0, 871), end: (0, 872), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 872), end: (0, 873), text: `)`
+    capture: 2 - indent.end, start: (0, 872), end: (0, 873), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 883), end: (0, 884), text: `)`
+    capture: 2 - indent.end, start: (0, 883), end: (0, 884), text: `)`
+examples/payperiods.gsfx
+  pattern: 0
+    capture: indent.begin, start: (0, 1), end: (22, 1)
+  pattern: 0
+    capture: 0 - indent.begin, start: (2, 14), end: (2, 40), text: `DATE(targetYear + 1, 1, 1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (2, 39), end: (2, 40), text: `)`
+    capture: 2 - indent.end, start: (2, 39), end: (2, 40), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (3, 14), end: (3, 36), text: `DATE(targetYear, 1, 1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (3, 35), end: (3, 36), text: `)`
+    capture: 2 - indent.end, start: (3, 35), end: (3, 36), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (4, 25), end: (4, 57), text: `MOD(8 - WEEKDAY(firstDay, 2), 7)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (4, 33), end: (4, 53), text: `WEEKDAY(firstDay, 2)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (4, 52), end: (4, 53), text: `)`
+    capture: 2 - indent.end, start: (4, 52), end: (4, 53), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (4, 56), end: (4, 57), text: `)`
+    capture: 2 - indent.end, start: (4, 56), end: (4, 57), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (5, 14), end: (5, 37), text: `DATE(targetYear, 10, 1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (5, 36), end: (5, 37), text: `)`
+    capture: 2 - indent.end, start: (5, 36), end: (5, 37), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (6, 22), end: (6, 47), text: `MOD(WEEKDAY(audit, 2), 7)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (6, 26), end: (6, 43), text: `WEEKDAY(audit, 2)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (6, 42), end: (6, 43), text: `)`
+    capture: 2 - indent.end, start: (6, 42), end: (6, 43), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (6, 46), end: (6, 47), text: `)`
+    capture: 2 - indent.end, start: (6, 46), end: (6, 47), text: `)`
+  pattern: 0
+    capture: indent.begin, start: (8, 14), end: (17, 15)
+  pattern: 0
+    capture: indent.begin, start: (9, 16), end: (16, 17)
+  pattern: 0
+    capture: indent.begin, start: (11, 18), end: (15, 19)
+  pattern: 0
+    capture: 0 - indent.begin, start: (13, 20), end: (13, 57), text: `AND(endReg >= freeze, start < freeze)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (13, 56), end: (13, 57), text: `)`
+    capture: 2 - indent.end, start: (13, 56), end: (13, 57), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (15, 18), end: (15, 19), text: `)`
+    capture: 2 - indent.end, start: (15, 18), end: (15, 19), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (16, 16), end: (16, 17), text: `)`
+    capture: 2 - indent.end, start: (16, 16), end: (16, 17), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (17, 14), end: (17, 15), text: `)`
+    capture: 2 - indent.end, start: (17, 14), end: (17, 15), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (18, 14), end: (18, 43), text: `SEQUENCE(27, 1, firstMon, 14)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (18, 42), end: (18, 43), text: `)`
+    capture: 2 - indent.end, start: (18, 42), end: (18, 43), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (19, 14), end: (19, 33), text: `MAP(starts, winEnd)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (19, 32), end: (19, 33), text: `)`
+    capture: 2 - indent.end, start: (19, 32), end: (19, 33), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (20, 14), end: (20, 45), text: `ARRAYFORMULA(starts < nextYear)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (20, 44), end: (20, 45), text: `)`
+    capture: 2 - indent.end, start: (20, 44), end: (20, 45), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (21, 2), end: (21, 52), text: `HSTACK(FILTER(starts, valid), FILTER(ends, valid))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (21, 9), end: (21, 30), text: `FILTER(starts, valid)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (21, 29), end: (21, 30), text: `)`
+    capture: 2 - indent.end, start: (21, 29), end: (21, 30), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (21, 32), end: (21, 51), text: `FILTER(ends, valid)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (21, 50), end: (21, 51), text: `)`
+    capture: 2 - indent.end, start: (21, 50), end: (21, 51), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (21, 51), end: (21, 52), text: `)`
+    capture: 2 - indent.end, start: (21, 51), end: (21, 52), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (22, 0), end: (22, 1), text: `)`
+    capture: 2 - indent.end, start: (22, 0), end: (22, 1), text: `)`
+examples/payperiods.min.gsfx
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 1), end: (0, 485), text: `LET(targetYear,B1,nextYear,DATE(targetYear+1,1,1),firstDay,DATE(targetYear,1,1),firstMon,firstDay+MOD(8-WEEKDAY(firstDay,2),7),audit,DATE(targetYear,10,1),auditSun,audit-MOD(WEEKDAY(audit,2),7),freeze,auditSun-21,winEnd,LAMBDA(start,LET(endReg,start+13,IFS(endReg>=nextYear,nextYear-1,AND(endReg>=freeze,start<freeze),freeze-1,TRUE,endReg))),starts,SEQUENCE(27,1,firstMon,14),ends,MAP(starts,winEnd),valid,ARRAYFORMULA(starts<nextYear),HSTACK(FILTER(starts,valid),FILTER(ends,valid)))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 28), end: (0, 50), text: `DATE(targetYear+1,1,1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 49), end: (0, 50), text: `)`
+    capture: 2 - indent.end, start: (0, 49), end: (0, 50), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 60), end: (0, 80), text: `DATE(targetYear,1,1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 79), end: (0, 80), text: `)`
+    capture: 2 - indent.end, start: (0, 79), end: (0, 80), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 99), end: (0, 127), text: `MOD(8-WEEKDAY(firstDay,2),7)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 105), end: (0, 124), text: `WEEKDAY(firstDay,2)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 123), end: (0, 124), text: `)`
+    capture: 2 - indent.end, start: (0, 123), end: (0, 124), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 126), end: (0, 127), text: `)`
+    capture: 2 - indent.end, start: (0, 126), end: (0, 127), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 134), end: (0, 155), text: `DATE(targetYear,10,1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 154), end: (0, 155), text: `)`
+    capture: 2 - indent.end, start: (0, 154), end: (0, 155), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 171), end: (0, 194), text: `MOD(WEEKDAY(audit,2),7)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 175), end: (0, 191), text: `WEEKDAY(audit,2)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 190), end: (0, 191), text: `)`
+    capture: 2 - indent.end, start: (0, 190), end: (0, 191), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 193), end: (0, 194), text: `)`
+    capture: 2 - indent.end, start: (0, 193), end: (0, 194), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 221), end: (0, 342), text: `LAMBDA(start,LET(endReg,start+13,IFS(endReg>=nextYear,nextYear-1,AND(endReg>=freeze,start<freeze),freeze-1,TRUE,endReg)))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 234), end: (0, 341), text: `LET(endReg,start+13,IFS(endReg>=nextYear,nextYear-1,AND(endReg>=freeze,start<freeze),freeze-1,TRUE,endReg))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 254), end: (0, 340), text: `IFS(endReg>=nextYear,nextYear-1,AND(endReg>=freeze,start<freeze),freeze-1,TRUE,endReg)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 286), end: (0, 318), text: `AND(endReg>=freeze,start<freeze)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 317), end: (0, 318), text: `)`
+    capture: 2 - indent.end, start: (0, 317), end: (0, 318), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 339), end: (0, 340), text: `)`
+    capture: 2 - indent.end, start: (0, 339), end: (0, 340), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 340), end: (0, 341), text: `)`
+    capture: 2 - indent.end, start: (0, 340), end: (0, 341), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 341), end: (0, 342), text: `)`
+    capture: 2 - indent.end, start: (0, 341), end: (0, 342), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 350), end: (0, 376), text: `SEQUENCE(27,1,firstMon,14)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 375), end: (0, 376), text: `)`
+    capture: 2 - indent.end, start: (0, 375), end: (0, 376), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 382), end: (0, 400), text: `MAP(starts,winEnd)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 399), end: (0, 400), text: `)`
+    capture: 2 - indent.end, start: (0, 399), end: (0, 400), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 407), end: (0, 436), text: `ARRAYFORMULA(starts<nextYear)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 435), end: (0, 436), text: `)`
+    capture: 2 - indent.end, start: (0, 435), end: (0, 436), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 437), end: (0, 484), text: `HSTACK(FILTER(starts,valid),FILTER(ends,valid))`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 444), end: (0, 464), text: `FILTER(starts,valid)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 463), end: (0, 464), text: `)`
+    capture: 2 - indent.end, start: (0, 463), end: (0, 464), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (0, 465), end: (0, 483), text: `FILTER(ends,valid)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 482), end: (0, 483), text: `)`
+    capture: 2 - indent.end, start: (0, 482), end: (0, 483), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 483), end: (0, 484), text: `)`
+    capture: 2 - indent.end, start: (0, 483), end: (0, 484), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (0, 484), end: (0, 485), text: `)`
+    capture: 2 - indent.end, start: (0, 484), end: (0, 485), text: `)`
