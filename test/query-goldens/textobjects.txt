@@ -1,0 +1,510 @@
+examples/gnarly.gsfx
+  pattern: 6
+    capture: function.outer, start: (0, 1), end: (10, 1)
+  pattern: 0
+    capture: 0 - function.outer, start: (1, 12), end: (1, 58), text: `FILTER(intake_log!E4:E, intake_log!C4:C <> "")`
+  pattern: 1
+    capture: 1 - function.inner, start: (1, 19), end: (1, 57), text: `intake_log!E4:E, intake_log!C4:C <> ""`
+  pattern: 0
+    capture: 0 - function.outer, start: (4, 12), end: (4, 43), text: `IF(COUNTA(raw) = 0, , SUM(raw))`
+  pattern: 1
+    capture: 1 - function.inner, start: (4, 15), end: (4, 42), text: `COUNTA(raw) = 0, , SUM(raw)`
+  pattern: 0
+    capture: 0 - function.outer, start: (4, 15), end: (4, 26), text: `COUNTA(raw)`
+  pattern: 1
+    capture: 1 - function.inner, start: (4, 22), end: (4, 25), text: `raw`
+  pattern: 0
+    capture: 0 - function.outer, start: (4, 34), end: (4, 42), text: `SUM(raw)`
+  pattern: 1
+    capture: 1 - function.inner, start: (4, 38), end: (4, 41), text: `raw`
+  pattern: 7
+    capture: function.inner, start: (5, 2), end: (9, 3)
+  pattern: 0
+    capture: function.outer, start: (5, 2), end: (9, 3)
+  pattern: 1
+    capture: function.inner, start: (6, 4), end: (8, 70)
+  pattern: 0
+    capture: 0 - function.outer, start: (6, 4), end: (6, 15), text: `COUNTA(raw)`
+  pattern: 1
+    capture: 1 - function.inner, start: (6, 11), end: (6, 14), text: `raw`
+  pattern: 0
+    capture: 0 - function.outer, start: (7, 4), end: (7, 12), text: `SUM(raw)`
+  pattern: 1
+    capture: 1 - function.inner, start: (7, 8), end: (7, 11), text: `raw`
+  pattern: 0
+    capture: 0 - function.outer, start: (8, 21), end: (8, 56), text: `TEXT(SUM(raw) * (1 + rate), "0.00")`
+  pattern: 1
+    capture: 1 - function.inner, start: (8, 26), end: (8, 55), text: `SUM(raw) * (1 + rate), "0.00"`
+  pattern: 0
+    capture: 0 - function.outer, start: (8, 26), end: (8, 34), text: `SUM(raw)`
+  pattern: 1
+    capture: 1 - function.inner, start: (8, 30), end: (8, 33), text: `raw`
+examples/gnarly.min.gsfx
+  pattern: 6
+    capture: 0 - function.outer, start: (0, 1), end: (0, 240), text: `LET(raw,FILTER(intake_log!E4:E,intake_log!C4:C<>""),label,"subtotal (rounded), excl. fees",rate,4.25%,fallback,IF(COUNTA(raw)=0,,SUM(raw)),IFS(COUNTA(raw)=0,"no rows",SUM(raw)>9^99,"overflow",TRUE,TEXT(SUM(raw)*(1+rate),"0.00")&" "&label))`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 9), end: (0, 52), text: `FILTER(intake_log!E4:E,intake_log!C4:C<>"")`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 16), end: (0, 51), text: `intake_log!E4:E,intake_log!C4:C<>""`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 112), end: (0, 139), text: `IF(COUNTA(raw)=0,,SUM(raw))`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 115), end: (0, 138), text: `COUNTA(raw)=0,,SUM(raw)`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 115), end: (0, 126), text: `COUNTA(raw)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 122), end: (0, 125), text: `raw`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 130), end: (0, 138), text: `SUM(raw)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 134), end: (0, 137), text: `raw`
+  pattern: 7
+    capture: 1 - function.inner, start: (0, 140), end: (0, 239), text: `IFS(COUNTA(raw)=0,"no rows",SUM(raw)>9^99,"overflow",TRUE,TEXT(SUM(raw)*(1+rate),"0.00")&" "&label)`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 140), end: (0, 239), text: `IFS(COUNTA(raw)=0,"no rows",SUM(raw)>9^99,"overflow",TRUE,TEXT(SUM(raw)*(1+rate),"0.00")&" "&label)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 144), end: (0, 238), text: `COUNTA(raw)=0,"no rows",SUM(raw)>9^99,"overflow",TRUE,TEXT(SUM(raw)*(1+rate),"0.00")&" "&label`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 144), end: (0, 155), text: `COUNTA(raw)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 151), end: (0, 154), text: `raw`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 168), end: (0, 176), text: `SUM(raw)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 172), end: (0, 175), text: `raw`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 198), end: (0, 228), text: `TEXT(SUM(raw)*(1+rate),"0.00")`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 203), end: (0, 227), text: `SUM(raw)*(1+rate),"0.00"`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 203), end: (0, 211), text: `SUM(raw)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 207), end: (0, 210), text: `raw`
+examples/monthly.gsfx
+  pattern: 0
+    capture: function.outer, start: (0, 1), end: (42, 1)
+  pattern: 1
+    capture: function.inner, start: (1, 2), end: (41, 11)
+  pattern: 6
+    capture: function.outer, start: (1, 2), end: (40, 3)
+  pattern: 0
+    capture: 0 - function.outer, start: (4, 20), end: (4, 70), text: `INDEX(C:C, LOOKUP(2, 1 / (C4:C <> ""), ROW(C4:C)))`
+  pattern: 1
+    capture: 1 - function.inner, start: (4, 26), end: (4, 69), text: `C:C, LOOKUP(2, 1 / (C4:C <> ""), ROW(C4:C))`
+  pattern: 0
+    capture: 0 - function.outer, start: (4, 31), end: (4, 69), text: `LOOKUP(2, 1 / (C4:C <> ""), ROW(C4:C))`
+  pattern: 1
+    capture: 1 - function.inner, start: (4, 38), end: (4, 68), text: `2, 1 / (C4:C <> ""), ROW(C4:C)`
+  pattern: 0
+    capture: 0 - function.outer, start: (4, 59), end: (4, 68), text: `ROW(C4:C)`
+  pattern: 1
+    capture: 1 - function.inner, start: (4, 63), end: (4, 67), text: `C4:C`
+  pattern: 0
+    capture: 0 - function.outer, start: (6, 31), end: (6, 61), text: `INDEX(stock_data!F:F, lastRow)`
+  pattern: 1
+    capture: 1 - function.inner, start: (6, 37), end: (6, 60), text: `stock_data!F:F, lastRow`
+  pattern: 0
+    capture: 0 - function.outer, start: (7, 31), end: (7, 61), text: `INDEX(stock_data!H:H, lastRow)`
+  pattern: 1
+    capture: 1 - function.inner, start: (7, 37), end: (7, 60), text: `stock_data!H:H, lastRow`
+  pattern: 0
+    capture: 0 - function.outer, start: (8, 17), end: (8, 80), text: `ARRAYFORMULA((weights > 0) * ISERROR(SEARCH("archived", tags)))`
+  pattern: 1
+    capture: 1 - function.inner, start: (8, 30), end: (8, 79), text: `(weights > 0) * ISERROR(SEARCH("archived", tags))`
+  pattern: 0
+    capture: 0 - function.outer, start: (8, 46), end: (8, 79), text: `ISERROR(SEARCH("archived", tags))`
+  pattern: 1
+    capture: 1 - function.inner, start: (8, 54), end: (8, 78), text: `SEARCH("archived", tags)`
+  pattern: 0
+    capture: 0 - function.outer, start: (8, 54), end: (8, 78), text: `SEARCH("archived", tags)`
+  pattern: 1
+    capture: 1 - function.inner, start: (8, 61), end: (8, 77), text: `"archived", tags`
+  pattern: 0
+    capture: function.outer, start: (10, 17), end: (16, 18)
+  pattern: 1
+    capture: function.inner, start: (11, 19), end: (15, 25)
+  pattern: 0
+    capture: function.outer, start: (11, 19), end: (14, 20)
+  pattern: 1
+    capture: function.inner, start: (12, 21), end: (13, 65)
+  pattern: 0
+    capture: 0 - function.outer, start: (12, 35), end: (12, 65), text: `INDEX(stock_data!C:C, lastRow)`
+  pattern: 1
+    capture: 1 - function.inner, start: (12, 41), end: (12, 64), text: `stock_data!C:C, lastRow`
+  pattern: 0
+    capture: 0 - function.outer, start: (13, 35), end: (13, 65), text: `INDEX(stock_data!U:U, lastRow)`
+  pattern: 1
+    capture: 1 - function.inner, start: (13, 41), end: (13, 64), text: `stock_data!U:U, lastRow`
+  pattern: 0
+    capture: 0 - function.outer, start: (18, 17), end: (18, 41), text: `CHOOSECOLS(shipments, 1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (18, 28), end: (18, 40), text: `shipments, 1`
+  pattern: 0
+    capture: 0 - function.outer, start: (19, 17), end: (19, 41), text: `CHOOSECOLS(shipments, 2)`
+  pattern: 1
+    capture: 1 - function.inner, start: (19, 28), end: (19, 40), text: `shipments, 2`
+  pattern: 0
+    capture: 0 - function.outer, start: (21, 17), end: (21, 68), text: `CHOOSECOLS(shipments, SEQUENCE(binCount * 2, 1, 3))`
+  pattern: 1
+    capture: 1 - function.inner, start: (21, 28), end: (21, 67), text: `shipments, SEQUENCE(binCount * 2, 1, 3)`
+  pattern: 0
+    capture: 0 - function.outer, start: (21, 39), end: (21, 67), text: `SEQUENCE(binCount * 2, 1, 3)`
+  pattern: 1
+    capture: 1 - function.inner, start: (21, 48), end: (21, 66), text: `binCount * 2, 1, 3`
+  pattern: 4
+    capture: function.outer, start: (22, 17), end: (27, 18)
+  pattern: 5
+    capture: function.inner, start: (23, 19), end: (26, 20)
+  pattern: 0
+    capture: function.outer, start: (23, 19), end: (26, 20)
+  pattern: 1
+    capture: function.inner, start: (24, 21), end: (25, 52)
+  pattern: 0
+    capture: 0 - function.outer, start: (25, 21), end: (25, 52), text: `SEQUENCE(binCount, 1, startCol)`
+  pattern: 1
+    capture: 1 - function.inner, start: (25, 30), end: (25, 51), text: `binCount, 1, startCol`
+  pattern: 0
+    capture: 0 - function.outer, start: (29, 17), end: (29, 44), text: `SEQUENCE(binCount, 1, 1, 0)`
+  pattern: 1
+    capture: 1 - function.inner, start: (29, 26), end: (29, 43), text: `binCount, 1, 1, 0`
+  pattern: 0
+    capture: 0 - function.outer, start: (30, 17), end: (30, 58), text: `BYCOL(binSlice(1), LAMBDA(col, SUM(col)))`
+  pattern: 1
+    capture: 1 - function.inner, start: (30, 23), end: (30, 57), text: `binSlice(1), LAMBDA(col, SUM(col))`
+  pattern: 0
+    capture: 0 - function.outer, start: (30, 23), end: (30, 34), text: `binSlice(1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (30, 32), end: (30, 33), text: `1`
+  pattern: 4
+    capture: 0 - function.outer, start: (30, 36), end: (30, 57), text: `LAMBDA(col, SUM(col))`
+  pattern: 5
+    capture: 1 - function.inner, start: (30, 48), end: (30, 56), text: `SUM(col)`
+  pattern: 0
+    capture: 0 - function.outer, start: (30, 48), end: (30, 56), text: `SUM(col)`
+  pattern: 1
+    capture: 1 - function.inner, start: (30, 52), end: (30, 55), text: `col`
+  pattern: 0
+    capture: function.outer, start: (32, 17), end: (35, 18)
+  pattern: 1
+    capture: function.inner, start: (33, 19), end: (34, 50)
+  pattern: 0
+    capture: 0 - function.outer, start: (33, 31), end: (33, 52), text: `EDATE(datesCapped, 1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (33, 37), end: (33, 51), text: `datesCapped, 1`
+  pattern: 0
+    capture: 0 - function.outer, start: (36, 17), end: (36, 55), text: `MMULT(TRANSPOSE(overlap * 1), onesCol)`
+  pattern: 1
+    capture: 1 - function.inner, start: (36, 23), end: (36, 54), text: `TRANSPOSE(overlap * 1), onesCol`
+  pattern: 0
+    capture: 0 - function.outer, start: (36, 23), end: (36, 45), text: `TRANSPOSE(overlap * 1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (36, 33), end: (36, 44), text: `overlap * 1`
+  pattern: 7
+    capture: function.inner, start: (38, 4), end: (39, 48)
+  pattern: 2
+    capture: 0 - function.outer, start: (38, 4), end: (38, 42), text: `LAMBDA(x, ROUND(SUM(x), 2))(binTotals)`
+  pattern: 4
+    capture: 0 - function.outer, start: (38, 4), end: (38, 31), text: `LAMBDA(x, ROUND(SUM(x), 2))`
+  pattern: 5
+    capture: 1 - function.inner, start: (38, 14), end: (38, 30), text: `ROUND(SUM(x), 2)`
+  pattern: 0
+    capture: 0 - function.outer, start: (38, 14), end: (38, 30), text: `ROUND(SUM(x), 2)`
+  pattern: 1
+    capture: 1 - function.inner, start: (38, 20), end: (38, 29), text: `SUM(x), 2`
+  pattern: 0
+    capture: 0 - function.outer, start: (38, 20), end: (38, 26), text: `SUM(x)`
+  pattern: 1
+    capture: 1 - function.inner, start: (38, 24), end: (38, 25), text: `x`
+  pattern: 3
+    capture: 1 - function.inner, start: (38, 32), end: (38, 41), text: `binTotals`
+  pattern: 0
+    capture: 0 - function.outer, start: (39, 8), end: (39, 48), text: `SUMPRODUCT(Inventory[Weight kg], perBin)`
+  pattern: 1
+    capture: 1 - function.inner, start: (39, 19), end: (39, 47), text: `Inventory[Weight kg], perBin`
+examples/monthly.min.gsfx
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 1), end: (0, 884), text: `IFNA(LET(lastRow,stock_data!A1,binCount,12,datesCapped,C4:INDEX(C:C,LOOKUP(2,1/(C4:C<>""),ROW(C4:C))),weights,stock_data!F2:INDEX(stock_data!F:F,lastRow),tags,stock_data!H2:INDEX(stock_data!H:H,lastRow),isLive,ARRAYFORMULA((weights>0)*ISERROR(SEARCH("archived",tags))),shipments,FILTER(HSTACK(stock_data!B2:INDEX(stock_data!C:C,lastRow),stock_data!J2:INDEX(stock_data!U:U,lastRow)),isLive),arrivals,CHOOSECOLS(shipments,1),departures,CHOOSECOLS(shipments,2),binData,CHOOSECOLS(shipments,SEQUENCE(binCount*2,1,3)),binSlice,LAMBDA(startCol,CHOOSECOLS(binData,SEQUENCE(binCount,1,startCol))),onesCol,SEQUENCE(binCount,1,1,0),binTotals,BYCOL(binSlice(1),LAMBDA(col,SUM(col))),overlap,ARRAYFORMULA((arrivals<EDATE(datesCapped,1))*(departures>=datesCapped)),perBin,MMULT(TRANSPOSE(overlap*1),onesCol),LAMBDA(x,ROUND(SUM(x),2))(binTotals)+SUMPRODUCT(Inventory[Weight kg],perBin)),"no data")`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 6), end: (0, 883), text: `LET(lastRow,stock_data!A1,binCount,12,datesCapped,C4:INDEX(C:C,LOOKUP(2,1/(C4:C<>""),ROW(C4:C))),weights,stock_data!F2:INDEX(stock_data!F:F,lastRow),tags,stock_data!H2:INDEX(stock_data!H:H,lastRow),isLive,ARRAYFORMULA((weights>0)*ISERROR(SEARCH("archived",tags))),shipments,FILTER(HSTACK(stock_data!B2:INDEX(stock_data!C:C,lastRow),stock_data!J2:INDEX(stock_data!U:U,lastRow)),isLive),arrivals,CHOOSECOLS(shipments,1),departures,CHOOSECOLS(shipments,2),binData,CHOOSECOLS(shipments,SEQUENCE(binCount*2,1,3)),binSlice,LAMBDA(startCol,CHOOSECOLS(binData,SEQUENCE(binCount,1,startCol))),onesCol,SEQUENCE(binCount,1,1,0),binTotals,BYCOL(binSlice(1),LAMBDA(col,SUM(col))),overlap,ARRAYFORMULA((arrivals<EDATE(datesCapped,1))*(departures>=datesCapped)),perBin,MMULT(TRANSPOSE(overlap*1),onesCol),LAMBDA(x,ROUND(SUM(x),2))(binTotals)+SUMPRODUCT(Inventory[Weight kg],perBin)),"no data"`
+  pattern: 6
+    capture: 0 - function.outer, start: (0, 6), end: (0, 873), text: `LET(lastRow,stock_data!A1,binCount,12,datesCapped,C4:INDEX(C:C,LOOKUP(2,1/(C4:C<>""),ROW(C4:C))),weights,stock_data!F2:INDEX(stock_data!F:F,lastRow),tags,stock_data!H2:INDEX(stock_data!H:H,lastRow),isLive,ARRAYFORMULA((weights>0)*ISERROR(SEARCH("archived",tags))),shipments,FILTER(HSTACK(stock_data!B2:INDEX(stock_data!C:C,lastRow),stock_data!J2:INDEX(stock_data!U:U,lastRow)),isLive),arrivals,CHOOSECOLS(shipments,1),departures,CHOOSECOLS(shipments,2),binData,CHOOSECOLS(shipments,SEQUENCE(binCount*2,1,3)),binSlice,LAMBDA(startCol,CHOOSECOLS(binData,SEQUENCE(binCount,1,startCol))),onesCol,SEQUENCE(binCount,1,1,0),binTotals,BYCOL(binSlice(1),LAMBDA(col,SUM(col))),overlap,ARRAYFORMULA((arrivals<EDATE(datesCapped,1))*(departures>=datesCapped)),perBin,MMULT(TRANSPOSE(overlap*1),onesCol),LAMBDA(x,ROUND(SUM(x),2))(binTotals)+SUMPRODUCT(Inventory[Weight kg],perBin))`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 59), end: (0, 102), text: `INDEX(C:C,LOOKUP(2,1/(C4:C<>""),ROW(C4:C)))`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 65), end: (0, 101), text: `C:C,LOOKUP(2,1/(C4:C<>""),ROW(C4:C))`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 69), end: (0, 101), text: `LOOKUP(2,1/(C4:C<>""),ROW(C4:C))`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 76), end: (0, 100), text: `2,1/(C4:C<>""),ROW(C4:C)`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 91), end: (0, 100), text: `ROW(C4:C)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 95), end: (0, 99), text: `C4:C`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 125), end: (0, 154), text: `INDEX(stock_data!F:F,lastRow)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 131), end: (0, 153), text: `stock_data!F:F,lastRow`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 174), end: (0, 203), text: `INDEX(stock_data!H:H,lastRow)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 180), end: (0, 202), text: `stock_data!H:H,lastRow`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 211), end: (0, 269), text: `ARRAYFORMULA((weights>0)*ISERROR(SEARCH("archived",tags)))`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 224), end: (0, 268), text: `(weights>0)*ISERROR(SEARCH("archived",tags))`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 236), end: (0, 268), text: `ISERROR(SEARCH("archived",tags))`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 244), end: (0, 267), text: `SEARCH("archived",tags)`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 244), end: (0, 267), text: `SEARCH("archived",tags)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 251), end: (0, 266), text: `"archived",tags`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 280), end: (0, 390), text: `FILTER(HSTACK(stock_data!B2:INDEX(stock_data!C:C,lastRow),stock_data!J2:INDEX(stock_data!U:U,lastRow)),isLive)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 287), end: (0, 389), text: `HSTACK(stock_data!B2:INDEX(stock_data!C:C,lastRow),stock_data!J2:INDEX(stock_data!U:U,lastRow)),isLive`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 287), end: (0, 382), text: `HSTACK(stock_data!B2:INDEX(stock_data!C:C,lastRow),stock_data!J2:INDEX(stock_data!U:U,lastRow))`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 294), end: (0, 381), text: `stock_data!B2:INDEX(stock_data!C:C,lastRow),stock_data!J2:INDEX(stock_data!U:U,lastRow)`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 308), end: (0, 337), text: `INDEX(stock_data!C:C,lastRow)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 314), end: (0, 336), text: `stock_data!C:C,lastRow`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 352), end: (0, 381), text: `INDEX(stock_data!U:U,lastRow)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 358), end: (0, 380), text: `stock_data!U:U,lastRow`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 400), end: (0, 423), text: `CHOOSECOLS(shipments,1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 411), end: (0, 422), text: `shipments,1`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 435), end: (0, 458), text: `CHOOSECOLS(shipments,2)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 446), end: (0, 457), text: `shipments,2`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 467), end: (0, 513), text: `CHOOSECOLS(shipments,SEQUENCE(binCount*2,1,3))`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 478), end: (0, 512), text: `shipments,SEQUENCE(binCount*2,1,3)`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 488), end: (0, 512), text: `SEQUENCE(binCount*2,1,3)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 497), end: (0, 511), text: `binCount*2,1,3`
+  pattern: 4
+    capture: 0 - function.outer, start: (0, 523), end: (0, 589), text: `LAMBDA(startCol,CHOOSECOLS(binData,SEQUENCE(binCount,1,startCol)))`
+  pattern: 5
+    capture: 1 - function.inner, start: (0, 539), end: (0, 588), text: `CHOOSECOLS(binData,SEQUENCE(binCount,1,startCol))`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 539), end: (0, 588), text: `CHOOSECOLS(binData,SEQUENCE(binCount,1,startCol))`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 550), end: (0, 587), text: `binData,SEQUENCE(binCount,1,startCol)`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 558), end: (0, 587), text: `SEQUENCE(binCount,1,startCol)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 567), end: (0, 586), text: `binCount,1,startCol`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 598), end: (0, 622), text: `SEQUENCE(binCount,1,1,0)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 607), end: (0, 621), text: `binCount,1,1,0`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 633), end: (0, 672), text: `BYCOL(binSlice(1),LAMBDA(col,SUM(col)))`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 639), end: (0, 671), text: `binSlice(1),LAMBDA(col,SUM(col))`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 639), end: (0, 650), text: `binSlice(1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 648), end: (0, 649), text: `1`
+  pattern: 4
+    capture: 0 - function.outer, start: (0, 651), end: (0, 671), text: `LAMBDA(col,SUM(col))`
+  pattern: 5
+    capture: 1 - function.inner, start: (0, 662), end: (0, 670), text: `SUM(col)`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 662), end: (0, 670), text: `SUM(col)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 666), end: (0, 669), text: `col`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 681), end: (0, 752), text: `ARRAYFORMULA((arrivals<EDATE(datesCapped,1))*(departures>=datesCapped))`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 694), end: (0, 751), text: `(arrivals<EDATE(datesCapped,1))*(departures>=datesCapped)`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 704), end: (0, 724), text: `EDATE(datesCapped,1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 710), end: (0, 723), text: `datesCapped,1`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 760), end: (0, 795), text: `MMULT(TRANSPOSE(overlap*1),onesCol)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 766), end: (0, 794), text: `TRANSPOSE(overlap*1),onesCol`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 766), end: (0, 786), text: `TRANSPOSE(overlap*1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 776), end: (0, 785), text: `overlap*1`
+  pattern: 7
+    capture: 1 - function.inner, start: (0, 796), end: (0, 872), text: `LAMBDA(x,ROUND(SUM(x),2))(binTotals)+SUMPRODUCT(Inventory[Weight kg],perBin)`
+  pattern: 2
+    capture: 0 - function.outer, start: (0, 796), end: (0, 832), text: `LAMBDA(x,ROUND(SUM(x),2))(binTotals)`
+  pattern: 4
+    capture: 0 - function.outer, start: (0, 796), end: (0, 821), text: `LAMBDA(x,ROUND(SUM(x),2))`
+  pattern: 5
+    capture: 1 - function.inner, start: (0, 805), end: (0, 820), text: `ROUND(SUM(x),2)`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 805), end: (0, 820), text: `ROUND(SUM(x),2)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 811), end: (0, 819), text: `SUM(x),2`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 811), end: (0, 817), text: `SUM(x)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 815), end: (0, 816), text: `x`
+  pattern: 3
+    capture: 1 - function.inner, start: (0, 822), end: (0, 831), text: `binTotals`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 833), end: (0, 872), text: `SUMPRODUCT(Inventory[Weight kg],perBin)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 844), end: (0, 871), text: `Inventory[Weight kg],perBin`
+examples/payperiods.gsfx
+  pattern: 6
+    capture: function.outer, start: (0, 1), end: (22, 1)
+  pattern: 0
+    capture: 0 - function.outer, start: (2, 14), end: (2, 40), text: `DATE(targetYear + 1, 1, 1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (2, 19), end: (2, 39), text: `targetYear + 1, 1, 1`
+  pattern: 0
+    capture: 0 - function.outer, start: (3, 14), end: (3, 36), text: `DATE(targetYear, 1, 1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (3, 19), end: (3, 35), text: `targetYear, 1, 1`
+  pattern: 0
+    capture: 0 - function.outer, start: (4, 25), end: (4, 57), text: `MOD(8 - WEEKDAY(firstDay, 2), 7)`
+  pattern: 1
+    capture: 1 - function.inner, start: (4, 29), end: (4, 56), text: `8 - WEEKDAY(firstDay, 2), 7`
+  pattern: 0
+    capture: 0 - function.outer, start: (4, 33), end: (4, 53), text: `WEEKDAY(firstDay, 2)`
+  pattern: 1
+    capture: 1 - function.inner, start: (4, 41), end: (4, 52), text: `firstDay, 2`
+  pattern: 0
+    capture: 0 - function.outer, start: (5, 14), end: (5, 37), text: `DATE(targetYear, 10, 1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (5, 19), end: (5, 36), text: `targetYear, 10, 1`
+  pattern: 0
+    capture: 0 - function.outer, start: (6, 22), end: (6, 47), text: `MOD(WEEKDAY(audit, 2), 7)`
+  pattern: 1
+    capture: 1 - function.inner, start: (6, 26), end: (6, 46), text: `WEEKDAY(audit, 2), 7`
+  pattern: 0
+    capture: 0 - function.outer, start: (6, 26), end: (6, 43), text: `WEEKDAY(audit, 2)`
+  pattern: 1
+    capture: 1 - function.inner, start: (6, 34), end: (6, 42), text: `audit, 2`
+  pattern: 4
+    capture: function.outer, start: (8, 14), end: (17, 15)
+  pattern: 5
+    capture: function.inner, start: (9, 16), end: (16, 17)
+  pattern: 6
+    capture: function.outer, start: (9, 16), end: (16, 17)
+  pattern: 7
+    capture: function.inner, start: (11, 18), end: (15, 19)
+  pattern: 0
+    capture: function.outer, start: (11, 18), end: (15, 19)
+  pattern: 1
+    capture: function.inner, start: (12, 20), end: (14, 65)
+  pattern: 0
+    capture: 0 - function.outer, start: (13, 20), end: (13, 57), text: `AND(endReg >= freeze, start < freeze)`
+  pattern: 1
+    capture: 1 - function.inner, start: (13, 24), end: (13, 56), text: `endReg >= freeze, start < freeze`
+  pattern: 0
+    capture: 0 - function.outer, start: (18, 14), end: (18, 43), text: `SEQUENCE(27, 1, firstMon, 14)`
+  pattern: 1
+    capture: 1 - function.inner, start: (18, 23), end: (18, 42), text: `27, 1, firstMon, 14`
+  pattern: 0
+    capture: 0 - function.outer, start: (19, 14), end: (19, 33), text: `MAP(starts, winEnd)`
+  pattern: 1
+    capture: 1 - function.inner, start: (19, 18), end: (19, 32), text: `starts, winEnd`
+  pattern: 0
+    capture: 0 - function.outer, start: (20, 14), end: (20, 45), text: `ARRAYFORMULA(starts < nextYear)`
+  pattern: 1
+    capture: 1 - function.inner, start: (20, 27), end: (20, 44), text: `starts < nextYear`
+  pattern: 7
+    capture: 1 - function.inner, start: (21, 2), end: (21, 52), text: `HSTACK(FILTER(starts, valid), FILTER(ends, valid))`
+  pattern: 0
+    capture: 0 - function.outer, start: (21, 2), end: (21, 52), text: `HSTACK(FILTER(starts, valid), FILTER(ends, valid))`
+  pattern: 1
+    capture: 1 - function.inner, start: (21, 9), end: (21, 51), text: `FILTER(starts, valid), FILTER(ends, valid)`
+  pattern: 0
+    capture: 0 - function.outer, start: (21, 9), end: (21, 30), text: `FILTER(starts, valid)`
+  pattern: 1
+    capture: 1 - function.inner, start: (21, 16), end: (21, 29), text: `starts, valid`
+  pattern: 0
+    capture: 0 - function.outer, start: (21, 32), end: (21, 51), text: `FILTER(ends, valid)`
+  pattern: 1
+    capture: 1 - function.inner, start: (21, 39), end: (21, 50), text: `ends, valid`
+examples/payperiods.min.gsfx
+  pattern: 6
+    capture: 0 - function.outer, start: (0, 1), end: (0, 485), text: `LET(targetYear,B1,nextYear,DATE(targetYear+1,1,1),firstDay,DATE(targetYear,1,1),firstMon,firstDay+MOD(8-WEEKDAY(firstDay,2),7),audit,DATE(targetYear,10,1),auditSun,audit-MOD(WEEKDAY(audit,2),7),freeze,auditSun-21,winEnd,LAMBDA(start,LET(endReg,start+13,IFS(endReg>=nextYear,nextYear-1,AND(endReg>=freeze,start<freeze),freeze-1,TRUE,endReg))),starts,SEQUENCE(27,1,firstMon,14),ends,MAP(starts,winEnd),valid,ARRAYFORMULA(starts<nextYear),HSTACK(FILTER(starts,valid),FILTER(ends,valid)))`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 28), end: (0, 50), text: `DATE(targetYear+1,1,1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 33), end: (0, 49), text: `targetYear+1,1,1`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 60), end: (0, 80), text: `DATE(targetYear,1,1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 65), end: (0, 79), text: `targetYear,1,1`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 99), end: (0, 127), text: `MOD(8-WEEKDAY(firstDay,2),7)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 103), end: (0, 126), text: `8-WEEKDAY(firstDay,2),7`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 105), end: (0, 124), text: `WEEKDAY(firstDay,2)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 113), end: (0, 123), text: `firstDay,2`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 134), end: (0, 155), text: `DATE(targetYear,10,1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 139), end: (0, 154), text: `targetYear,10,1`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 171), end: (0, 194), text: `MOD(WEEKDAY(audit,2),7)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 175), end: (0, 193), text: `WEEKDAY(audit,2),7`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 175), end: (0, 191), text: `WEEKDAY(audit,2)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 183), end: (0, 190), text: `audit,2`
+  pattern: 4
+    capture: 0 - function.outer, start: (0, 221), end: (0, 342), text: `LAMBDA(start,LET(endReg,start+13,IFS(endReg>=nextYear,nextYear-1,AND(endReg>=freeze,start<freeze),freeze-1,TRUE,endReg)))`
+  pattern: 5
+    capture: 1 - function.inner, start: (0, 234), end: (0, 341), text: `LET(endReg,start+13,IFS(endReg>=nextYear,nextYear-1,AND(endReg>=freeze,start<freeze),freeze-1,TRUE,endReg))`
+  pattern: 6
+    capture: 0 - function.outer, start: (0, 234), end: (0, 341), text: `LET(endReg,start+13,IFS(endReg>=nextYear,nextYear-1,AND(endReg>=freeze,start<freeze),freeze-1,TRUE,endReg))`
+  pattern: 7
+    capture: 1 - function.inner, start: (0, 254), end: (0, 340), text: `IFS(endReg>=nextYear,nextYear-1,AND(endReg>=freeze,start<freeze),freeze-1,TRUE,endReg)`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 254), end: (0, 340), text: `IFS(endReg>=nextYear,nextYear-1,AND(endReg>=freeze,start<freeze),freeze-1,TRUE,endReg)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 258), end: (0, 339), text: `endReg>=nextYear,nextYear-1,AND(endReg>=freeze,start<freeze),freeze-1,TRUE,endReg`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 286), end: (0, 318), text: `AND(endReg>=freeze,start<freeze)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 290), end: (0, 317), text: `endReg>=freeze,start<freeze`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 350), end: (0, 376), text: `SEQUENCE(27,1,firstMon,14)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 359), end: (0, 375), text: `27,1,firstMon,14`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 382), end: (0, 400), text: `MAP(starts,winEnd)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 386), end: (0, 399), text: `starts,winEnd`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 407), end: (0, 436), text: `ARRAYFORMULA(starts<nextYear)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 420), end: (0, 435), text: `starts<nextYear`
+  pattern: 7
+    capture: 1 - function.inner, start: (0, 437), end: (0, 484), text: `HSTACK(FILTER(starts,valid),FILTER(ends,valid))`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 437), end: (0, 484), text: `HSTACK(FILTER(starts,valid),FILTER(ends,valid))`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 444), end: (0, 483), text: `FILTER(starts,valid),FILTER(ends,valid)`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 444), end: (0, 464), text: `FILTER(starts,valid)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 451), end: (0, 463), text: `starts,valid`
+  pattern: 0
+    capture: 0 - function.outer, start: (0, 465), end: (0, 483), text: `FILTER(ends,valid)`
+  pattern: 1
+    capture: 1 - function.inner, start: (0, 472), end: (0, 482), text: `ends,valid`

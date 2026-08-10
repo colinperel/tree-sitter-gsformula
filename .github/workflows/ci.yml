@@ -90,10 +90,11 @@ jobs:
         uses: tree-sitter/fuzz-action@v4
         if: steps.scanner-check.outputs.changed == 'true'
 
-  # Real formulas must parse clean and every query must run against them —
-  # this is the gate README.md promises. `tree-sitter parse -q` exits
-  # nonzero on any ERROR/MISSING node; the query step catches patterns
-  # that lint clean but no longer match the tree.
+  # Real formulas must parse clean and every query must capture what it
+  # captured yesterday — this is the gate README.md promises.
+  # `tree-sitter parse -q` exits nonzero on any ERROR/MISSING node; the
+  # golden diff catches patterns that lint clean but silently changed (or
+  # lost) their captures. Regeneration recipe: test/query-goldens/README.md.
   examples:
     name: Parse examples
     runs-on: ubuntu-latest
@@ -109,11 +110,12 @@ jobs:
         run: tree-sitter build
       - name: Parse examples
         run: tree-sitter parse -q examples/*.gsfx
-      - name: Run queries over examples
+      - name: Diff query captures against goldens
         run: |
           for q in queries/*.scm; do
-            tree-sitter query "$q" examples/*.gsfx > /dev/null
+            tree-sitter query "$q" examples/*.gsfx > "test/query-goldens/$(basename "$q" .scm).txt"
           done
+          git diff --exit-code -- test/query-goldens/
 
   # examples/ mirrors six goldens whose canonical copies live in gsfmt's
   # tests/data/. gsfmt's own CI pins its checkout of this repo to a release
