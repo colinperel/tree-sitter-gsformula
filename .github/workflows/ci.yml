@@ -168,8 +168,12 @@ jobs:
       - name: Build parser
         run: tree-sitter build
 
+      # Pinned: pulling releases/latest let a linter release change what CI
+      # enforces without a commit here (3.16 broke the flat-queries/ lint,
+      # 0605ab3). Bump deliberately: raise the tag, run this job, fix what
+      # the new version flags in the same commit.
       - name: Set up ts_query_ls
-        run: curl -fL https://github.com/ribru17/ts_query_ls/releases/latest/download/ts_query_ls-x86_64-unknown-linux-gnu.tar.gz | tar -xz
+        run: curl -fL https://github.com/ribru17/ts_query_ls/releases/download/v3.16.0/ts_query_ls-x86_64-unknown-linux-gnu.tar.gz | tar -xz
 
       - name: Check queries
         run: ./ts_query_ls check -f queries/
