@@ -1,2598 +1,2675 @@
+examples/errors.gsfx
+  pattern: 25
+    capture: 12 - operator, start: (0, 0), end: (0, 1), text: `=`
+  pattern: 15
+    capture: 9 - function.call, start: (0, 1), end: (0, 4), text: `IFS`
+  pattern: 0
+    capture: 0 - variable, start: (0, 1), end: (0, 4), text: `IFS`
+  pattern: 26
+    capture: 13 - punctuation.bracket, start: (0, 4), end: (0, 5), text: `(`
+  pattern: 15
+    capture: 9 - function.call, start: (1, 2), end: (1, 6), text: `ISNA`
+  pattern: 0
+    capture: 0 - variable, start: (1, 2), end: (1, 6), text: `ISNA`
+  pattern: 26
+    capture: 13 - punctuation.bracket, start: (1, 6), end: (1, 7), text: `(`
+  pattern: 5
+    capture: 5 - variable.builtin, start: (1, 7), end: (1, 9), text: `A1`
+  pattern: 26
+    capture: 13 - punctuation.bracket, start: (1, 9), end: (1, 10), text: `)`
+  pattern: 27
+    capture: 8 - punctuation.delimiter, start: (1, 10), end: (1, 11), text: `,`
+  pattern: 4
+    capture: 4 - constant.builtin, start: (1, 12), end: (1, 16), text: `#N/A`
+  pattern: 27
+    capture: 8 - punctuation.delimiter, start: (1, 16), end: (1, 17), text: `,`
+  pattern: 15
+    capture: 9 - function.call, start: (2, 2), end: (2, 7), text: `ISERR`
+  pattern: 0
+    capture: 0 - variable, start: (2, 2), end: (2, 7), text: `ISERR`
+  pattern: 26
+    capture: 13 - punctuation.bracket, start: (2, 7), end: (2, 8), text: `(`
+  pattern: 5
+    capture: 5 - variable.builtin, start: (2, 8), end: (2, 10), text: `B1`
+  pattern: 26
+    capture: 13 - punctuation.bracket, start: (2, 10), end: (2, 11), text: `)`
+  pattern: 27
+    capture: 8 - punctuation.delimiter, start: (2, 11), end: (2, 12), text: `,`
+  pattern: 4
+    capture: 4 - constant.builtin, start: (2, 13), end: (2, 20), text: `#DIV/0!`
+  pattern: 27
+    capture: 8 - punctuation.delimiter, start: (2, 20), end: (2, 21), text: `,`
+  pattern: 15
+    capture: 9 - function.call, start: (3, 2), end: (3, 9), text: `ISERROR`
+  pattern: 0
+    capture: 0 - variable, start: (3, 2), end: (3, 9), text: `ISERROR`
+  pattern: 26
+    capture: 13 - punctuation.bracket, start: (3, 9), end: (3, 10), text: `(`
+  pattern: 5
+    capture: 5 - variable.builtin, start: (3, 10), end: (3, 12), text: `C1`
+  pattern: 26
+    capture: 13 - punctuation.bracket, start: (3, 12), end: (3, 13), text: `)`
+  pattern: 27
+    capture: 8 - punctuation.delimiter, start: (3, 13), end: (3, 14), text: `,`
+  pattern: 15
+    capture: 9 - function.call, start: (3, 15), end: (3, 22), text: `IFERROR`
+  pattern: 0
+    capture: 0 - variable, start: (3, 15), end: (3, 22), text: `IFERROR`
+  pattern: 26
+    capture: 13 - punctuation.bracket, start: (3, 22), end: (3, 23), text: `(`
+  pattern: 5
+    capture: 5 - variable.builtin, start: (3, 23), end: (3, 25), text: `C1`
+  pattern: 27
+    capture: 8 - punctuation.delimiter, start: (3, 25), end: (3, 26), text: `,`
+  pattern: 4
+    capture: 4 - constant.builtin, start: (3, 27), end: (3, 32), text: `#REF!`
+  pattern: 26
+    capture: 13 - punctuation.bracket, start: (3, 32), end: (3, 33), text: `)`
+  pattern: 27
+    capture: 8 - punctuation.delimiter, start: (3, 33), end: (3, 34), text: `,`
+  pattern: 3
+    capture: 3 - boolean.builtin, start: (4, 2), end: (4, 6), text: `TRUE`
+  pattern: 27
+    capture: 8 - punctuation.delimiter, start: (4, 6), end: (4, 7), text: `,`
+  pattern: 4
+    capture: 4 - constant.builtin, start: (4, 8), end: (4, 15), text: `#VALUE!`
+  pattern: 26
+    capture: 13 - punctuation.bracket, start: (5, 0), end: (5, 1), text: `)`
 examples/gnarly.gsfx
   pattern: 25
-    capture: 13 - operator, start: (0, 0), end: (0, 1), text: `=`
+    capture: 12 - operator, start: (0, 0), end: (0, 1), text: `=`
   pattern: 18
-    capture: 11 - function.builtin, start: (0, 1), end: (0, 4), text: `LET`
+    capture: 10 - function.builtin, start: (0, 1), end: (0, 4), text: `LET`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 4), end: (0, 5), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 4), end: (0, 5), text: `(`
   pattern: 20
-    capture: 12 - variable.parameter, start: (1, 2), end: (1, 5), text: `raw`
+    capture: 11 - variable.parameter, start: (1, 2), end: (1, 5), text: `raw`
   pattern: 0
     capture: 0 - variable, start: (1, 2), end: (1, 5), text: `raw`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (1, 5), end: (1, 6), text: `,`
+    capture: 8 - punctuation.delimiter, start: (1, 5), end: (1, 6), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (1, 12), end: (1, 18), text: `FILTER`
+    capture: 9 - function.call, start: (1, 12), end: (1, 18), text: `FILTER`
   pattern: 0
     capture: 0 - variable, start: (1, 12), end: (1, 18), text: `FILTER`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (1, 18), end: (1, 19), text: `(`
+    capture: 13 - punctuation.bracket, start: (1, 18), end: (1, 19), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (1, 19), end: (1, 32), text: `intake_log!E4`
   pattern: 22
-    capture: 13 - operator, start: (1, 32), end: (1, 33), text: `:`
+    capture: 12 - operator, start: (1, 32), end: (1, 33), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (1, 33), end: (1, 34), text: `E`
   pattern: 0
     capture: 0 - variable, start: (1, 33), end: (1, 34), text: `E`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (1, 34), end: (1, 35), text: `,`
+    capture: 8 - punctuation.delimiter, start: (1, 34), end: (1, 35), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (1, 36), end: (1, 49), text: `intake_log!C4`
   pattern: 22
-    capture: 13 - operator, start: (1, 49), end: (1, 50), text: `:`
+    capture: 12 - operator, start: (1, 49), end: (1, 50), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (1, 50), end: (1, 51), text: `C`
   pattern: 0
     capture: 0 - variable, start: (1, 50), end: (1, 51), text: `C`
   pattern: 22
-    capture: 13 - operator, start: (1, 52), end: (1, 54), text: `<>`
+    capture: 12 - operator, start: (1, 52), end: (1, 54), text: `<>`
   pattern: 1
     capture: 1 - string, start: (1, 55), end: (1, 57), text: `""`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (1, 57), end: (1, 58), text: `)`
+    capture: 13 - punctuation.bracket, start: (1, 57), end: (1, 58), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (1, 58), end: (1, 59), text: `,`
+    capture: 8 - punctuation.delimiter, start: (1, 58), end: (1, 59), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (2, 2), end: (2, 7), text: `label`
+    capture: 11 - variable.parameter, start: (2, 2), end: (2, 7), text: `label`
   pattern: 0
     capture: 0 - variable, start: (2, 2), end: (2, 7), text: `label`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (2, 7), end: (2, 8), text: `,`
+    capture: 8 - punctuation.delimiter, start: (2, 7), end: (2, 8), text: `,`
   pattern: 1
     capture: 1 - string, start: (2, 12), end: (2, 44), text: `"subtotal (rounded), excl. fees"`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (2, 44), end: (2, 45), text: `,`
+    capture: 8 - punctuation.delimiter, start: (2, 44), end: (2, 45), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (3, 2), end: (3, 6), text: `rate`
+    capture: 11 - variable.parameter, start: (3, 2), end: (3, 6), text: `rate`
   pattern: 0
     capture: 0 - variable, start: (3, 2), end: (3, 6), text: `rate`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (3, 6), end: (3, 7), text: `,`
+    capture: 8 - punctuation.delimiter, start: (3, 6), end: (3, 7), text: `,`
   pattern: 2
     capture: 2 - number, start: (3, 12), end: (3, 16), text: `4.25`
   pattern: 24
-    capture: 13 - operator, start: (3, 16), end: (3, 17), text: `%`
+    capture: 12 - operator, start: (3, 16), end: (3, 17), text: `%`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (3, 17), end: (3, 18), text: `,`
+    capture: 8 - punctuation.delimiter, start: (3, 17), end: (3, 18), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (4, 2), end: (4, 10), text: `fallback`
+    capture: 11 - variable.parameter, start: (4, 2), end: (4, 10), text: `fallback`
   pattern: 0
     capture: 0 - variable, start: (4, 2), end: (4, 10), text: `fallback`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 10), end: (4, 11), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 10), end: (4, 11), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (4, 12), end: (4, 14), text: `IF`
+    capture: 9 - function.call, start: (4, 12), end: (4, 14), text: `IF`
   pattern: 0
     capture: 0 - variable, start: (4, 12), end: (4, 14), text: `IF`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 14), end: (4, 15), text: `(`
+    capture: 13 - punctuation.bracket, start: (4, 14), end: (4, 15), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (4, 15), end: (4, 21), text: `COUNTA`
+    capture: 9 - function.call, start: (4, 15), end: (4, 21), text: `COUNTA`
   pattern: 0
     capture: 0 - variable, start: (4, 15), end: (4, 21), text: `COUNTA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 21), end: (4, 22), text: `(`
+    capture: 13 - punctuation.bracket, start: (4, 21), end: (4, 22), text: `(`
   pattern: 0
     capture: 0 - variable, start: (4, 22), end: (4, 25), text: `raw`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 25), end: (4, 26), text: `)`
+    capture: 13 - punctuation.bracket, start: (4, 25), end: (4, 26), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (4, 27), end: (4, 28), text: `=`
+    capture: 12 - operator, start: (4, 27), end: (4, 28), text: `=`
   pattern: 2
     capture: 2 - number, start: (4, 29), end: (4, 30), text: `0`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 30), end: (4, 31), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 30), end: (4, 31), text: `,`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 32), end: (4, 33), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 32), end: (4, 33), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (4, 34), end: (4, 37), text: `SUM`
+    capture: 9 - function.call, start: (4, 34), end: (4, 37), text: `SUM`
   pattern: 0
     capture: 0 - variable, start: (4, 34), end: (4, 37), text: `SUM`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 37), end: (4, 38), text: `(`
+    capture: 13 - punctuation.bracket, start: (4, 37), end: (4, 38), text: `(`
   pattern: 0
     capture: 0 - variable, start: (4, 38), end: (4, 41), text: `raw`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 41), end: (4, 42), text: `)`
+    capture: 13 - punctuation.bracket, start: (4, 41), end: (4, 42), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 42), end: (4, 43), text: `)`
+    capture: 13 - punctuation.bracket, start: (4, 42), end: (4, 43), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 43), end: (4, 44), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 43), end: (4, 44), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (5, 2), end: (5, 5), text: `IFS`
+    capture: 9 - function.call, start: (5, 2), end: (5, 5), text: `IFS`
   pattern: 0
     capture: 0 - variable, start: (5, 2), end: (5, 5), text: `IFS`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (5, 5), end: (5, 6), text: `(`
+    capture: 13 - punctuation.bracket, start: (5, 5), end: (5, 6), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (6, 4), end: (6, 10), text: `COUNTA`
+    capture: 9 - function.call, start: (6, 4), end: (6, 10), text: `COUNTA`
   pattern: 0
     capture: 0 - variable, start: (6, 4), end: (6, 10), text: `COUNTA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (6, 10), end: (6, 11), text: `(`
+    capture: 13 - punctuation.bracket, start: (6, 10), end: (6, 11), text: `(`
   pattern: 0
     capture: 0 - variable, start: (6, 11), end: (6, 14), text: `raw`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (6, 14), end: (6, 15), text: `)`
+    capture: 13 - punctuation.bracket, start: (6, 14), end: (6, 15), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (6, 16), end: (6, 17), text: `=`
+    capture: 12 - operator, start: (6, 16), end: (6, 17), text: `=`
   pattern: 2
     capture: 2 - number, start: (6, 18), end: (6, 19), text: `0`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (6, 19), end: (6, 20), text: `,`
+    capture: 8 - punctuation.delimiter, start: (6, 19), end: (6, 20), text: `,`
   pattern: 1
     capture: 1 - string, start: (6, 21), end: (6, 30), text: `"no rows"`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (6, 30), end: (6, 31), text: `,`
+    capture: 8 - punctuation.delimiter, start: (6, 30), end: (6, 31), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (7, 4), end: (7, 7), text: `SUM`
+    capture: 9 - function.call, start: (7, 4), end: (7, 7), text: `SUM`
   pattern: 0
     capture: 0 - variable, start: (7, 4), end: (7, 7), text: `SUM`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (7, 7), end: (7, 8), text: `(`
+    capture: 13 - punctuation.bracket, start: (7, 7), end: (7, 8), text: `(`
   pattern: 0
     capture: 0 - variable, start: (7, 8), end: (7, 11), text: `raw`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (7, 11), end: (7, 12), text: `)`
+    capture: 13 - punctuation.bracket, start: (7, 11), end: (7, 12), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (7, 13), end: (7, 14), text: `>`
+    capture: 12 - operator, start: (7, 13), end: (7, 14), text: `>`
   pattern: 2
     capture: 2 - number, start: (7, 15), end: (7, 16), text: `9`
   pattern: 22
-    capture: 13 - operator, start: (7, 16), end: (7, 17), text: `^`
+    capture: 12 - operator, start: (7, 16), end: (7, 17), text: `^`
   pattern: 2
     capture: 2 - number, start: (7, 17), end: (7, 19), text: `99`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (7, 19), end: (7, 20), text: `,`
+    capture: 8 - punctuation.delimiter, start: (7, 19), end: (7, 20), text: `,`
   pattern: 1
     capture: 1 - string, start: (7, 21), end: (7, 31), text: `"overflow"`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (7, 31), end: (7, 32), text: `,`
+    capture: 8 - punctuation.delimiter, start: (7, 31), end: (7, 32), text: `,`
   pattern: 3
     capture: 3 - boolean.builtin, start: (8, 4), end: (8, 8), text: `TRUE`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (8, 8), end: (8, 9), text: `,`
+    capture: 8 - punctuation.delimiter, start: (8, 8), end: (8, 9), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (8, 21), end: (8, 25), text: `TEXT`
+    capture: 9 - function.call, start: (8, 21), end: (8, 25), text: `TEXT`
   pattern: 0
     capture: 0 - variable, start: (8, 21), end: (8, 25), text: `TEXT`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 25), end: (8, 26), text: `(`
+    capture: 13 - punctuation.bracket, start: (8, 25), end: (8, 26), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (8, 26), end: (8, 29), text: `SUM`
+    capture: 9 - function.call, start: (8, 26), end: (8, 29), text: `SUM`
   pattern: 0
     capture: 0 - variable, start: (8, 26), end: (8, 29), text: `SUM`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 29), end: (8, 30), text: `(`
+    capture: 13 - punctuation.bracket, start: (8, 29), end: (8, 30), text: `(`
   pattern: 0
     capture: 0 - variable, start: (8, 30), end: (8, 33), text: `raw`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 33), end: (8, 34), text: `)`
+    capture: 13 - punctuation.bracket, start: (8, 33), end: (8, 34), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (8, 35), end: (8, 36), text: `*`
+    capture: 12 - operator, start: (8, 35), end: (8, 36), text: `*`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 37), end: (8, 38), text: `(`
+    capture: 13 - punctuation.bracket, start: (8, 37), end: (8, 38), text: `(`
   pattern: 2
     capture: 2 - number, start: (8, 38), end: (8, 39), text: `1`
   pattern: 22
-    capture: 13 - operator, start: (8, 40), end: (8, 41), text: `+`
+    capture: 12 - operator, start: (8, 40), end: (8, 41), text: `+`
   pattern: 0
     capture: 0 - variable, start: (8, 42), end: (8, 46), text: `rate`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 46), end: (8, 47), text: `)`
+    capture: 13 - punctuation.bracket, start: (8, 46), end: (8, 47), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (8, 47), end: (8, 48), text: `,`
+    capture: 8 - punctuation.delimiter, start: (8, 47), end: (8, 48), text: `,`
   pattern: 1
     capture: 1 - string, start: (8, 49), end: (8, 55), text: `"0.00"`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 55), end: (8, 56), text: `)`
+    capture: 13 - punctuation.bracket, start: (8, 55), end: (8, 56), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (8, 57), end: (8, 58), text: `&`
+    capture: 12 - operator, start: (8, 57), end: (8, 58), text: `&`
   pattern: 1
     capture: 1 - string, start: (8, 59), end: (8, 62), text: `" "`
   pattern: 22
-    capture: 13 - operator, start: (8, 63), end: (8, 64), text: `&`
+    capture: 12 - operator, start: (8, 63), end: (8, 64), text: `&`
   pattern: 0
     capture: 0 - variable, start: (8, 65), end: (8, 70), text: `label`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (9, 2), end: (9, 3), text: `)`
+    capture: 13 - punctuation.bracket, start: (9, 2), end: (9, 3), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (10, 0), end: (10, 1), text: `)`
+    capture: 13 - punctuation.bracket, start: (10, 0), end: (10, 1), text: `)`
 examples/gnarly.min.gsfx
   pattern: 25
-    capture: 13 - operator, start: (0, 0), end: (0, 1), text: `=`
+    capture: 12 - operator, start: (0, 0), end: (0, 1), text: `=`
   pattern: 18
-    capture: 11 - function.builtin, start: (0, 1), end: (0, 4), text: `LET`
+    capture: 10 - function.builtin, start: (0, 1), end: (0, 4), text: `LET`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 4), end: (0, 5), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 4), end: (0, 5), text: `(`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 5), end: (0, 8), text: `raw`
+    capture: 11 - variable.parameter, start: (0, 5), end: (0, 8), text: `raw`
   pattern: 0
     capture: 0 - variable, start: (0, 5), end: (0, 8), text: `raw`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 8), end: (0, 9), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 8), end: (0, 9), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 9), end: (0, 15), text: `FILTER`
+    capture: 9 - function.call, start: (0, 9), end: (0, 15), text: `FILTER`
   pattern: 0
     capture: 0 - variable, start: (0, 9), end: (0, 15), text: `FILTER`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 15), end: (0, 16), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 15), end: (0, 16), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 16), end: (0, 29), text: `intake_log!E4`
   pattern: 22
-    capture: 13 - operator, start: (0, 29), end: (0, 30), text: `:`
+    capture: 12 - operator, start: (0, 29), end: (0, 30), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (0, 30), end: (0, 31), text: `E`
   pattern: 0
     capture: 0 - variable, start: (0, 30), end: (0, 31), text: `E`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 31), end: (0, 32), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 31), end: (0, 32), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 32), end: (0, 45), text: `intake_log!C4`
   pattern: 22
-    capture: 13 - operator, start: (0, 45), end: (0, 46), text: `:`
+    capture: 12 - operator, start: (0, 45), end: (0, 46), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (0, 46), end: (0, 47), text: `C`
   pattern: 0
     capture: 0 - variable, start: (0, 46), end: (0, 47), text: `C`
   pattern: 22
-    capture: 13 - operator, start: (0, 47), end: (0, 49), text: `<>`
+    capture: 12 - operator, start: (0, 47), end: (0, 49), text: `<>`
   pattern: 1
     capture: 1 - string, start: (0, 49), end: (0, 51), text: `""`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 51), end: (0, 52), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 51), end: (0, 52), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 52), end: (0, 53), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 52), end: (0, 53), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 53), end: (0, 58), text: `label`
+    capture: 11 - variable.parameter, start: (0, 53), end: (0, 58), text: `label`
   pattern: 0
     capture: 0 - variable, start: (0, 53), end: (0, 58), text: `label`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 58), end: (0, 59), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 58), end: (0, 59), text: `,`
   pattern: 1
     capture: 1 - string, start: (0, 59), end: (0, 91), text: `"subtotal (rounded), excl. fees"`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 91), end: (0, 92), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 91), end: (0, 92), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 92), end: (0, 96), text: `rate`
+    capture: 11 - variable.parameter, start: (0, 92), end: (0, 96), text: `rate`
   pattern: 0
     capture: 0 - variable, start: (0, 92), end: (0, 96), text: `rate`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 96), end: (0, 97), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 96), end: (0, 97), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 97), end: (0, 101), text: `4.25`
   pattern: 24
-    capture: 13 - operator, start: (0, 101), end: (0, 102), text: `%`
+    capture: 12 - operator, start: (0, 101), end: (0, 102), text: `%`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 102), end: (0, 103), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 102), end: (0, 103), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 103), end: (0, 111), text: `fallback`
+    capture: 11 - variable.parameter, start: (0, 103), end: (0, 111), text: `fallback`
   pattern: 0
     capture: 0 - variable, start: (0, 103), end: (0, 111), text: `fallback`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 111), end: (0, 112), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 111), end: (0, 112), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 112), end: (0, 114), text: `IF`
+    capture: 9 - function.call, start: (0, 112), end: (0, 114), text: `IF`
   pattern: 0
     capture: 0 - variable, start: (0, 112), end: (0, 114), text: `IF`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 114), end: (0, 115), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 114), end: (0, 115), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (0, 115), end: (0, 121), text: `COUNTA`
+    capture: 9 - function.call, start: (0, 115), end: (0, 121), text: `COUNTA`
   pattern: 0
     capture: 0 - variable, start: (0, 115), end: (0, 121), text: `COUNTA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 121), end: (0, 122), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 121), end: (0, 122), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 122), end: (0, 125), text: `raw`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 125), end: (0, 126), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 125), end: (0, 126), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (0, 126), end: (0, 127), text: `=`
+    capture: 12 - operator, start: (0, 126), end: (0, 127), text: `=`
   pattern: 2
     capture: 2 - number, start: (0, 127), end: (0, 128), text: `0`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 128), end: (0, 129), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 128), end: (0, 129), text: `,`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 129), end: (0, 130), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 129), end: (0, 130), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 130), end: (0, 133), text: `SUM`
+    capture: 9 - function.call, start: (0, 130), end: (0, 133), text: `SUM`
   pattern: 0
     capture: 0 - variable, start: (0, 130), end: (0, 133), text: `SUM`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 133), end: (0, 134), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 133), end: (0, 134), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 134), end: (0, 137), text: `raw`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 137), end: (0, 138), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 137), end: (0, 138), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 138), end: (0, 139), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 138), end: (0, 139), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 139), end: (0, 140), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 139), end: (0, 140), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 140), end: (0, 143), text: `IFS`
+    capture: 9 - function.call, start: (0, 140), end: (0, 143), text: `IFS`
   pattern: 0
     capture: 0 - variable, start: (0, 140), end: (0, 143), text: `IFS`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 143), end: (0, 144), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 143), end: (0, 144), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (0, 144), end: (0, 150), text: `COUNTA`
+    capture: 9 - function.call, start: (0, 144), end: (0, 150), text: `COUNTA`
   pattern: 0
     capture: 0 - variable, start: (0, 144), end: (0, 150), text: `COUNTA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 150), end: (0, 151), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 150), end: (0, 151), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 151), end: (0, 154), text: `raw`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 154), end: (0, 155), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 154), end: (0, 155), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (0, 155), end: (0, 156), text: `=`
+    capture: 12 - operator, start: (0, 155), end: (0, 156), text: `=`
   pattern: 2
     capture: 2 - number, start: (0, 156), end: (0, 157), text: `0`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 157), end: (0, 158), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 157), end: (0, 158), text: `,`
   pattern: 1
     capture: 1 - string, start: (0, 158), end: (0, 167), text: `"no rows"`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 167), end: (0, 168), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 167), end: (0, 168), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 168), end: (0, 171), text: `SUM`
+    capture: 9 - function.call, start: (0, 168), end: (0, 171), text: `SUM`
   pattern: 0
     capture: 0 - variable, start: (0, 168), end: (0, 171), text: `SUM`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 171), end: (0, 172), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 171), end: (0, 172), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 172), end: (0, 175), text: `raw`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 175), end: (0, 176), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 175), end: (0, 176), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (0, 176), end: (0, 177), text: `>`
+    capture: 12 - operator, start: (0, 176), end: (0, 177), text: `>`
   pattern: 2
     capture: 2 - number, start: (0, 177), end: (0, 178), text: `9`
   pattern: 22
-    capture: 13 - operator, start: (0, 178), end: (0, 179), text: `^`
+    capture: 12 - operator, start: (0, 178), end: (0, 179), text: `^`
   pattern: 2
     capture: 2 - number, start: (0, 179), end: (0, 181), text: `99`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 181), end: (0, 182), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 181), end: (0, 182), text: `,`
   pattern: 1
     capture: 1 - string, start: (0, 182), end: (0, 192), text: `"overflow"`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 192), end: (0, 193), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 192), end: (0, 193), text: `,`
   pattern: 3
     capture: 3 - boolean.builtin, start: (0, 193), end: (0, 197), text: `TRUE`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 197), end: (0, 198), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 197), end: (0, 198), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 198), end: (0, 202), text: `TEXT`
+    capture: 9 - function.call, start: (0, 198), end: (0, 202), text: `TEXT`
   pattern: 0
     capture: 0 - variable, start: (0, 198), end: (0, 202), text: `TEXT`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 202), end: (0, 203), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 202), end: (0, 203), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (0, 203), end: (0, 206), text: `SUM`
+    capture: 9 - function.call, start: (0, 203), end: (0, 206), text: `SUM`
   pattern: 0
     capture: 0 - variable, start: (0, 203), end: (0, 206), text: `SUM`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 206), end: (0, 207), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 206), end: (0, 207), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 207), end: (0, 210), text: `raw`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 210), end: (0, 211), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 210), end: (0, 211), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (0, 211), end: (0, 212), text: `*`
+    capture: 12 - operator, start: (0, 211), end: (0, 212), text: `*`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 212), end: (0, 213), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 212), end: (0, 213), text: `(`
   pattern: 2
     capture: 2 - number, start: (0, 213), end: (0, 214), text: `1`
   pattern: 22
-    capture: 13 - operator, start: (0, 214), end: (0, 215), text: `+`
+    capture: 12 - operator, start: (0, 214), end: (0, 215), text: `+`
   pattern: 0
     capture: 0 - variable, start: (0, 215), end: (0, 219), text: `rate`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 219), end: (0, 220), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 219), end: (0, 220), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 220), end: (0, 221), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 220), end: (0, 221), text: `,`
   pattern: 1
     capture: 1 - string, start: (0, 221), end: (0, 227), text: `"0.00"`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 227), end: (0, 228), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 227), end: (0, 228), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (0, 228), end: (0, 229), text: `&`
+    capture: 12 - operator, start: (0, 228), end: (0, 229), text: `&`
   pattern: 1
     capture: 1 - string, start: (0, 229), end: (0, 232), text: `" "`
   pattern: 22
-    capture: 13 - operator, start: (0, 232), end: (0, 233), text: `&`
+    capture: 12 - operator, start: (0, 232), end: (0, 233), text: `&`
   pattern: 0
     capture: 0 - variable, start: (0, 233), end: (0, 238), text: `label`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 238), end: (0, 239), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 238), end: (0, 239), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 239), end: (0, 240), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 239), end: (0, 240), text: `)`
 examples/monthly.gsfx
   pattern: 25
-    capture: 13 - operator, start: (0, 0), end: (0, 1), text: `=`
+    capture: 12 - operator, start: (0, 0), end: (0, 1), text: `=`
   pattern: 15
-    capture: 10 - function.call, start: (0, 1), end: (0, 5), text: `IFNA`
+    capture: 9 - function.call, start: (0, 1), end: (0, 5), text: `IFNA`
   pattern: 0
     capture: 0 - variable, start: (0, 1), end: (0, 5), text: `IFNA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 5), end: (0, 6), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 5), end: (0, 6), text: `(`
   pattern: 18
-    capture: 11 - function.builtin, start: (1, 2), end: (1, 5), text: `LET`
+    capture: 10 - function.builtin, start: (1, 2), end: (1, 5), text: `LET`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (1, 5), end: (1, 6), text: `(`
+    capture: 13 - punctuation.bracket, start: (1, 5), end: (1, 6), text: `(`
   pattern: 20
-    capture: 12 - variable.parameter, start: (2, 4), end: (2, 11), text: `lastRow`
+    capture: 11 - variable.parameter, start: (2, 4), end: (2, 11), text: `lastRow`
   pattern: 0
     capture: 0 - variable, start: (2, 4), end: (2, 11), text: `lastRow`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (2, 11), end: (2, 12), text: `,`
+    capture: 8 - punctuation.delimiter, start: (2, 11), end: (2, 12), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (2, 17), end: (2, 30), text: `stock_data!A1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (2, 30), end: (2, 31), text: `,`
+    capture: 8 - punctuation.delimiter, start: (2, 30), end: (2, 31), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (3, 4), end: (3, 12), text: `binCount`
+    capture: 11 - variable.parameter, start: (3, 4), end: (3, 12), text: `binCount`
   pattern: 0
     capture: 0 - variable, start: (3, 4), end: (3, 12), text: `binCount`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (3, 12), end: (3, 13), text: `,`
+    capture: 8 - punctuation.delimiter, start: (3, 12), end: (3, 13), text: `,`
   pattern: 2
     capture: 2 - number, start: (3, 17), end: (3, 19), text: `12`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (3, 19), end: (3, 20), text: `,`
+    capture: 8 - punctuation.delimiter, start: (3, 19), end: (3, 20), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (4, 4), end: (4, 15), text: `datesCapped`
+    capture: 11 - variable.parameter, start: (4, 4), end: (4, 15), text: `datesCapped`
   pattern: 0
     capture: 0 - variable, start: (4, 4), end: (4, 15), text: `datesCapped`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 15), end: (4, 16), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 15), end: (4, 16), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (4, 17), end: (4, 19), text: `C4`
   pattern: 22
-    capture: 13 - operator, start: (4, 19), end: (4, 20), text: `:`
+    capture: 12 - operator, start: (4, 19), end: (4, 20), text: `:`
   pattern: 15
-    capture: 10 - function.call, start: (4, 20), end: (4, 25), text: `INDEX`
+    capture: 9 - function.call, start: (4, 20), end: (4, 25), text: `INDEX`
   pattern: 0
     capture: 0 - variable, start: (4, 20), end: (4, 25), text: `INDEX`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 25), end: (4, 26), text: `(`
+    capture: 13 - punctuation.bracket, start: (4, 25), end: (4, 26), text: `(`
   pattern: 0
     capture: 0 - variable, start: (4, 26), end: (4, 27), text: `C`
   pattern: 6
     capture: 5 - variable.builtin, start: (4, 26), end: (4, 27), text: `C`
   pattern: 22
-    capture: 13 - operator, start: (4, 27), end: (4, 28), text: `:`
+    capture: 12 - operator, start: (4, 27), end: (4, 28), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (4, 28), end: (4, 29), text: `C`
   pattern: 0
     capture: 0 - variable, start: (4, 28), end: (4, 29), text: `C`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 29), end: (4, 30), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 29), end: (4, 30), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (4, 31), end: (4, 37), text: `LOOKUP`
+    capture: 9 - function.call, start: (4, 31), end: (4, 37), text: `LOOKUP`
   pattern: 0
     capture: 0 - variable, start: (4, 31), end: (4, 37), text: `LOOKUP`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 37), end: (4, 38), text: `(`
+    capture: 13 - punctuation.bracket, start: (4, 37), end: (4, 38), text: `(`
   pattern: 2
     capture: 2 - number, start: (4, 38), end: (4, 39), text: `2`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 39), end: (4, 40), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 39), end: (4, 40), text: `,`
   pattern: 2
     capture: 2 - number, start: (4, 41), end: (4, 42), text: `1`
   pattern: 22
-    capture: 13 - operator, start: (4, 43), end: (4, 44), text: `/`
+    capture: 12 - operator, start: (4, 43), end: (4, 44), text: `/`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 45), end: (4, 46), text: `(`
+    capture: 13 - punctuation.bracket, start: (4, 45), end: (4, 46), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (4, 46), end: (4, 48), text: `C4`
   pattern: 22
-    capture: 13 - operator, start: (4, 48), end: (4, 49), text: `:`
+    capture: 12 - operator, start: (4, 48), end: (4, 49), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (4, 49), end: (4, 50), text: `C`
   pattern: 0
     capture: 0 - variable, start: (4, 49), end: (4, 50), text: `C`
   pattern: 22
-    capture: 13 - operator, start: (4, 51), end: (4, 53), text: `<>`
+    capture: 12 - operator, start: (4, 51), end: (4, 53), text: `<>`
   pattern: 1
     capture: 1 - string, start: (4, 54), end: (4, 56), text: `""`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 56), end: (4, 57), text: `)`
+    capture: 13 - punctuation.bracket, start: (4, 56), end: (4, 57), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 57), end: (4, 58), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 57), end: (4, 58), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (4, 59), end: (4, 62), text: `ROW`
+    capture: 9 - function.call, start: (4, 59), end: (4, 62), text: `ROW`
   pattern: 0
     capture: 0 - variable, start: (4, 59), end: (4, 62), text: `ROW`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 62), end: (4, 63), text: `(`
+    capture: 13 - punctuation.bracket, start: (4, 62), end: (4, 63), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (4, 63), end: (4, 65), text: `C4`
   pattern: 22
-    capture: 13 - operator, start: (4, 65), end: (4, 66), text: `:`
+    capture: 12 - operator, start: (4, 65), end: (4, 66), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (4, 66), end: (4, 67), text: `C`
   pattern: 0
     capture: 0 - variable, start: (4, 66), end: (4, 67), text: `C`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 67), end: (4, 68), text: `)`
+    capture: 13 - punctuation.bracket, start: (4, 67), end: (4, 68), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 68), end: (4, 69), text: `)`
+    capture: 13 - punctuation.bracket, start: (4, 68), end: (4, 69), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 69), end: (4, 70), text: `)`
+    capture: 13 - punctuation.bracket, start: (4, 69), end: (4, 70), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 70), end: (4, 71), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 70), end: (4, 71), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (6, 4), end: (6, 11), text: `weights`
+    capture: 11 - variable.parameter, start: (6, 4), end: (6, 11), text: `weights`
   pattern: 0
     capture: 0 - variable, start: (6, 4), end: (6, 11), text: `weights`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (6, 11), end: (6, 12), text: `,`
+    capture: 8 - punctuation.delimiter, start: (6, 11), end: (6, 12), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (6, 17), end: (6, 30), text: `stock_data!F2`
   pattern: 22
-    capture: 13 - operator, start: (6, 30), end: (6, 31), text: `:`
+    capture: 12 - operator, start: (6, 30), end: (6, 31), text: `:`
   pattern: 15
-    capture: 10 - function.call, start: (6, 31), end: (6, 36), text: `INDEX`
+    capture: 9 - function.call, start: (6, 31), end: (6, 36), text: `INDEX`
   pattern: 0
     capture: 0 - variable, start: (6, 31), end: (6, 36), text: `INDEX`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (6, 36), end: (6, 37), text: `(`
+    capture: 13 - punctuation.bracket, start: (6, 36), end: (6, 37), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (6, 37), end: (6, 49), text: `stock_data!F`
   pattern: 22
-    capture: 13 - operator, start: (6, 49), end: (6, 50), text: `:`
+    capture: 12 - operator, start: (6, 49), end: (6, 50), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (6, 50), end: (6, 51), text: `F`
   pattern: 0
     capture: 0 - variable, start: (6, 50), end: (6, 51), text: `F`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (6, 51), end: (6, 52), text: `,`
+    capture: 8 - punctuation.delimiter, start: (6, 51), end: (6, 52), text: `,`
   pattern: 0
     capture: 0 - variable, start: (6, 53), end: (6, 60), text: `lastRow`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (6, 60), end: (6, 61), text: `)`
+    capture: 13 - punctuation.bracket, start: (6, 60), end: (6, 61), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (6, 61), end: (6, 62), text: `,`
+    capture: 8 - punctuation.delimiter, start: (6, 61), end: (6, 62), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (7, 4), end: (7, 8), text: `tags`
+    capture: 11 - variable.parameter, start: (7, 4), end: (7, 8), text: `tags`
   pattern: 0
     capture: 0 - variable, start: (7, 4), end: (7, 8), text: `tags`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (7, 8), end: (7, 9), text: `,`
+    capture: 8 - punctuation.delimiter, start: (7, 8), end: (7, 9), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (7, 17), end: (7, 30), text: `stock_data!H2`
   pattern: 22
-    capture: 13 - operator, start: (7, 30), end: (7, 31), text: `:`
+    capture: 12 - operator, start: (7, 30), end: (7, 31), text: `:`
   pattern: 15
-    capture: 10 - function.call, start: (7, 31), end: (7, 36), text: `INDEX`
+    capture: 9 - function.call, start: (7, 31), end: (7, 36), text: `INDEX`
   pattern: 0
     capture: 0 - variable, start: (7, 31), end: (7, 36), text: `INDEX`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (7, 36), end: (7, 37), text: `(`
+    capture: 13 - punctuation.bracket, start: (7, 36), end: (7, 37), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (7, 37), end: (7, 49), text: `stock_data!H`
   pattern: 22
-    capture: 13 - operator, start: (7, 49), end: (7, 50), text: `:`
+    capture: 12 - operator, start: (7, 49), end: (7, 50), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (7, 50), end: (7, 51), text: `H`
   pattern: 0
     capture: 0 - variable, start: (7, 50), end: (7, 51), text: `H`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (7, 51), end: (7, 52), text: `,`
+    capture: 8 - punctuation.delimiter, start: (7, 51), end: (7, 52), text: `,`
   pattern: 0
     capture: 0 - variable, start: (7, 53), end: (7, 60), text: `lastRow`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (7, 60), end: (7, 61), text: `)`
+    capture: 13 - punctuation.bracket, start: (7, 60), end: (7, 61), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (7, 61), end: (7, 62), text: `,`
+    capture: 8 - punctuation.delimiter, start: (7, 61), end: (7, 62), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (8, 4), end: (8, 10), text: `isLive`
+    capture: 11 - variable.parameter, start: (8, 4), end: (8, 10), text: `isLive`
   pattern: 0
     capture: 0 - variable, start: (8, 4), end: (8, 10), text: `isLive`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (8, 10), end: (8, 11), text: `,`
+    capture: 8 - punctuation.delimiter, start: (8, 10), end: (8, 11), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (8, 17), end: (8, 29), text: `ARRAYFORMULA`
+    capture: 9 - function.call, start: (8, 17), end: (8, 29), text: `ARRAYFORMULA`
   pattern: 0
     capture: 0 - variable, start: (8, 17), end: (8, 29), text: `ARRAYFORMULA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 29), end: (8, 30), text: `(`
+    capture: 13 - punctuation.bracket, start: (8, 29), end: (8, 30), text: `(`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 30), end: (8, 31), text: `(`
+    capture: 13 - punctuation.bracket, start: (8, 30), end: (8, 31), text: `(`
   pattern: 0
     capture: 0 - variable, start: (8, 31), end: (8, 38), text: `weights`
   pattern: 22
-    capture: 13 - operator, start: (8, 39), end: (8, 40), text: `>`
+    capture: 12 - operator, start: (8, 39), end: (8, 40), text: `>`
   pattern: 2
     capture: 2 - number, start: (8, 41), end: (8, 42), text: `0`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 42), end: (8, 43), text: `)`
+    capture: 13 - punctuation.bracket, start: (8, 42), end: (8, 43), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (8, 44), end: (8, 45), text: `*`
+    capture: 12 - operator, start: (8, 44), end: (8, 45), text: `*`
   pattern: 15
-    capture: 10 - function.call, start: (8, 46), end: (8, 53), text: `ISERROR`
+    capture: 9 - function.call, start: (8, 46), end: (8, 53), text: `ISERROR`
   pattern: 0
     capture: 0 - variable, start: (8, 46), end: (8, 53), text: `ISERROR`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 53), end: (8, 54), text: `(`
+    capture: 13 - punctuation.bracket, start: (8, 53), end: (8, 54), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (8, 54), end: (8, 60), text: `SEARCH`
+    capture: 9 - function.call, start: (8, 54), end: (8, 60), text: `SEARCH`
   pattern: 0
     capture: 0 - variable, start: (8, 54), end: (8, 60), text: `SEARCH`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 60), end: (8, 61), text: `(`
+    capture: 13 - punctuation.bracket, start: (8, 60), end: (8, 61), text: `(`
   pattern: 1
     capture: 1 - string, start: (8, 61), end: (8, 71), text: `"archived"`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (8, 71), end: (8, 72), text: `,`
+    capture: 8 - punctuation.delimiter, start: (8, 71), end: (8, 72), text: `,`
   pattern: 0
     capture: 0 - variable, start: (8, 73), end: (8, 77), text: `tags`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 77), end: (8, 78), text: `)`
+    capture: 13 - punctuation.bracket, start: (8, 77), end: (8, 78), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 78), end: (8, 79), text: `)`
+    capture: 13 - punctuation.bracket, start: (8, 78), end: (8, 79), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 79), end: (8, 80), text: `)`
+    capture: 13 - punctuation.bracket, start: (8, 79), end: (8, 80), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (8, 80), end: (8, 81), text: `,`
+    capture: 8 - punctuation.delimiter, start: (8, 80), end: (8, 81), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (10, 4), end: (10, 13), text: `shipments`
+    capture: 11 - variable.parameter, start: (10, 4), end: (10, 13), text: `shipments`
   pattern: 0
     capture: 0 - variable, start: (10, 4), end: (10, 13), text: `shipments`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (10, 13), end: (10, 14), text: `,`
+    capture: 8 - punctuation.delimiter, start: (10, 13), end: (10, 14), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (10, 17), end: (10, 23), text: `FILTER`
+    capture: 9 - function.call, start: (10, 17), end: (10, 23), text: `FILTER`
   pattern: 0
     capture: 0 - variable, start: (10, 17), end: (10, 23), text: `FILTER`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (10, 23), end: (10, 24), text: `(`
+    capture: 13 - punctuation.bracket, start: (10, 23), end: (10, 24), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (11, 19), end: (11, 25), text: `HSTACK`
+    capture: 9 - function.call, start: (11, 19), end: (11, 25), text: `HSTACK`
   pattern: 0
     capture: 0 - variable, start: (11, 19), end: (11, 25), text: `HSTACK`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (11, 25), end: (11, 26), text: `(`
+    capture: 13 - punctuation.bracket, start: (11, 25), end: (11, 26), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (12, 21), end: (12, 34), text: `stock_data!B2`
   pattern: 22
-    capture: 13 - operator, start: (12, 34), end: (12, 35), text: `:`
+    capture: 12 - operator, start: (12, 34), end: (12, 35), text: `:`
   pattern: 15
-    capture: 10 - function.call, start: (12, 35), end: (12, 40), text: `INDEX`
+    capture: 9 - function.call, start: (12, 35), end: (12, 40), text: `INDEX`
   pattern: 0
     capture: 0 - variable, start: (12, 35), end: (12, 40), text: `INDEX`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (12, 40), end: (12, 41), text: `(`
+    capture: 13 - punctuation.bracket, start: (12, 40), end: (12, 41), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (12, 41), end: (12, 53), text: `stock_data!C`
   pattern: 22
-    capture: 13 - operator, start: (12, 53), end: (12, 54), text: `:`
+    capture: 12 - operator, start: (12, 53), end: (12, 54), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (12, 54), end: (12, 55), text: `C`
   pattern: 0
     capture: 0 - variable, start: (12, 54), end: (12, 55), text: `C`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (12, 55), end: (12, 56), text: `,`
+    capture: 8 - punctuation.delimiter, start: (12, 55), end: (12, 56), text: `,`
   pattern: 0
     capture: 0 - variable, start: (12, 57), end: (12, 64), text: `lastRow`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (12, 64), end: (12, 65), text: `)`
+    capture: 13 - punctuation.bracket, start: (12, 64), end: (12, 65), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (12, 65), end: (12, 66), text: `,`
+    capture: 8 - punctuation.delimiter, start: (12, 65), end: (12, 66), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (13, 21), end: (13, 34), text: `stock_data!J2`
   pattern: 22
-    capture: 13 - operator, start: (13, 34), end: (13, 35), text: `:`
+    capture: 12 - operator, start: (13, 34), end: (13, 35), text: `:`
   pattern: 15
-    capture: 10 - function.call, start: (13, 35), end: (13, 40), text: `INDEX`
+    capture: 9 - function.call, start: (13, 35), end: (13, 40), text: `INDEX`
   pattern: 0
     capture: 0 - variable, start: (13, 35), end: (13, 40), text: `INDEX`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (13, 40), end: (13, 41), text: `(`
+    capture: 13 - punctuation.bracket, start: (13, 40), end: (13, 41), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (13, 41), end: (13, 53), text: `stock_data!U`
   pattern: 22
-    capture: 13 - operator, start: (13, 53), end: (13, 54), text: `:`
+    capture: 12 - operator, start: (13, 53), end: (13, 54), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (13, 54), end: (13, 55), text: `U`
   pattern: 0
     capture: 0 - variable, start: (13, 54), end: (13, 55), text: `U`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (13, 55), end: (13, 56), text: `,`
+    capture: 8 - punctuation.delimiter, start: (13, 55), end: (13, 56), text: `,`
   pattern: 0
     capture: 0 - variable, start: (13, 57), end: (13, 64), text: `lastRow`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (13, 64), end: (13, 65), text: `)`
+    capture: 13 - punctuation.bracket, start: (13, 64), end: (13, 65), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (14, 19), end: (14, 20), text: `)`
+    capture: 13 - punctuation.bracket, start: (14, 19), end: (14, 20), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (14, 20), end: (14, 21), text: `,`
+    capture: 8 - punctuation.delimiter, start: (14, 20), end: (14, 21), text: `,`
   pattern: 0
     capture: 0 - variable, start: (15, 19), end: (15, 25), text: `isLive`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (16, 17), end: (16, 18), text: `)`
+    capture: 13 - punctuation.bracket, start: (16, 17), end: (16, 18), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (16, 18), end: (16, 19), text: `,`
+    capture: 8 - punctuation.delimiter, start: (16, 18), end: (16, 19), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (18, 4), end: (18, 12), text: `arrivals`
+    capture: 11 - variable.parameter, start: (18, 4), end: (18, 12), text: `arrivals`
   pattern: 0
     capture: 0 - variable, start: (18, 4), end: (18, 12), text: `arrivals`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (18, 12), end: (18, 13), text: `,`
+    capture: 8 - punctuation.delimiter, start: (18, 12), end: (18, 13), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (18, 17), end: (18, 27), text: `CHOOSECOLS`
+    capture: 9 - function.call, start: (18, 17), end: (18, 27), text: `CHOOSECOLS`
   pattern: 0
     capture: 0 - variable, start: (18, 17), end: (18, 27), text: `CHOOSECOLS`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (18, 27), end: (18, 28), text: `(`
+    capture: 13 - punctuation.bracket, start: (18, 27), end: (18, 28), text: `(`
   pattern: 0
     capture: 0 - variable, start: (18, 28), end: (18, 37), text: `shipments`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (18, 37), end: (18, 38), text: `,`
+    capture: 8 - punctuation.delimiter, start: (18, 37), end: (18, 38), text: `,`
   pattern: 2
     capture: 2 - number, start: (18, 39), end: (18, 40), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (18, 40), end: (18, 41), text: `)`
+    capture: 13 - punctuation.bracket, start: (18, 40), end: (18, 41), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (18, 41), end: (18, 42), text: `,`
+    capture: 8 - punctuation.delimiter, start: (18, 41), end: (18, 42), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (19, 4), end: (19, 14), text: `departures`
+    capture: 11 - variable.parameter, start: (19, 4), end: (19, 14), text: `departures`
   pattern: 0
     capture: 0 - variable, start: (19, 4), end: (19, 14), text: `departures`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (19, 14), end: (19, 15), text: `,`
+    capture: 8 - punctuation.delimiter, start: (19, 14), end: (19, 15), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (19, 17), end: (19, 27), text: `CHOOSECOLS`
+    capture: 9 - function.call, start: (19, 17), end: (19, 27), text: `CHOOSECOLS`
   pattern: 0
     capture: 0 - variable, start: (19, 17), end: (19, 27), text: `CHOOSECOLS`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (19, 27), end: (19, 28), text: `(`
+    capture: 13 - punctuation.bracket, start: (19, 27), end: (19, 28), text: `(`
   pattern: 0
     capture: 0 - variable, start: (19, 28), end: (19, 37), text: `shipments`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (19, 37), end: (19, 38), text: `,`
+    capture: 8 - punctuation.delimiter, start: (19, 37), end: (19, 38), text: `,`
   pattern: 2
     capture: 2 - number, start: (19, 39), end: (19, 40), text: `2`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (19, 40), end: (19, 41), text: `)`
+    capture: 13 - punctuation.bracket, start: (19, 40), end: (19, 41), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (19, 41), end: (19, 42), text: `,`
+    capture: 8 - punctuation.delimiter, start: (19, 41), end: (19, 42), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (21, 4), end: (21, 11), text: `binData`
+    capture: 11 - variable.parameter, start: (21, 4), end: (21, 11), text: `binData`
   pattern: 0
     capture: 0 - variable, start: (21, 4), end: (21, 11), text: `binData`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (21, 11), end: (21, 12), text: `,`
+    capture: 8 - punctuation.delimiter, start: (21, 11), end: (21, 12), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (21, 17), end: (21, 27), text: `CHOOSECOLS`
+    capture: 9 - function.call, start: (21, 17), end: (21, 27), text: `CHOOSECOLS`
   pattern: 0
     capture: 0 - variable, start: (21, 17), end: (21, 27), text: `CHOOSECOLS`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (21, 27), end: (21, 28), text: `(`
+    capture: 13 - punctuation.bracket, start: (21, 27), end: (21, 28), text: `(`
   pattern: 0
     capture: 0 - variable, start: (21, 28), end: (21, 37), text: `shipments`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (21, 37), end: (21, 38), text: `,`
+    capture: 8 - punctuation.delimiter, start: (21, 37), end: (21, 38), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (21, 39), end: (21, 47), text: `SEQUENCE`
+    capture: 9 - function.call, start: (21, 39), end: (21, 47), text: `SEQUENCE`
   pattern: 0
     capture: 0 - variable, start: (21, 39), end: (21, 47), text: `SEQUENCE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (21, 47), end: (21, 48), text: `(`
+    capture: 13 - punctuation.bracket, start: (21, 47), end: (21, 48), text: `(`
   pattern: 0
     capture: 0 - variable, start: (21, 48), end: (21, 56), text: `binCount`
   pattern: 22
-    capture: 13 - operator, start: (21, 57), end: (21, 58), text: `*`
+    capture: 12 - operator, start: (21, 57), end: (21, 58), text: `*`
   pattern: 2
     capture: 2 - number, start: (21, 59), end: (21, 60), text: `2`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (21, 60), end: (21, 61), text: `,`
+    capture: 8 - punctuation.delimiter, start: (21, 60), end: (21, 61), text: `,`
   pattern: 2
     capture: 2 - number, start: (21, 62), end: (21, 63), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (21, 63), end: (21, 64), text: `,`
+    capture: 8 - punctuation.delimiter, start: (21, 63), end: (21, 64), text: `,`
   pattern: 2
     capture: 2 - number, start: (21, 65), end: (21, 66), text: `3`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (21, 66), end: (21, 67), text: `)`
+    capture: 13 - punctuation.bracket, start: (21, 66), end: (21, 67), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (21, 67), end: (21, 68), text: `)`
+    capture: 13 - punctuation.bracket, start: (21, 67), end: (21, 68), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (21, 68), end: (21, 69), text: `,`
+    capture: 8 - punctuation.delimiter, start: (21, 68), end: (21, 69), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (22, 4), end: (22, 12), text: `binSlice`
+    capture: 11 - variable.parameter, start: (22, 4), end: (22, 12), text: `binSlice`
   pattern: 0
     capture: 0 - variable, start: (22, 4), end: (22, 12), text: `binSlice`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (22, 12), end: (22, 13), text: `,`
+    capture: 8 - punctuation.delimiter, start: (22, 12), end: (22, 13), text: `,`
   pattern: 19
-    capture: 11 - function.builtin, start: (22, 17), end: (22, 23), text: `LAMBDA`
+    capture: 10 - function.builtin, start: (22, 17), end: (22, 23), text: `LAMBDA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (22, 23), end: (22, 24), text: `(`
+    capture: 13 - punctuation.bracket, start: (22, 23), end: (22, 24), text: `(`
   pattern: 21
-    capture: 12 - variable.parameter, start: (22, 24), end: (22, 32), text: `startCol`
+    capture: 11 - variable.parameter, start: (22, 24), end: (22, 32), text: `startCol`
   pattern: 0
     capture: 0 - variable, start: (22, 24), end: (22, 32), text: `startCol`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (22, 32), end: (22, 33), text: `,`
+    capture: 8 - punctuation.delimiter, start: (22, 32), end: (22, 33), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (23, 19), end: (23, 29), text: `CHOOSECOLS`
+    capture: 9 - function.call, start: (23, 19), end: (23, 29), text: `CHOOSECOLS`
   pattern: 0
     capture: 0 - variable, start: (23, 19), end: (23, 29), text: `CHOOSECOLS`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (23, 29), end: (23, 30), text: `(`
+    capture: 13 - punctuation.bracket, start: (23, 29), end: (23, 30), text: `(`
   pattern: 0
     capture: 0 - variable, start: (24, 21), end: (24, 28), text: `binData`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (24, 28), end: (24, 29), text: `,`
+    capture: 8 - punctuation.delimiter, start: (24, 28), end: (24, 29), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (25, 21), end: (25, 29), text: `SEQUENCE`
+    capture: 9 - function.call, start: (25, 21), end: (25, 29), text: `SEQUENCE`
   pattern: 0
     capture: 0 - variable, start: (25, 21), end: (25, 29), text: `SEQUENCE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (25, 29), end: (25, 30), text: `(`
+    capture: 13 - punctuation.bracket, start: (25, 29), end: (25, 30), text: `(`
   pattern: 0
     capture: 0 - variable, start: (25, 30), end: (25, 38), text: `binCount`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (25, 38), end: (25, 39), text: `,`
+    capture: 8 - punctuation.delimiter, start: (25, 38), end: (25, 39), text: `,`
   pattern: 2
     capture: 2 - number, start: (25, 40), end: (25, 41), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (25, 41), end: (25, 42), text: `,`
+    capture: 8 - punctuation.delimiter, start: (25, 41), end: (25, 42), text: `,`
   pattern: 0
     capture: 0 - variable, start: (25, 43), end: (25, 51), text: `startCol`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (25, 51), end: (25, 52), text: `)`
+    capture: 13 - punctuation.bracket, start: (25, 51), end: (25, 52), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (26, 19), end: (26, 20), text: `)`
+    capture: 13 - punctuation.bracket, start: (26, 19), end: (26, 20), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (27, 17), end: (27, 18), text: `)`
+    capture: 13 - punctuation.bracket, start: (27, 17), end: (27, 18), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (27, 18), end: (27, 19), text: `,`
+    capture: 8 - punctuation.delimiter, start: (27, 18), end: (27, 19), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (29, 4), end: (29, 11), text: `onesCol`
+    capture: 11 - variable.parameter, start: (29, 4), end: (29, 11), text: `onesCol`
   pattern: 0
     capture: 0 - variable, start: (29, 4), end: (29, 11), text: `onesCol`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (29, 11), end: (29, 12), text: `,`
+    capture: 8 - punctuation.delimiter, start: (29, 11), end: (29, 12), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (29, 17), end: (29, 25), text: `SEQUENCE`
+    capture: 9 - function.call, start: (29, 17), end: (29, 25), text: `SEQUENCE`
   pattern: 0
     capture: 0 - variable, start: (29, 17), end: (29, 25), text: `SEQUENCE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (29, 25), end: (29, 26), text: `(`
+    capture: 13 - punctuation.bracket, start: (29, 25), end: (29, 26), text: `(`
   pattern: 0
     capture: 0 - variable, start: (29, 26), end: (29, 34), text: `binCount`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (29, 34), end: (29, 35), text: `,`
+    capture: 8 - punctuation.delimiter, start: (29, 34), end: (29, 35), text: `,`
   pattern: 2
     capture: 2 - number, start: (29, 36), end: (29, 37), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (29, 37), end: (29, 38), text: `,`
+    capture: 8 - punctuation.delimiter, start: (29, 37), end: (29, 38), text: `,`
   pattern: 2
     capture: 2 - number, start: (29, 39), end: (29, 40), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (29, 40), end: (29, 41), text: `,`
+    capture: 8 - punctuation.delimiter, start: (29, 40), end: (29, 41), text: `,`
   pattern: 2
     capture: 2 - number, start: (29, 42), end: (29, 43), text: `0`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (29, 43), end: (29, 44), text: `)`
+    capture: 13 - punctuation.bracket, start: (29, 43), end: (29, 44), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (29, 44), end: (29, 45), text: `,`
+    capture: 8 - punctuation.delimiter, start: (29, 44), end: (29, 45), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (30, 4), end: (30, 13), text: `binTotals`
+    capture: 11 - variable.parameter, start: (30, 4), end: (30, 13), text: `binTotals`
   pattern: 0
     capture: 0 - variable, start: (30, 4), end: (30, 13), text: `binTotals`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (30, 13), end: (30, 14), text: `,`
+    capture: 8 - punctuation.delimiter, start: (30, 13), end: (30, 14), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (30, 17), end: (30, 22), text: `BYCOL`
+    capture: 9 - function.call, start: (30, 17), end: (30, 22), text: `BYCOL`
   pattern: 0
     capture: 0 - variable, start: (30, 17), end: (30, 22), text: `BYCOL`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (30, 22), end: (30, 23), text: `(`
+    capture: 13 - punctuation.bracket, start: (30, 22), end: (30, 23), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (30, 23), end: (30, 31), text: `binSlice`
+    capture: 9 - function.call, start: (30, 23), end: (30, 31), text: `binSlice`
   pattern: 0
     capture: 0 - variable, start: (30, 23), end: (30, 31), text: `binSlice`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (30, 31), end: (30, 32), text: `(`
+    capture: 13 - punctuation.bracket, start: (30, 31), end: (30, 32), text: `(`
   pattern: 2
     capture: 2 - number, start: (30, 32), end: (30, 33), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (30, 33), end: (30, 34), text: `)`
+    capture: 13 - punctuation.bracket, start: (30, 33), end: (30, 34), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (30, 34), end: (30, 35), text: `,`
+    capture: 8 - punctuation.delimiter, start: (30, 34), end: (30, 35), text: `,`
   pattern: 19
-    capture: 11 - function.builtin, start: (30, 36), end: (30, 42), text: `LAMBDA`
+    capture: 10 - function.builtin, start: (30, 36), end: (30, 42), text: `LAMBDA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (30, 42), end: (30, 43), text: `(`
+    capture: 13 - punctuation.bracket, start: (30, 42), end: (30, 43), text: `(`
   pattern: 21
-    capture: 12 - variable.parameter, start: (30, 43), end: (30, 46), text: `col`
+    capture: 11 - variable.parameter, start: (30, 43), end: (30, 46), text: `col`
   pattern: 0
     capture: 0 - variable, start: (30, 43), end: (30, 46), text: `col`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (30, 46), end: (30, 47), text: `,`
+    capture: 8 - punctuation.delimiter, start: (30, 46), end: (30, 47), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (30, 48), end: (30, 51), text: `SUM`
+    capture: 9 - function.call, start: (30, 48), end: (30, 51), text: `SUM`
   pattern: 0
     capture: 0 - variable, start: (30, 48), end: (30, 51), text: `SUM`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (30, 51), end: (30, 52), text: `(`
+    capture: 13 - punctuation.bracket, start: (30, 51), end: (30, 52), text: `(`
   pattern: 0
     capture: 0 - variable, start: (30, 52), end: (30, 55), text: `col`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (30, 55), end: (30, 56), text: `)`
+    capture: 13 - punctuation.bracket, start: (30, 55), end: (30, 56), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (30, 56), end: (30, 57), text: `)`
+    capture: 13 - punctuation.bracket, start: (30, 56), end: (30, 57), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (30, 57), end: (30, 58), text: `)`
+    capture: 13 - punctuation.bracket, start: (30, 57), end: (30, 58), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (30, 58), end: (30, 59), text: `,`
+    capture: 8 - punctuation.delimiter, start: (30, 58), end: (30, 59), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (32, 4), end: (32, 11), text: `overlap`
+    capture: 11 - variable.parameter, start: (32, 4), end: (32, 11), text: `overlap`
   pattern: 0
     capture: 0 - variable, start: (32, 4), end: (32, 11), text: `overlap`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (32, 11), end: (32, 12), text: `,`
+    capture: 8 - punctuation.delimiter, start: (32, 11), end: (32, 12), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (32, 17), end: (32, 29), text: `ARRAYFORMULA`
+    capture: 9 - function.call, start: (32, 17), end: (32, 29), text: `ARRAYFORMULA`
   pattern: 0
     capture: 0 - variable, start: (32, 17), end: (32, 29), text: `ARRAYFORMULA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (32, 29), end: (32, 30), text: `(`
+    capture: 13 - punctuation.bracket, start: (32, 29), end: (32, 30), text: `(`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (33, 19), end: (33, 20), text: `(`
+    capture: 13 - punctuation.bracket, start: (33, 19), end: (33, 20), text: `(`
   pattern: 0
     capture: 0 - variable, start: (33, 20), end: (33, 28), text: `arrivals`
   pattern: 22
-    capture: 13 - operator, start: (33, 29), end: (33, 30), text: `<`
+    capture: 12 - operator, start: (33, 29), end: (33, 30), text: `<`
   pattern: 15
-    capture: 10 - function.call, start: (33, 31), end: (33, 36), text: `EDATE`
+    capture: 9 - function.call, start: (33, 31), end: (33, 36), text: `EDATE`
   pattern: 0
     capture: 0 - variable, start: (33, 31), end: (33, 36), text: `EDATE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (33, 36), end: (33, 37), text: `(`
+    capture: 13 - punctuation.bracket, start: (33, 36), end: (33, 37), text: `(`
   pattern: 0
     capture: 0 - variable, start: (33, 37), end: (33, 48), text: `datesCapped`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (33, 48), end: (33, 49), text: `,`
+    capture: 8 - punctuation.delimiter, start: (33, 48), end: (33, 49), text: `,`
   pattern: 2
     capture: 2 - number, start: (33, 50), end: (33, 51), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (33, 51), end: (33, 52), text: `)`
+    capture: 13 - punctuation.bracket, start: (33, 51), end: (33, 52), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (33, 52), end: (33, 53), text: `)`
+    capture: 13 - punctuation.bracket, start: (33, 52), end: (33, 53), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (34, 21), end: (34, 22), text: `*`
+    capture: 12 - operator, start: (34, 21), end: (34, 22), text: `*`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (34, 23), end: (34, 24), text: `(`
+    capture: 13 - punctuation.bracket, start: (34, 23), end: (34, 24), text: `(`
   pattern: 0
     capture: 0 - variable, start: (34, 24), end: (34, 34), text: `departures`
   pattern: 22
-    capture: 13 - operator, start: (34, 35), end: (34, 37), text: `>=`
+    capture: 12 - operator, start: (34, 35), end: (34, 37), text: `>=`
   pattern: 0
     capture: 0 - variable, start: (34, 38), end: (34, 49), text: `datesCapped`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (34, 49), end: (34, 50), text: `)`
+    capture: 13 - punctuation.bracket, start: (34, 49), end: (34, 50), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (35, 17), end: (35, 18), text: `)`
+    capture: 13 - punctuation.bracket, start: (35, 17), end: (35, 18), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (35, 18), end: (35, 19), text: `,`
+    capture: 8 - punctuation.delimiter, start: (35, 18), end: (35, 19), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (36, 4), end: (36, 10), text: `perBin`
+    capture: 11 - variable.parameter, start: (36, 4), end: (36, 10), text: `perBin`
   pattern: 0
     capture: 0 - variable, start: (36, 4), end: (36, 10), text: `perBin`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (36, 10), end: (36, 11), text: `,`
+    capture: 8 - punctuation.delimiter, start: (36, 10), end: (36, 11), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (36, 17), end: (36, 22), text: `MMULT`
+    capture: 9 - function.call, start: (36, 17), end: (36, 22), text: `MMULT`
   pattern: 0
     capture: 0 - variable, start: (36, 17), end: (36, 22), text: `MMULT`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (36, 22), end: (36, 23), text: `(`
+    capture: 13 - punctuation.bracket, start: (36, 22), end: (36, 23), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (36, 23), end: (36, 32), text: `TRANSPOSE`
+    capture: 9 - function.call, start: (36, 23), end: (36, 32), text: `TRANSPOSE`
   pattern: 0
     capture: 0 - variable, start: (36, 23), end: (36, 32), text: `TRANSPOSE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (36, 32), end: (36, 33), text: `(`
+    capture: 13 - punctuation.bracket, start: (36, 32), end: (36, 33), text: `(`
   pattern: 0
     capture: 0 - variable, start: (36, 33), end: (36, 40), text: `overlap`
   pattern: 22
-    capture: 13 - operator, start: (36, 41), end: (36, 42), text: `*`
+    capture: 12 - operator, start: (36, 41), end: (36, 42), text: `*`
   pattern: 2
     capture: 2 - number, start: (36, 43), end: (36, 44), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (36, 44), end: (36, 45), text: `)`
+    capture: 13 - punctuation.bracket, start: (36, 44), end: (36, 45), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (36, 45), end: (36, 46), text: `,`
+    capture: 8 - punctuation.delimiter, start: (36, 45), end: (36, 46), text: `,`
   pattern: 0
     capture: 0 - variable, start: (36, 47), end: (36, 54), text: `onesCol`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (36, 54), end: (36, 55), text: `)`
+    capture: 13 - punctuation.bracket, start: (36, 54), end: (36, 55), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (36, 55), end: (36, 56), text: `,`
+    capture: 8 - punctuation.delimiter, start: (36, 55), end: (36, 56), text: `,`
   pattern: 19
-    capture: 11 - function.builtin, start: (38, 4), end: (38, 10), text: `LAMBDA`
+    capture: 10 - function.builtin, start: (38, 4), end: (38, 10), text: `LAMBDA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (38, 10), end: (38, 11), text: `(`
+    capture: 13 - punctuation.bracket, start: (38, 10), end: (38, 11), text: `(`
   pattern: 21
-    capture: 12 - variable.parameter, start: (38, 11), end: (38, 12), text: `x`
+    capture: 11 - variable.parameter, start: (38, 11), end: (38, 12), text: `x`
   pattern: 0
     capture: 0 - variable, start: (38, 11), end: (38, 12), text: `x`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (38, 12), end: (38, 13), text: `,`
+    capture: 8 - punctuation.delimiter, start: (38, 12), end: (38, 13), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (38, 14), end: (38, 19), text: `ROUND`
+    capture: 9 - function.call, start: (38, 14), end: (38, 19), text: `ROUND`
   pattern: 0
     capture: 0 - variable, start: (38, 14), end: (38, 19), text: `ROUND`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (38, 19), end: (38, 20), text: `(`
+    capture: 13 - punctuation.bracket, start: (38, 19), end: (38, 20), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (38, 20), end: (38, 23), text: `SUM`
+    capture: 9 - function.call, start: (38, 20), end: (38, 23), text: `SUM`
   pattern: 0
     capture: 0 - variable, start: (38, 20), end: (38, 23), text: `SUM`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (38, 23), end: (38, 24), text: `(`
+    capture: 13 - punctuation.bracket, start: (38, 23), end: (38, 24), text: `(`
   pattern: 0
     capture: 0 - variable, start: (38, 24), end: (38, 25), text: `x`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (38, 25), end: (38, 26), text: `)`
+    capture: 13 - punctuation.bracket, start: (38, 25), end: (38, 26), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (38, 26), end: (38, 27), text: `,`
+    capture: 8 - punctuation.delimiter, start: (38, 26), end: (38, 27), text: `,`
   pattern: 2
     capture: 2 - number, start: (38, 28), end: (38, 29), text: `2`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (38, 29), end: (38, 30), text: `)`
+    capture: 13 - punctuation.bracket, start: (38, 29), end: (38, 30), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (38, 30), end: (38, 31), text: `)`
+    capture: 13 - punctuation.bracket, start: (38, 30), end: (38, 31), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (38, 31), end: (38, 32), text: `(`
+    capture: 13 - punctuation.bracket, start: (38, 31), end: (38, 32), text: `(`
   pattern: 0
     capture: 0 - variable, start: (38, 32), end: (38, 41), text: `binTotals`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (38, 41), end: (38, 42), text: `)`
+    capture: 13 - punctuation.bracket, start: (38, 41), end: (38, 42), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (39, 6), end: (39, 7), text: `+`
+    capture: 12 - operator, start: (39, 6), end: (39, 7), text: `+`
   pattern: 15
-    capture: 10 - function.call, start: (39, 8), end: (39, 18), text: `SUMPRODUCT`
+    capture: 9 - function.call, start: (39, 8), end: (39, 18), text: `SUMPRODUCT`
   pattern: 0
     capture: 0 - variable, start: (39, 8), end: (39, 18), text: `SUMPRODUCT`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (39, 18), end: (39, 19), text: `(`
+    capture: 13 - punctuation.bracket, start: (39, 18), end: (39, 19), text: `(`
   pattern: 10
     capture: 6 - type, start: (39, 19), end: (39, 28), text: `Inventory`
   pattern: 0
     capture: 0 - variable, start: (39, 19), end: (39, 28), text: `Inventory`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (39, 28), end: (39, 29), text: `[`
+    capture: 13 - punctuation.bracket, start: (39, 28), end: (39, 29), text: `[`
   pattern: 12
-    capture: 8 - property, start: (39, 29), end: (39, 38), text: `Weight kg`
+    capture: 7 - property, start: (39, 29), end: (39, 38), text: `Weight kg`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (39, 38), end: (39, 39), text: `]`
+    capture: 13 - punctuation.bracket, start: (39, 38), end: (39, 39), text: `]`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (39, 39), end: (39, 40), text: `,`
+    capture: 8 - punctuation.delimiter, start: (39, 39), end: (39, 40), text: `,`
   pattern: 0
     capture: 0 - variable, start: (39, 41), end: (39, 47), text: `perBin`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (39, 47), end: (39, 48), text: `)`
+    capture: 13 - punctuation.bracket, start: (39, 47), end: (39, 48), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (40, 2), end: (40, 3), text: `)`
+    capture: 13 - punctuation.bracket, start: (40, 2), end: (40, 3), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (40, 3), end: (40, 4), text: `,`
+    capture: 8 - punctuation.delimiter, start: (40, 3), end: (40, 4), text: `,`
   pattern: 1
     capture: 1 - string, start: (41, 2), end: (41, 11), text: `"no data"`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (42, 0), end: (42, 1), text: `)`
+    capture: 13 - punctuation.bracket, start: (42, 0), end: (42, 1), text: `)`
 examples/monthly.min.gsfx
   pattern: 25
-    capture: 13 - operator, start: (0, 0), end: (0, 1), text: `=`
+    capture: 12 - operator, start: (0, 0), end: (0, 1), text: `=`
   pattern: 15
-    capture: 10 - function.call, start: (0, 1), end: (0, 5), text: `IFNA`
+    capture: 9 - function.call, start: (0, 1), end: (0, 5), text: `IFNA`
   pattern: 0
     capture: 0 - variable, start: (0, 1), end: (0, 5), text: `IFNA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 5), end: (0, 6), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 5), end: (0, 6), text: `(`
   pattern: 18
-    capture: 11 - function.builtin, start: (0, 6), end: (0, 9), text: `LET`
+    capture: 10 - function.builtin, start: (0, 6), end: (0, 9), text: `LET`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 9), end: (0, 10), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 9), end: (0, 10), text: `(`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 10), end: (0, 17), text: `lastRow`
+    capture: 11 - variable.parameter, start: (0, 10), end: (0, 17), text: `lastRow`
   pattern: 0
     capture: 0 - variable, start: (0, 10), end: (0, 17), text: `lastRow`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 17), end: (0, 18), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 17), end: (0, 18), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 18), end: (0, 31), text: `stock_data!A1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 31), end: (0, 32), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 31), end: (0, 32), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 32), end: (0, 40), text: `binCount`
+    capture: 11 - variable.parameter, start: (0, 32), end: (0, 40), text: `binCount`
   pattern: 0
     capture: 0 - variable, start: (0, 32), end: (0, 40), text: `binCount`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 40), end: (0, 41), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 40), end: (0, 41), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 41), end: (0, 43), text: `12`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 43), end: (0, 44), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 43), end: (0, 44), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 44), end: (0, 55), text: `datesCapped`
+    capture: 11 - variable.parameter, start: (0, 44), end: (0, 55), text: `datesCapped`
   pattern: 0
     capture: 0 - variable, start: (0, 44), end: (0, 55), text: `datesCapped`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 55), end: (0, 56), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 55), end: (0, 56), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 56), end: (0, 58), text: `C4`
   pattern: 22
-    capture: 13 - operator, start: (0, 58), end: (0, 59), text: `:`
+    capture: 12 - operator, start: (0, 58), end: (0, 59), text: `:`
   pattern: 15
-    capture: 10 - function.call, start: (0, 59), end: (0, 64), text: `INDEX`
+    capture: 9 - function.call, start: (0, 59), end: (0, 64), text: `INDEX`
   pattern: 0
     capture: 0 - variable, start: (0, 59), end: (0, 64), text: `INDEX`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 64), end: (0, 65), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 64), end: (0, 65), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 65), end: (0, 66), text: `C`
   pattern: 6
     capture: 5 - variable.builtin, start: (0, 65), end: (0, 66), text: `C`
   pattern: 22
-    capture: 13 - operator, start: (0, 66), end: (0, 67), text: `:`
+    capture: 12 - operator, start: (0, 66), end: (0, 67), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (0, 67), end: (0, 68), text: `C`
   pattern: 0
     capture: 0 - variable, start: (0, 67), end: (0, 68), text: `C`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 68), end: (0, 69), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 68), end: (0, 69), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 69), end: (0, 75), text: `LOOKUP`
+    capture: 9 - function.call, start: (0, 69), end: (0, 75), text: `LOOKUP`
   pattern: 0
     capture: 0 - variable, start: (0, 69), end: (0, 75), text: `LOOKUP`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 75), end: (0, 76), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 75), end: (0, 76), text: `(`
   pattern: 2
     capture: 2 - number, start: (0, 76), end: (0, 77), text: `2`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 77), end: (0, 78), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 77), end: (0, 78), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 78), end: (0, 79), text: `1`
   pattern: 22
-    capture: 13 - operator, start: (0, 79), end: (0, 80), text: `/`
+    capture: 12 - operator, start: (0, 79), end: (0, 80), text: `/`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 80), end: (0, 81), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 80), end: (0, 81), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 81), end: (0, 83), text: `C4`
   pattern: 22
-    capture: 13 - operator, start: (0, 83), end: (0, 84), text: `:`
+    capture: 12 - operator, start: (0, 83), end: (0, 84), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (0, 84), end: (0, 85), text: `C`
   pattern: 0
     capture: 0 - variable, start: (0, 84), end: (0, 85), text: `C`
   pattern: 22
-    capture: 13 - operator, start: (0, 85), end: (0, 87), text: `<>`
+    capture: 12 - operator, start: (0, 85), end: (0, 87), text: `<>`
   pattern: 1
     capture: 1 - string, start: (0, 87), end: (0, 89), text: `""`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 89), end: (0, 90), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 89), end: (0, 90), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 90), end: (0, 91), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 90), end: (0, 91), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 91), end: (0, 94), text: `ROW`
+    capture: 9 - function.call, start: (0, 91), end: (0, 94), text: `ROW`
   pattern: 0
     capture: 0 - variable, start: (0, 91), end: (0, 94), text: `ROW`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 94), end: (0, 95), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 94), end: (0, 95), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 95), end: (0, 97), text: `C4`
   pattern: 22
-    capture: 13 - operator, start: (0, 97), end: (0, 98), text: `:`
+    capture: 12 - operator, start: (0, 97), end: (0, 98), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (0, 98), end: (0, 99), text: `C`
   pattern: 0
     capture: 0 - variable, start: (0, 98), end: (0, 99), text: `C`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 99), end: (0, 100), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 99), end: (0, 100), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 100), end: (0, 101), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 100), end: (0, 101), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 101), end: (0, 102), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 101), end: (0, 102), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 102), end: (0, 103), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 102), end: (0, 103), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 103), end: (0, 110), text: `weights`
+    capture: 11 - variable.parameter, start: (0, 103), end: (0, 110), text: `weights`
   pattern: 0
     capture: 0 - variable, start: (0, 103), end: (0, 110), text: `weights`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 110), end: (0, 111), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 110), end: (0, 111), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 111), end: (0, 124), text: `stock_data!F2`
   pattern: 22
-    capture: 13 - operator, start: (0, 124), end: (0, 125), text: `:`
+    capture: 12 - operator, start: (0, 124), end: (0, 125), text: `:`
   pattern: 15
-    capture: 10 - function.call, start: (0, 125), end: (0, 130), text: `INDEX`
+    capture: 9 - function.call, start: (0, 125), end: (0, 130), text: `INDEX`
   pattern: 0
     capture: 0 - variable, start: (0, 125), end: (0, 130), text: `INDEX`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 130), end: (0, 131), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 130), end: (0, 131), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 131), end: (0, 143), text: `stock_data!F`
   pattern: 22
-    capture: 13 - operator, start: (0, 143), end: (0, 144), text: `:`
+    capture: 12 - operator, start: (0, 143), end: (0, 144), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (0, 144), end: (0, 145), text: `F`
   pattern: 0
     capture: 0 - variable, start: (0, 144), end: (0, 145), text: `F`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 145), end: (0, 146), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 145), end: (0, 146), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 146), end: (0, 153), text: `lastRow`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 153), end: (0, 154), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 153), end: (0, 154), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 154), end: (0, 155), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 154), end: (0, 155), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 155), end: (0, 159), text: `tags`
+    capture: 11 - variable.parameter, start: (0, 155), end: (0, 159), text: `tags`
   pattern: 0
     capture: 0 - variable, start: (0, 155), end: (0, 159), text: `tags`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 159), end: (0, 160), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 159), end: (0, 160), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 160), end: (0, 173), text: `stock_data!H2`
   pattern: 22
-    capture: 13 - operator, start: (0, 173), end: (0, 174), text: `:`
+    capture: 12 - operator, start: (0, 173), end: (0, 174), text: `:`
   pattern: 15
-    capture: 10 - function.call, start: (0, 174), end: (0, 179), text: `INDEX`
+    capture: 9 - function.call, start: (0, 174), end: (0, 179), text: `INDEX`
   pattern: 0
     capture: 0 - variable, start: (0, 174), end: (0, 179), text: `INDEX`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 179), end: (0, 180), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 179), end: (0, 180), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 180), end: (0, 192), text: `stock_data!H`
   pattern: 22
-    capture: 13 - operator, start: (0, 192), end: (0, 193), text: `:`
+    capture: 12 - operator, start: (0, 192), end: (0, 193), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (0, 193), end: (0, 194), text: `H`
   pattern: 0
     capture: 0 - variable, start: (0, 193), end: (0, 194), text: `H`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 194), end: (0, 195), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 194), end: (0, 195), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 195), end: (0, 202), text: `lastRow`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 202), end: (0, 203), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 202), end: (0, 203), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 203), end: (0, 204), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 203), end: (0, 204), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 204), end: (0, 210), text: `isLive`
+    capture: 11 - variable.parameter, start: (0, 204), end: (0, 210), text: `isLive`
   pattern: 0
     capture: 0 - variable, start: (0, 204), end: (0, 210), text: `isLive`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 210), end: (0, 211), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 210), end: (0, 211), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 211), end: (0, 223), text: `ARRAYFORMULA`
+    capture: 9 - function.call, start: (0, 211), end: (0, 223), text: `ARRAYFORMULA`
   pattern: 0
     capture: 0 - variable, start: (0, 211), end: (0, 223), text: `ARRAYFORMULA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 223), end: (0, 224), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 223), end: (0, 224), text: `(`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 224), end: (0, 225), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 224), end: (0, 225), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 225), end: (0, 232), text: `weights`
   pattern: 22
-    capture: 13 - operator, start: (0, 232), end: (0, 233), text: `>`
+    capture: 12 - operator, start: (0, 232), end: (0, 233), text: `>`
   pattern: 2
     capture: 2 - number, start: (0, 233), end: (0, 234), text: `0`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 234), end: (0, 235), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 234), end: (0, 235), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (0, 235), end: (0, 236), text: `*`
+    capture: 12 - operator, start: (0, 235), end: (0, 236), text: `*`
   pattern: 15
-    capture: 10 - function.call, start: (0, 236), end: (0, 243), text: `ISERROR`
+    capture: 9 - function.call, start: (0, 236), end: (0, 243), text: `ISERROR`
   pattern: 0
     capture: 0 - variable, start: (0, 236), end: (0, 243), text: `ISERROR`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 243), end: (0, 244), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 243), end: (0, 244), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (0, 244), end: (0, 250), text: `SEARCH`
+    capture: 9 - function.call, start: (0, 244), end: (0, 250), text: `SEARCH`
   pattern: 0
     capture: 0 - variable, start: (0, 244), end: (0, 250), text: `SEARCH`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 250), end: (0, 251), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 250), end: (0, 251), text: `(`
   pattern: 1
     capture: 1 - string, start: (0, 251), end: (0, 261), text: `"archived"`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 261), end: (0, 262), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 261), end: (0, 262), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 262), end: (0, 266), text: `tags`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 266), end: (0, 267), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 266), end: (0, 267), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 267), end: (0, 268), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 267), end: (0, 268), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 268), end: (0, 269), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 268), end: (0, 269), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 269), end: (0, 270), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 269), end: (0, 270), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 270), end: (0, 279), text: `shipments`
+    capture: 11 - variable.parameter, start: (0, 270), end: (0, 279), text: `shipments`
   pattern: 0
     capture: 0 - variable, start: (0, 270), end: (0, 279), text: `shipments`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 279), end: (0, 280), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 279), end: (0, 280), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 280), end: (0, 286), text: `FILTER`
+    capture: 9 - function.call, start: (0, 280), end: (0, 286), text: `FILTER`
   pattern: 0
     capture: 0 - variable, start: (0, 280), end: (0, 286), text: `FILTER`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 286), end: (0, 287), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 286), end: (0, 287), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (0, 287), end: (0, 293), text: `HSTACK`
+    capture: 9 - function.call, start: (0, 287), end: (0, 293), text: `HSTACK`
   pattern: 0
     capture: 0 - variable, start: (0, 287), end: (0, 293), text: `HSTACK`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 293), end: (0, 294), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 293), end: (0, 294), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 294), end: (0, 307), text: `stock_data!B2`
   pattern: 22
-    capture: 13 - operator, start: (0, 307), end: (0, 308), text: `:`
+    capture: 12 - operator, start: (0, 307), end: (0, 308), text: `:`
   pattern: 15
-    capture: 10 - function.call, start: (0, 308), end: (0, 313), text: `INDEX`
+    capture: 9 - function.call, start: (0, 308), end: (0, 313), text: `INDEX`
   pattern: 0
     capture: 0 - variable, start: (0, 308), end: (0, 313), text: `INDEX`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 313), end: (0, 314), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 313), end: (0, 314), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 314), end: (0, 326), text: `stock_data!C`
   pattern: 22
-    capture: 13 - operator, start: (0, 326), end: (0, 327), text: `:`
+    capture: 12 - operator, start: (0, 326), end: (0, 327), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (0, 327), end: (0, 328), text: `C`
   pattern: 0
     capture: 0 - variable, start: (0, 327), end: (0, 328), text: `C`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 328), end: (0, 329), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 328), end: (0, 329), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 329), end: (0, 336), text: `lastRow`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 336), end: (0, 337), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 336), end: (0, 337), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 337), end: (0, 338), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 337), end: (0, 338), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 338), end: (0, 351), text: `stock_data!J2`
   pattern: 22
-    capture: 13 - operator, start: (0, 351), end: (0, 352), text: `:`
+    capture: 12 - operator, start: (0, 351), end: (0, 352), text: `:`
   pattern: 15
-    capture: 10 - function.call, start: (0, 352), end: (0, 357), text: `INDEX`
+    capture: 9 - function.call, start: (0, 352), end: (0, 357), text: `INDEX`
   pattern: 0
     capture: 0 - variable, start: (0, 352), end: (0, 357), text: `INDEX`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 357), end: (0, 358), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 357), end: (0, 358), text: `(`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 358), end: (0, 370), text: `stock_data!U`
   pattern: 22
-    capture: 13 - operator, start: (0, 370), end: (0, 371), text: `:`
+    capture: 12 - operator, start: (0, 370), end: (0, 371), text: `:`
   pattern: 7
     capture: 5 - variable.builtin, start: (0, 371), end: (0, 372), text: `U`
   pattern: 0
     capture: 0 - variable, start: (0, 371), end: (0, 372), text: `U`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 372), end: (0, 373), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 372), end: (0, 373), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 373), end: (0, 380), text: `lastRow`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 380), end: (0, 381), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 380), end: (0, 381), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 381), end: (0, 382), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 381), end: (0, 382), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 382), end: (0, 383), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 382), end: (0, 383), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 383), end: (0, 389), text: `isLive`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 389), end: (0, 390), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 389), end: (0, 390), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 390), end: (0, 391), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 390), end: (0, 391), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 391), end: (0, 399), text: `arrivals`
+    capture: 11 - variable.parameter, start: (0, 391), end: (0, 399), text: `arrivals`
   pattern: 0
     capture: 0 - variable, start: (0, 391), end: (0, 399), text: `arrivals`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 399), end: (0, 400), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 399), end: (0, 400), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 400), end: (0, 410), text: `CHOOSECOLS`
+    capture: 9 - function.call, start: (0, 400), end: (0, 410), text: `CHOOSECOLS`
   pattern: 0
     capture: 0 - variable, start: (0, 400), end: (0, 410), text: `CHOOSECOLS`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 410), end: (0, 411), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 410), end: (0, 411), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 411), end: (0, 420), text: `shipments`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 420), end: (0, 421), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 420), end: (0, 421), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 421), end: (0, 422), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 422), end: (0, 423), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 422), end: (0, 423), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 423), end: (0, 424), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 423), end: (0, 424), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 424), end: (0, 434), text: `departures`
+    capture: 11 - variable.parameter, start: (0, 424), end: (0, 434), text: `departures`
   pattern: 0
     capture: 0 - variable, start: (0, 424), end: (0, 434), text: `departures`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 434), end: (0, 435), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 434), end: (0, 435), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 435), end: (0, 445), text: `CHOOSECOLS`
+    capture: 9 - function.call, start: (0, 435), end: (0, 445), text: `CHOOSECOLS`
   pattern: 0
     capture: 0 - variable, start: (0, 435), end: (0, 445), text: `CHOOSECOLS`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 445), end: (0, 446), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 445), end: (0, 446), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 446), end: (0, 455), text: `shipments`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 455), end: (0, 456), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 455), end: (0, 456), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 456), end: (0, 457), text: `2`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 457), end: (0, 458), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 457), end: (0, 458), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 458), end: (0, 459), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 458), end: (0, 459), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 459), end: (0, 466), text: `binData`
+    capture: 11 - variable.parameter, start: (0, 459), end: (0, 466), text: `binData`
   pattern: 0
     capture: 0 - variable, start: (0, 459), end: (0, 466), text: `binData`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 466), end: (0, 467), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 466), end: (0, 467), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 467), end: (0, 477), text: `CHOOSECOLS`
+    capture: 9 - function.call, start: (0, 467), end: (0, 477), text: `CHOOSECOLS`
   pattern: 0
     capture: 0 - variable, start: (0, 467), end: (0, 477), text: `CHOOSECOLS`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 477), end: (0, 478), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 477), end: (0, 478), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 478), end: (0, 487), text: `shipments`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 487), end: (0, 488), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 487), end: (0, 488), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 488), end: (0, 496), text: `SEQUENCE`
+    capture: 9 - function.call, start: (0, 488), end: (0, 496), text: `SEQUENCE`
   pattern: 0
     capture: 0 - variable, start: (0, 488), end: (0, 496), text: `SEQUENCE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 496), end: (0, 497), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 496), end: (0, 497), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 497), end: (0, 505), text: `binCount`
   pattern: 22
-    capture: 13 - operator, start: (0, 505), end: (0, 506), text: `*`
+    capture: 12 - operator, start: (0, 505), end: (0, 506), text: `*`
   pattern: 2
     capture: 2 - number, start: (0, 506), end: (0, 507), text: `2`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 507), end: (0, 508), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 507), end: (0, 508), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 508), end: (0, 509), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 509), end: (0, 510), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 509), end: (0, 510), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 510), end: (0, 511), text: `3`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 511), end: (0, 512), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 511), end: (0, 512), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 512), end: (0, 513), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 512), end: (0, 513), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 513), end: (0, 514), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 513), end: (0, 514), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 514), end: (0, 522), text: `binSlice`
+    capture: 11 - variable.parameter, start: (0, 514), end: (0, 522), text: `binSlice`
   pattern: 0
     capture: 0 - variable, start: (0, 514), end: (0, 522), text: `binSlice`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 522), end: (0, 523), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 522), end: (0, 523), text: `,`
   pattern: 19
-    capture: 11 - function.builtin, start: (0, 523), end: (0, 529), text: `LAMBDA`
+    capture: 10 - function.builtin, start: (0, 523), end: (0, 529), text: `LAMBDA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 529), end: (0, 530), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 529), end: (0, 530), text: `(`
   pattern: 21
-    capture: 12 - variable.parameter, start: (0, 530), end: (0, 538), text: `startCol`
+    capture: 11 - variable.parameter, start: (0, 530), end: (0, 538), text: `startCol`
   pattern: 0
     capture: 0 - variable, start: (0, 530), end: (0, 538), text: `startCol`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 538), end: (0, 539), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 538), end: (0, 539), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 539), end: (0, 549), text: `CHOOSECOLS`
+    capture: 9 - function.call, start: (0, 539), end: (0, 549), text: `CHOOSECOLS`
   pattern: 0
     capture: 0 - variable, start: (0, 539), end: (0, 549), text: `CHOOSECOLS`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 549), end: (0, 550), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 549), end: (0, 550), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 550), end: (0, 557), text: `binData`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 557), end: (0, 558), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 557), end: (0, 558), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 558), end: (0, 566), text: `SEQUENCE`
+    capture: 9 - function.call, start: (0, 558), end: (0, 566), text: `SEQUENCE`
   pattern: 0
     capture: 0 - variable, start: (0, 558), end: (0, 566), text: `SEQUENCE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 566), end: (0, 567), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 566), end: (0, 567), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 567), end: (0, 575), text: `binCount`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 575), end: (0, 576), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 575), end: (0, 576), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 576), end: (0, 577), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 577), end: (0, 578), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 577), end: (0, 578), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 578), end: (0, 586), text: `startCol`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 586), end: (0, 587), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 586), end: (0, 587), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 587), end: (0, 588), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 587), end: (0, 588), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 588), end: (0, 589), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 588), end: (0, 589), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 589), end: (0, 590), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 589), end: (0, 590), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 590), end: (0, 597), text: `onesCol`
+    capture: 11 - variable.parameter, start: (0, 590), end: (0, 597), text: `onesCol`
   pattern: 0
     capture: 0 - variable, start: (0, 590), end: (0, 597), text: `onesCol`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 597), end: (0, 598), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 597), end: (0, 598), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 598), end: (0, 606), text: `SEQUENCE`
+    capture: 9 - function.call, start: (0, 598), end: (0, 606), text: `SEQUENCE`
   pattern: 0
     capture: 0 - variable, start: (0, 598), end: (0, 606), text: `SEQUENCE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 606), end: (0, 607), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 606), end: (0, 607), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 607), end: (0, 615), text: `binCount`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 615), end: (0, 616), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 615), end: (0, 616), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 616), end: (0, 617), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 617), end: (0, 618), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 617), end: (0, 618), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 618), end: (0, 619), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 619), end: (0, 620), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 619), end: (0, 620), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 620), end: (0, 621), text: `0`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 621), end: (0, 622), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 621), end: (0, 622), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 622), end: (0, 623), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 622), end: (0, 623), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 623), end: (0, 632), text: `binTotals`
+    capture: 11 - variable.parameter, start: (0, 623), end: (0, 632), text: `binTotals`
   pattern: 0
     capture: 0 - variable, start: (0, 623), end: (0, 632), text: `binTotals`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 632), end: (0, 633), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 632), end: (0, 633), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 633), end: (0, 638), text: `BYCOL`
+    capture: 9 - function.call, start: (0, 633), end: (0, 638), text: `BYCOL`
   pattern: 0
     capture: 0 - variable, start: (0, 633), end: (0, 638), text: `BYCOL`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 638), end: (0, 639), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 638), end: (0, 639), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (0, 639), end: (0, 647), text: `binSlice`
+    capture: 9 - function.call, start: (0, 639), end: (0, 647), text: `binSlice`
   pattern: 0
     capture: 0 - variable, start: (0, 639), end: (0, 647), text: `binSlice`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 647), end: (0, 648), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 647), end: (0, 648), text: `(`
   pattern: 2
     capture: 2 - number, start: (0, 648), end: (0, 649), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 649), end: (0, 650), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 649), end: (0, 650), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 650), end: (0, 651), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 650), end: (0, 651), text: `,`
   pattern: 19
-    capture: 11 - function.builtin, start: (0, 651), end: (0, 657), text: `LAMBDA`
+    capture: 10 - function.builtin, start: (0, 651), end: (0, 657), text: `LAMBDA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 657), end: (0, 658), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 657), end: (0, 658), text: `(`
   pattern: 21
-    capture: 12 - variable.parameter, start: (0, 658), end: (0, 661), text: `col`
+    capture: 11 - variable.parameter, start: (0, 658), end: (0, 661), text: `col`
   pattern: 0
     capture: 0 - variable, start: (0, 658), end: (0, 661), text: `col`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 661), end: (0, 662), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 661), end: (0, 662), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 662), end: (0, 665), text: `SUM`
+    capture: 9 - function.call, start: (0, 662), end: (0, 665), text: `SUM`
   pattern: 0
     capture: 0 - variable, start: (0, 662), end: (0, 665), text: `SUM`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 665), end: (0, 666), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 665), end: (0, 666), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 666), end: (0, 669), text: `col`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 669), end: (0, 670), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 669), end: (0, 670), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 670), end: (0, 671), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 670), end: (0, 671), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 671), end: (0, 672), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 671), end: (0, 672), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 672), end: (0, 673), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 672), end: (0, 673), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 673), end: (0, 680), text: `overlap`
+    capture: 11 - variable.parameter, start: (0, 673), end: (0, 680), text: `overlap`
   pattern: 0
     capture: 0 - variable, start: (0, 673), end: (0, 680), text: `overlap`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 680), end: (0, 681), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 680), end: (0, 681), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 681), end: (0, 693), text: `ARRAYFORMULA`
+    capture: 9 - function.call, start: (0, 681), end: (0, 693), text: `ARRAYFORMULA`
   pattern: 0
     capture: 0 - variable, start: (0, 681), end: (0, 693), text: `ARRAYFORMULA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 693), end: (0, 694), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 693), end: (0, 694), text: `(`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 694), end: (0, 695), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 694), end: (0, 695), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 695), end: (0, 703), text: `arrivals`
   pattern: 22
-    capture: 13 - operator, start: (0, 703), end: (0, 704), text: `<`
+    capture: 12 - operator, start: (0, 703), end: (0, 704), text: `<`
   pattern: 15
-    capture: 10 - function.call, start: (0, 704), end: (0, 709), text: `EDATE`
+    capture: 9 - function.call, start: (0, 704), end: (0, 709), text: `EDATE`
   pattern: 0
     capture: 0 - variable, start: (0, 704), end: (0, 709), text: `EDATE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 709), end: (0, 710), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 709), end: (0, 710), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 710), end: (0, 721), text: `datesCapped`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 721), end: (0, 722), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 721), end: (0, 722), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 722), end: (0, 723), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 723), end: (0, 724), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 723), end: (0, 724), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 724), end: (0, 725), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 724), end: (0, 725), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (0, 725), end: (0, 726), text: `*`
+    capture: 12 - operator, start: (0, 725), end: (0, 726), text: `*`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 726), end: (0, 727), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 726), end: (0, 727), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 727), end: (0, 737), text: `departures`
   pattern: 22
-    capture: 13 - operator, start: (0, 737), end: (0, 739), text: `>=`
+    capture: 12 - operator, start: (0, 737), end: (0, 739), text: `>=`
   pattern: 0
     capture: 0 - variable, start: (0, 739), end: (0, 750), text: `datesCapped`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 750), end: (0, 751), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 750), end: (0, 751), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 751), end: (0, 752), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 751), end: (0, 752), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 752), end: (0, 753), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 752), end: (0, 753), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 753), end: (0, 759), text: `perBin`
+    capture: 11 - variable.parameter, start: (0, 753), end: (0, 759), text: `perBin`
   pattern: 0
     capture: 0 - variable, start: (0, 753), end: (0, 759), text: `perBin`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 759), end: (0, 760), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 759), end: (0, 760), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 760), end: (0, 765), text: `MMULT`
+    capture: 9 - function.call, start: (0, 760), end: (0, 765), text: `MMULT`
   pattern: 0
     capture: 0 - variable, start: (0, 760), end: (0, 765), text: `MMULT`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 765), end: (0, 766), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 765), end: (0, 766), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (0, 766), end: (0, 775), text: `TRANSPOSE`
+    capture: 9 - function.call, start: (0, 766), end: (0, 775), text: `TRANSPOSE`
   pattern: 0
     capture: 0 - variable, start: (0, 766), end: (0, 775), text: `TRANSPOSE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 775), end: (0, 776), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 775), end: (0, 776), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 776), end: (0, 783), text: `overlap`
   pattern: 22
-    capture: 13 - operator, start: (0, 783), end: (0, 784), text: `*`
+    capture: 12 - operator, start: (0, 783), end: (0, 784), text: `*`
   pattern: 2
     capture: 2 - number, start: (0, 784), end: (0, 785), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 785), end: (0, 786), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 785), end: (0, 786), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 786), end: (0, 787), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 786), end: (0, 787), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 787), end: (0, 794), text: `onesCol`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 794), end: (0, 795), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 794), end: (0, 795), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 795), end: (0, 796), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 795), end: (0, 796), text: `,`
   pattern: 19
-    capture: 11 - function.builtin, start: (0, 796), end: (0, 802), text: `LAMBDA`
+    capture: 10 - function.builtin, start: (0, 796), end: (0, 802), text: `LAMBDA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 802), end: (0, 803), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 802), end: (0, 803), text: `(`
   pattern: 21
-    capture: 12 - variable.parameter, start: (0, 803), end: (0, 804), text: `x`
+    capture: 11 - variable.parameter, start: (0, 803), end: (0, 804), text: `x`
   pattern: 0
     capture: 0 - variable, start: (0, 803), end: (0, 804), text: `x`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 804), end: (0, 805), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 804), end: (0, 805), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 805), end: (0, 810), text: `ROUND`
+    capture: 9 - function.call, start: (0, 805), end: (0, 810), text: `ROUND`
   pattern: 0
     capture: 0 - variable, start: (0, 805), end: (0, 810), text: `ROUND`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 810), end: (0, 811), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 810), end: (0, 811), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (0, 811), end: (0, 814), text: `SUM`
+    capture: 9 - function.call, start: (0, 811), end: (0, 814), text: `SUM`
   pattern: 0
     capture: 0 - variable, start: (0, 811), end: (0, 814), text: `SUM`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 814), end: (0, 815), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 814), end: (0, 815), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 815), end: (0, 816), text: `x`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 816), end: (0, 817), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 816), end: (0, 817), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 817), end: (0, 818), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 817), end: (0, 818), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 818), end: (0, 819), text: `2`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 819), end: (0, 820), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 819), end: (0, 820), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 820), end: (0, 821), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 820), end: (0, 821), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 821), end: (0, 822), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 821), end: (0, 822), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 822), end: (0, 831), text: `binTotals`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 831), end: (0, 832), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 831), end: (0, 832), text: `)`
   pattern: 22
-    capture: 13 - operator, start: (0, 832), end: (0, 833), text: `+`
+    capture: 12 - operator, start: (0, 832), end: (0, 833), text: `+`
   pattern: 15
-    capture: 10 - function.call, start: (0, 833), end: (0, 843), text: `SUMPRODUCT`
+    capture: 9 - function.call, start: (0, 833), end: (0, 843), text: `SUMPRODUCT`
   pattern: 0
     capture: 0 - variable, start: (0, 833), end: (0, 843), text: `SUMPRODUCT`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 843), end: (0, 844), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 843), end: (0, 844), text: `(`
   pattern: 10
     capture: 6 - type, start: (0, 844), end: (0, 853), text: `Inventory`
   pattern: 0
     capture: 0 - variable, start: (0, 844), end: (0, 853), text: `Inventory`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 853), end: (0, 854), text: `[`
+    capture: 13 - punctuation.bracket, start: (0, 853), end: (0, 854), text: `[`
   pattern: 12
-    capture: 8 - property, start: (0, 854), end: (0, 863), text: `Weight kg`
+    capture: 7 - property, start: (0, 854), end: (0, 863), text: `Weight kg`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 863), end: (0, 864), text: `]`
+    capture: 13 - punctuation.bracket, start: (0, 863), end: (0, 864), text: `]`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 864), end: (0, 865), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 864), end: (0, 865), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 865), end: (0, 871), text: `perBin`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 871), end: (0, 872), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 871), end: (0, 872), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 872), end: (0, 873), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 872), end: (0, 873), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 873), end: (0, 874), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 873), end: (0, 874), text: `,`
   pattern: 1
     capture: 1 - string, start: (0, 874), end: (0, 883), text: `"no data"`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 883), end: (0, 884), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 883), end: (0, 884), text: `)`
 examples/payperiods.gsfx
   pattern: 25
-    capture: 13 - operator, start: (0, 0), end: (0, 1), text: `=`
+    capture: 12 - operator, start: (0, 0), end: (0, 1), text: `=`
   pattern: 18
-    capture: 11 - function.builtin, start: (0, 1), end: (0, 4), text: `LET`
+    capture: 10 - function.builtin, start: (0, 1), end: (0, 4), text: `LET`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 4), end: (0, 5), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 4), end: (0, 5), text: `(`
   pattern: 20
-    capture: 12 - variable.parameter, start: (1, 2), end: (1, 12), text: `targetYear`
+    capture: 11 - variable.parameter, start: (1, 2), end: (1, 12), text: `targetYear`
   pattern: 0
     capture: 0 - variable, start: (1, 2), end: (1, 12), text: `targetYear`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (1, 12), end: (1, 13), text: `,`
+    capture: 8 - punctuation.delimiter, start: (1, 12), end: (1, 13), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (1, 14), end: (1, 16), text: `B1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (1, 16), end: (1, 17), text: `,`
+    capture: 8 - punctuation.delimiter, start: (1, 16), end: (1, 17), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (2, 2), end: (2, 10), text: `nextYear`
+    capture: 11 - variable.parameter, start: (2, 2), end: (2, 10), text: `nextYear`
   pattern: 0
     capture: 0 - variable, start: (2, 2), end: (2, 10), text: `nextYear`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (2, 10), end: (2, 11), text: `,`
+    capture: 8 - punctuation.delimiter, start: (2, 10), end: (2, 11), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (2, 14), end: (2, 18), text: `DATE`
+    capture: 9 - function.call, start: (2, 14), end: (2, 18), text: `DATE`
   pattern: 0
     capture: 0 - variable, start: (2, 14), end: (2, 18), text: `DATE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (2, 18), end: (2, 19), text: `(`
+    capture: 13 - punctuation.bracket, start: (2, 18), end: (2, 19), text: `(`
   pattern: 0
     capture: 0 - variable, start: (2, 19), end: (2, 29), text: `targetYear`
   pattern: 22
-    capture: 13 - operator, start: (2, 30), end: (2, 31), text: `+`
+    capture: 12 - operator, start: (2, 30), end: (2, 31), text: `+`
   pattern: 2
     capture: 2 - number, start: (2, 32), end: (2, 33), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (2, 33), end: (2, 34), text: `,`
+    capture: 8 - punctuation.delimiter, start: (2, 33), end: (2, 34), text: `,`
   pattern: 2
     capture: 2 - number, start: (2, 35), end: (2, 36), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (2, 36), end: (2, 37), text: `,`
+    capture: 8 - punctuation.delimiter, start: (2, 36), end: (2, 37), text: `,`
   pattern: 2
     capture: 2 - number, start: (2, 38), end: (2, 39), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (2, 39), end: (2, 40), text: `)`
+    capture: 13 - punctuation.bracket, start: (2, 39), end: (2, 40), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (2, 40), end: (2, 41), text: `,`
+    capture: 8 - punctuation.delimiter, start: (2, 40), end: (2, 41), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (3, 2), end: (3, 10), text: `firstDay`
+    capture: 11 - variable.parameter, start: (3, 2), end: (3, 10), text: `firstDay`
   pattern: 0
     capture: 0 - variable, start: (3, 2), end: (3, 10), text: `firstDay`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (3, 10), end: (3, 11), text: `,`
+    capture: 8 - punctuation.delimiter, start: (3, 10), end: (3, 11), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (3, 14), end: (3, 18), text: `DATE`
+    capture: 9 - function.call, start: (3, 14), end: (3, 18), text: `DATE`
   pattern: 0
     capture: 0 - variable, start: (3, 14), end: (3, 18), text: `DATE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (3, 18), end: (3, 19), text: `(`
+    capture: 13 - punctuation.bracket, start: (3, 18), end: (3, 19), text: `(`
   pattern: 0
     capture: 0 - variable, start: (3, 19), end: (3, 29), text: `targetYear`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (3, 29), end: (3, 30), text: `,`
+    capture: 8 - punctuation.delimiter, start: (3, 29), end: (3, 30), text: `,`
   pattern: 2
     capture: 2 - number, start: (3, 31), end: (3, 32), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (3, 32), end: (3, 33), text: `,`
+    capture: 8 - punctuation.delimiter, start: (3, 32), end: (3, 33), text: `,`
   pattern: 2
     capture: 2 - number, start: (3, 34), end: (3, 35), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (3, 35), end: (3, 36), text: `)`
+    capture: 13 - punctuation.bracket, start: (3, 35), end: (3, 36), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (3, 36), end: (3, 37), text: `,`
+    capture: 8 - punctuation.delimiter, start: (3, 36), end: (3, 37), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (4, 2), end: (4, 10), text: `firstMon`
+    capture: 11 - variable.parameter, start: (4, 2), end: (4, 10), text: `firstMon`
   pattern: 0
     capture: 0 - variable, start: (4, 2), end: (4, 10), text: `firstMon`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 10), end: (4, 11), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 10), end: (4, 11), text: `,`
   pattern: 0
     capture: 0 - variable, start: (4, 14), end: (4, 22), text: `firstDay`
   pattern: 22
-    capture: 13 - operator, start: (4, 23), end: (4, 24), text: `+`
+    capture: 12 - operator, start: (4, 23), end: (4, 24), text: `+`
   pattern: 15
-    capture: 10 - function.call, start: (4, 25), end: (4, 28), text: `MOD`
+    capture: 9 - function.call, start: (4, 25), end: (4, 28), text: `MOD`
   pattern: 0
     capture: 0 - variable, start: (4, 25), end: (4, 28), text: `MOD`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 28), end: (4, 29), text: `(`
+    capture: 13 - punctuation.bracket, start: (4, 28), end: (4, 29), text: `(`
   pattern: 2
     capture: 2 - number, start: (4, 29), end: (4, 30), text: `8`
   pattern: 22
-    capture: 13 - operator, start: (4, 31), end: (4, 32), text: `-`
+    capture: 12 - operator, start: (4, 31), end: (4, 32), text: `-`
   pattern: 15
-    capture: 10 - function.call, start: (4, 33), end: (4, 40), text: `WEEKDAY`
+    capture: 9 - function.call, start: (4, 33), end: (4, 40), text: `WEEKDAY`
   pattern: 0
     capture: 0 - variable, start: (4, 33), end: (4, 40), text: `WEEKDAY`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 40), end: (4, 41), text: `(`
+    capture: 13 - punctuation.bracket, start: (4, 40), end: (4, 41), text: `(`
   pattern: 0
     capture: 0 - variable, start: (4, 41), end: (4, 49), text: `firstDay`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 49), end: (4, 50), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 49), end: (4, 50), text: `,`
   pattern: 2
     capture: 2 - number, start: (4, 51), end: (4, 52), text: `2`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 52), end: (4, 53), text: `)`
+    capture: 13 - punctuation.bracket, start: (4, 52), end: (4, 53), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 53), end: (4, 54), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 53), end: (4, 54), text: `,`
   pattern: 2
     capture: 2 - number, start: (4, 55), end: (4, 56), text: `7`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (4, 56), end: (4, 57), text: `)`
+    capture: 13 - punctuation.bracket, start: (4, 56), end: (4, 57), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (4, 57), end: (4, 58), text: `,`
+    capture: 8 - punctuation.delimiter, start: (4, 57), end: (4, 58), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (5, 2), end: (5, 7), text: `audit`
+    capture: 11 - variable.parameter, start: (5, 2), end: (5, 7), text: `audit`
   pattern: 0
     capture: 0 - variable, start: (5, 2), end: (5, 7), text: `audit`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (5, 7), end: (5, 8), text: `,`
+    capture: 8 - punctuation.delimiter, start: (5, 7), end: (5, 8), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (5, 14), end: (5, 18), text: `DATE`
+    capture: 9 - function.call, start: (5, 14), end: (5, 18), text: `DATE`
   pattern: 0
     capture: 0 - variable, start: (5, 14), end: (5, 18), text: `DATE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (5, 18), end: (5, 19), text: `(`
+    capture: 13 - punctuation.bracket, start: (5, 18), end: (5, 19), text: `(`
   pattern: 0
     capture: 0 - variable, start: (5, 19), end: (5, 29), text: `targetYear`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (5, 29), end: (5, 30), text: `,`
+    capture: 8 - punctuation.delimiter, start: (5, 29), end: (5, 30), text: `,`
   pattern: 2
     capture: 2 - number, start: (5, 31), end: (5, 33), text: `10`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (5, 33), end: (5, 34), text: `,`
+    capture: 8 - punctuation.delimiter, start: (5, 33), end: (5, 34), text: `,`
   pattern: 2
     capture: 2 - number, start: (5, 35), end: (5, 36), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (5, 36), end: (5, 37), text: `)`
+    capture: 13 - punctuation.bracket, start: (5, 36), end: (5, 37), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (5, 37), end: (5, 38), text: `,`
+    capture: 8 - punctuation.delimiter, start: (5, 37), end: (5, 38), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (6, 2), end: (6, 10), text: `auditSun`
+    capture: 11 - variable.parameter, start: (6, 2), end: (6, 10), text: `auditSun`
   pattern: 0
     capture: 0 - variable, start: (6, 2), end: (6, 10), text: `auditSun`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (6, 10), end: (6, 11), text: `,`
+    capture: 8 - punctuation.delimiter, start: (6, 10), end: (6, 11), text: `,`
   pattern: 0
     capture: 0 - variable, start: (6, 14), end: (6, 19), text: `audit`
   pattern: 22
-    capture: 13 - operator, start: (6, 20), end: (6, 21), text: `-`
+    capture: 12 - operator, start: (6, 20), end: (6, 21), text: `-`
   pattern: 15
-    capture: 10 - function.call, start: (6, 22), end: (6, 25), text: `MOD`
+    capture: 9 - function.call, start: (6, 22), end: (6, 25), text: `MOD`
   pattern: 0
     capture: 0 - variable, start: (6, 22), end: (6, 25), text: `MOD`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (6, 25), end: (6, 26), text: `(`
+    capture: 13 - punctuation.bracket, start: (6, 25), end: (6, 26), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (6, 26), end: (6, 33), text: `WEEKDAY`
+    capture: 9 - function.call, start: (6, 26), end: (6, 33), text: `WEEKDAY`
   pattern: 0
     capture: 0 - variable, start: (6, 26), end: (6, 33), text: `WEEKDAY`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (6, 33), end: (6, 34), text: `(`
+    capture: 13 - punctuation.bracket, start: (6, 33), end: (6, 34), text: `(`
   pattern: 0
     capture: 0 - variable, start: (6, 34), end: (6, 39), text: `audit`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (6, 39), end: (6, 40), text: `,`
+    capture: 8 - punctuation.delimiter, start: (6, 39), end: (6, 40), text: `,`
   pattern: 2
     capture: 2 - number, start: (6, 41), end: (6, 42), text: `2`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (6, 42), end: (6, 43), text: `)`
+    capture: 13 - punctuation.bracket, start: (6, 42), end: (6, 43), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (6, 43), end: (6, 44), text: `,`
+    capture: 8 - punctuation.delimiter, start: (6, 43), end: (6, 44), text: `,`
   pattern: 2
     capture: 2 - number, start: (6, 45), end: (6, 46), text: `7`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (6, 46), end: (6, 47), text: `)`
+    capture: 13 - punctuation.bracket, start: (6, 46), end: (6, 47), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (6, 47), end: (6, 48), text: `,`
+    capture: 8 - punctuation.delimiter, start: (6, 47), end: (6, 48), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (7, 2), end: (7, 8), text: `freeze`
+    capture: 11 - variable.parameter, start: (7, 2), end: (7, 8), text: `freeze`
   pattern: 0
     capture: 0 - variable, start: (7, 2), end: (7, 8), text: `freeze`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (7, 8), end: (7, 9), text: `,`
+    capture: 8 - punctuation.delimiter, start: (7, 8), end: (7, 9), text: `,`
   pattern: 0
     capture: 0 - variable, start: (7, 14), end: (7, 22), text: `auditSun`
   pattern: 22
-    capture: 13 - operator, start: (7, 23), end: (7, 24), text: `-`
+    capture: 12 - operator, start: (7, 23), end: (7, 24), text: `-`
   pattern: 2
     capture: 2 - number, start: (7, 25), end: (7, 27), text: `21`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (7, 27), end: (7, 28), text: `,`
+    capture: 8 - punctuation.delimiter, start: (7, 27), end: (7, 28), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (8, 2), end: (8, 8), text: `winEnd`
+    capture: 11 - variable.parameter, start: (8, 2), end: (8, 8), text: `winEnd`
   pattern: 0
     capture: 0 - variable, start: (8, 2), end: (8, 8), text: `winEnd`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (8, 8), end: (8, 9), text: `,`
+    capture: 8 - punctuation.delimiter, start: (8, 8), end: (8, 9), text: `,`
   pattern: 19
-    capture: 11 - function.builtin, start: (8, 14), end: (8, 20), text: `LAMBDA`
+    capture: 10 - function.builtin, start: (8, 14), end: (8, 20), text: `LAMBDA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (8, 20), end: (8, 21), text: `(`
+    capture: 13 - punctuation.bracket, start: (8, 20), end: (8, 21), text: `(`
   pattern: 21
-    capture: 12 - variable.parameter, start: (8, 21), end: (8, 26), text: `start`
+    capture: 11 - variable.parameter, start: (8, 21), end: (8, 26), text: `start`
   pattern: 0
     capture: 0 - variable, start: (8, 21), end: (8, 26), text: `start`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (8, 26), end: (8, 27), text: `,`
+    capture: 8 - punctuation.delimiter, start: (8, 26), end: (8, 27), text: `,`
   pattern: 18
-    capture: 11 - function.builtin, start: (9, 16), end: (9, 19), text: `LET`
+    capture: 10 - function.builtin, start: (9, 16), end: (9, 19), text: `LET`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (9, 19), end: (9, 20), text: `(`
+    capture: 13 - punctuation.bracket, start: (9, 19), end: (9, 20), text: `(`
   pattern: 20
-    capture: 12 - variable.parameter, start: (10, 18), end: (10, 24), text: `endReg`
+    capture: 11 - variable.parameter, start: (10, 18), end: (10, 24), text: `endReg`
   pattern: 0
     capture: 0 - variable, start: (10, 18), end: (10, 24), text: `endReg`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (10, 24), end: (10, 25), text: `,`
+    capture: 8 - punctuation.delimiter, start: (10, 24), end: (10, 25), text: `,`
   pattern: 0
     capture: 0 - variable, start: (10, 26), end: (10, 31), text: `start`
   pattern: 22
-    capture: 13 - operator, start: (10, 32), end: (10, 33), text: `+`
+    capture: 12 - operator, start: (10, 32), end: (10, 33), text: `+`
   pattern: 2
     capture: 2 - number, start: (10, 34), end: (10, 36), text: `13`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (10, 36), end: (10, 37), text: `,`
+    capture: 8 - punctuation.delimiter, start: (10, 36), end: (10, 37), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (11, 18), end: (11, 21), text: `IFS`
+    capture: 9 - function.call, start: (11, 18), end: (11, 21), text: `IFS`
   pattern: 0
     capture: 0 - variable, start: (11, 18), end: (11, 21), text: `IFS`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (11, 21), end: (11, 22), text: `(`
+    capture: 13 - punctuation.bracket, start: (11, 21), end: (11, 22), text: `(`
   pattern: 0
     capture: 0 - variable, start: (12, 20), end: (12, 26), text: `endReg`
   pattern: 22
-    capture: 13 - operator, start: (12, 27), end: (12, 29), text: `>=`
+    capture: 12 - operator, start: (12, 27), end: (12, 29), text: `>=`
   pattern: 0
     capture: 0 - variable, start: (12, 30), end: (12, 38), text: `nextYear`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (12, 38), end: (12, 39), text: `,`
+    capture: 8 - punctuation.delimiter, start: (12, 38), end: (12, 39), text: `,`
   pattern: 0
     capture: 0 - variable, start: (12, 59), end: (12, 67), text: `nextYear`
   pattern: 22
-    capture: 13 - operator, start: (12, 68), end: (12, 69), text: `-`
+    capture: 12 - operator, start: (12, 68), end: (12, 69), text: `-`
   pattern: 2
     capture: 2 - number, start: (12, 70), end: (12, 71), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (12, 71), end: (12, 72), text: `,`
+    capture: 8 - punctuation.delimiter, start: (12, 71), end: (12, 72), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (13, 20), end: (13, 23), text: `AND`
+    capture: 9 - function.call, start: (13, 20), end: (13, 23), text: `AND`
   pattern: 0
     capture: 0 - variable, start: (13, 20), end: (13, 23), text: `AND`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (13, 23), end: (13, 24), text: `(`
+    capture: 13 - punctuation.bracket, start: (13, 23), end: (13, 24), text: `(`
   pattern: 0
     capture: 0 - variable, start: (13, 24), end: (13, 30), text: `endReg`
   pattern: 22
-    capture: 13 - operator, start: (13, 31), end: (13, 33), text: `>=`
+    capture: 12 - operator, start: (13, 31), end: (13, 33), text: `>=`
   pattern: 0
     capture: 0 - variable, start: (13, 34), end: (13, 40), text: `freeze`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (13, 40), end: (13, 41), text: `,`
+    capture: 8 - punctuation.delimiter, start: (13, 40), end: (13, 41), text: `,`
   pattern: 0
     capture: 0 - variable, start: (13, 42), end: (13, 47), text: `start`
   pattern: 22
-    capture: 13 - operator, start: (13, 48), end: (13, 49), text: `<`
+    capture: 12 - operator, start: (13, 48), end: (13, 49), text: `<`
   pattern: 0
     capture: 0 - variable, start: (13, 50), end: (13, 56), text: `freeze`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (13, 56), end: (13, 57), text: `)`
+    capture: 13 - punctuation.bracket, start: (13, 56), end: (13, 57), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (13, 57), end: (13, 58), text: `,`
+    capture: 8 - punctuation.delimiter, start: (13, 57), end: (13, 58), text: `,`
   pattern: 0
     capture: 0 - variable, start: (13, 59), end: (13, 65), text: `freeze`
   pattern: 22
-    capture: 13 - operator, start: (13, 66), end: (13, 67), text: `-`
+    capture: 12 - operator, start: (13, 66), end: (13, 67), text: `-`
   pattern: 2
     capture: 2 - number, start: (13, 68), end: (13, 69), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (13, 69), end: (13, 70), text: `,`
+    capture: 8 - punctuation.delimiter, start: (13, 69), end: (13, 70), text: `,`
   pattern: 3
     capture: 3 - boolean.builtin, start: (14, 20), end: (14, 24), text: `TRUE`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (14, 24), end: (14, 25), text: `,`
+    capture: 8 - punctuation.delimiter, start: (14, 24), end: (14, 25), text: `,`
   pattern: 0
     capture: 0 - variable, start: (14, 59), end: (14, 65), text: `endReg`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (15, 18), end: (15, 19), text: `)`
+    capture: 13 - punctuation.bracket, start: (15, 18), end: (15, 19), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (16, 16), end: (16, 17), text: `)`
+    capture: 13 - punctuation.bracket, start: (16, 16), end: (16, 17), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (17, 14), end: (17, 15), text: `)`
+    capture: 13 - punctuation.bracket, start: (17, 14), end: (17, 15), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (17, 15), end: (17, 16), text: `,`
+    capture: 8 - punctuation.delimiter, start: (17, 15), end: (17, 16), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (18, 2), end: (18, 8), text: `starts`
+    capture: 11 - variable.parameter, start: (18, 2), end: (18, 8), text: `starts`
   pattern: 0
     capture: 0 - variable, start: (18, 2), end: (18, 8), text: `starts`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (18, 8), end: (18, 9), text: `,`
+    capture: 8 - punctuation.delimiter, start: (18, 8), end: (18, 9), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (18, 14), end: (18, 22), text: `SEQUENCE`
+    capture: 9 - function.call, start: (18, 14), end: (18, 22), text: `SEQUENCE`
   pattern: 0
     capture: 0 - variable, start: (18, 14), end: (18, 22), text: `SEQUENCE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (18, 22), end: (18, 23), text: `(`
+    capture: 13 - punctuation.bracket, start: (18, 22), end: (18, 23), text: `(`
   pattern: 2
     capture: 2 - number, start: (18, 23), end: (18, 25), text: `27`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (18, 25), end: (18, 26), text: `,`
+    capture: 8 - punctuation.delimiter, start: (18, 25), end: (18, 26), text: `,`
   pattern: 2
     capture: 2 - number, start: (18, 27), end: (18, 28), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (18, 28), end: (18, 29), text: `,`
+    capture: 8 - punctuation.delimiter, start: (18, 28), end: (18, 29), text: `,`
   pattern: 0
     capture: 0 - variable, start: (18, 30), end: (18, 38), text: `firstMon`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (18, 38), end: (18, 39), text: `,`
+    capture: 8 - punctuation.delimiter, start: (18, 38), end: (18, 39), text: `,`
   pattern: 2
     capture: 2 - number, start: (18, 40), end: (18, 42), text: `14`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (18, 42), end: (18, 43), text: `)`
+    capture: 13 - punctuation.bracket, start: (18, 42), end: (18, 43), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (18, 43), end: (18, 44), text: `,`
+    capture: 8 - punctuation.delimiter, start: (18, 43), end: (18, 44), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (19, 2), end: (19, 6), text: `ends`
+    capture: 11 - variable.parameter, start: (19, 2), end: (19, 6), text: `ends`
   pattern: 0
     capture: 0 - variable, start: (19, 2), end: (19, 6), text: `ends`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (19, 6), end: (19, 7), text: `,`
+    capture: 8 - punctuation.delimiter, start: (19, 6), end: (19, 7), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (19, 14), end: (19, 17), text: `MAP`
+    capture: 9 - function.call, start: (19, 14), end: (19, 17), text: `MAP`
   pattern: 0
     capture: 0 - variable, start: (19, 14), end: (19, 17), text: `MAP`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (19, 17), end: (19, 18), text: `(`
+    capture: 13 - punctuation.bracket, start: (19, 17), end: (19, 18), text: `(`
   pattern: 0
     capture: 0 - variable, start: (19, 18), end: (19, 24), text: `starts`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (19, 24), end: (19, 25), text: `,`
+    capture: 8 - punctuation.delimiter, start: (19, 24), end: (19, 25), text: `,`
   pattern: 0
     capture: 0 - variable, start: (19, 26), end: (19, 32), text: `winEnd`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (19, 32), end: (19, 33), text: `)`
+    capture: 13 - punctuation.bracket, start: (19, 32), end: (19, 33), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (19, 33), end: (19, 34), text: `,`
+    capture: 8 - punctuation.delimiter, start: (19, 33), end: (19, 34), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (20, 2), end: (20, 7), text: `valid`
+    capture: 11 - variable.parameter, start: (20, 2), end: (20, 7), text: `valid`
   pattern: 0
     capture: 0 - variable, start: (20, 2), end: (20, 7), text: `valid`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (20, 7), end: (20, 8), text: `,`
+    capture: 8 - punctuation.delimiter, start: (20, 7), end: (20, 8), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (20, 14), end: (20, 26), text: `ARRAYFORMULA`
+    capture: 9 - function.call, start: (20, 14), end: (20, 26), text: `ARRAYFORMULA`
   pattern: 0
     capture: 0 - variable, start: (20, 14), end: (20, 26), text: `ARRAYFORMULA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (20, 26), end: (20, 27), text: `(`
+    capture: 13 - punctuation.bracket, start: (20, 26), end: (20, 27), text: `(`
   pattern: 0
     capture: 0 - variable, start: (20, 27), end: (20, 33), text: `starts`
   pattern: 22
-    capture: 13 - operator, start: (20, 34), end: (20, 35), text: `<`
+    capture: 12 - operator, start: (20, 34), end: (20, 35), text: `<`
   pattern: 0
     capture: 0 - variable, start: (20, 36), end: (20, 44), text: `nextYear`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (20, 44), end: (20, 45), text: `)`
+    capture: 13 - punctuation.bracket, start: (20, 44), end: (20, 45), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (20, 45), end: (20, 46), text: `,`
+    capture: 8 - punctuation.delimiter, start: (20, 45), end: (20, 46), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (21, 2), end: (21, 8), text: `HSTACK`
+    capture: 9 - function.call, start: (21, 2), end: (21, 8), text: `HSTACK`
   pattern: 0
     capture: 0 - variable, start: (21, 2), end: (21, 8), text: `HSTACK`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (21, 8), end: (21, 9), text: `(`
+    capture: 13 - punctuation.bracket, start: (21, 8), end: (21, 9), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (21, 9), end: (21, 15), text: `FILTER`
+    capture: 9 - function.call, start: (21, 9), end: (21, 15), text: `FILTER`
   pattern: 0
     capture: 0 - variable, start: (21, 9), end: (21, 15), text: `FILTER`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (21, 15), end: (21, 16), text: `(`
+    capture: 13 - punctuation.bracket, start: (21, 15), end: (21, 16), text: `(`
   pattern: 0
     capture: 0 - variable, start: (21, 16), end: (21, 22), text: `starts`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (21, 22), end: (21, 23), text: `,`
+    capture: 8 - punctuation.delimiter, start: (21, 22), end: (21, 23), text: `,`
   pattern: 0
     capture: 0 - variable, start: (21, 24), end: (21, 29), text: `valid`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (21, 29), end: (21, 30), text: `)`
+    capture: 13 - punctuation.bracket, start: (21, 29), end: (21, 30), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (21, 30), end: (21, 31), text: `,`
+    capture: 8 - punctuation.delimiter, start: (21, 30), end: (21, 31), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (21, 32), end: (21, 38), text: `FILTER`
+    capture: 9 - function.call, start: (21, 32), end: (21, 38), text: `FILTER`
   pattern: 0
     capture: 0 - variable, start: (21, 32), end: (21, 38), text: `FILTER`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (21, 38), end: (21, 39), text: `(`
+    capture: 13 - punctuation.bracket, start: (21, 38), end: (21, 39), text: `(`
   pattern: 0
     capture: 0 - variable, start: (21, 39), end: (21, 43), text: `ends`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (21, 43), end: (21, 44), text: `,`
+    capture: 8 - punctuation.delimiter, start: (21, 43), end: (21, 44), text: `,`
   pattern: 0
     capture: 0 - variable, start: (21, 45), end: (21, 50), text: `valid`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (21, 50), end: (21, 51), text: `)`
+    capture: 13 - punctuation.bracket, start: (21, 50), end: (21, 51), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (21, 51), end: (21, 52), text: `)`
+    capture: 13 - punctuation.bracket, start: (21, 51), end: (21, 52), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (22, 0), end: (22, 1), text: `)`
+    capture: 13 - punctuation.bracket, start: (22, 0), end: (22, 1), text: `)`
 examples/payperiods.min.gsfx
   pattern: 25
-    capture: 13 - operator, start: (0, 0), end: (0, 1), text: `=`
+    capture: 12 - operator, start: (0, 0), end: (0, 1), text: `=`
   pattern: 18
-    capture: 11 - function.builtin, start: (0, 1), end: (0, 4), text: `LET`
+    capture: 10 - function.builtin, start: (0, 1), end: (0, 4), text: `LET`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 4), end: (0, 5), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 4), end: (0, 5), text: `(`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 5), end: (0, 15), text: `targetYear`
+    capture: 11 - variable.parameter, start: (0, 5), end: (0, 15), text: `targetYear`
   pattern: 0
     capture: 0 - variable, start: (0, 5), end: (0, 15), text: `targetYear`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 15), end: (0, 16), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 15), end: (0, 16), text: `,`
   pattern: 5
     capture: 5 - variable.builtin, start: (0, 16), end: (0, 18), text: `B1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 18), end: (0, 19), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 18), end: (0, 19), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 19), end: (0, 27), text: `nextYear`
+    capture: 11 - variable.parameter, start: (0, 19), end: (0, 27), text: `nextYear`
   pattern: 0
     capture: 0 - variable, start: (0, 19), end: (0, 27), text: `nextYear`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 27), end: (0, 28), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 27), end: (0, 28), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 28), end: (0, 32), text: `DATE`
+    capture: 9 - function.call, start: (0, 28), end: (0, 32), text: `DATE`
   pattern: 0
     capture: 0 - variable, start: (0, 28), end: (0, 32), text: `DATE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 32), end: (0, 33), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 32), end: (0, 33), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 33), end: (0, 43), text: `targetYear`
   pattern: 22
-    capture: 13 - operator, start: (0, 43), end: (0, 44), text: `+`
+    capture: 12 - operator, start: (0, 43), end: (0, 44), text: `+`
   pattern: 2
     capture: 2 - number, start: (0, 44), end: (0, 45), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 45), end: (0, 46), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 45), end: (0, 46), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 46), end: (0, 47), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 47), end: (0, 48), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 47), end: (0, 48), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 48), end: (0, 49), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 49), end: (0, 50), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 49), end: (0, 50), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 50), end: (0, 51), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 50), end: (0, 51), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 51), end: (0, 59), text: `firstDay`
+    capture: 11 - variable.parameter, start: (0, 51), end: (0, 59), text: `firstDay`
   pattern: 0
     capture: 0 - variable, start: (0, 51), end: (0, 59), text: `firstDay`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 59), end: (0, 60), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 59), end: (0, 60), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 60), end: (0, 64), text: `DATE`
+    capture: 9 - function.call, start: (0, 60), end: (0, 64), text: `DATE`
   pattern: 0
     capture: 0 - variable, start: (0, 60), end: (0, 64), text: `DATE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 64), end: (0, 65), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 64), end: (0, 65), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 65), end: (0, 75), text: `targetYear`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 75), end: (0, 76), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 75), end: (0, 76), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 76), end: (0, 77), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 77), end: (0, 78), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 77), end: (0, 78), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 78), end: (0, 79), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 79), end: (0, 80), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 79), end: (0, 80), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 80), end: (0, 81), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 80), end: (0, 81), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 81), end: (0, 89), text: `firstMon`
+    capture: 11 - variable.parameter, start: (0, 81), end: (0, 89), text: `firstMon`
   pattern: 0
     capture: 0 - variable, start: (0, 81), end: (0, 89), text: `firstMon`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 89), end: (0, 90), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 89), end: (0, 90), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 90), end: (0, 98), text: `firstDay`
   pattern: 22
-    capture: 13 - operator, start: (0, 98), end: (0, 99), text: `+`
+    capture: 12 - operator, start: (0, 98), end: (0, 99), text: `+`
   pattern: 15
-    capture: 10 - function.call, start: (0, 99), end: (0, 102), text: `MOD`
+    capture: 9 - function.call, start: (0, 99), end: (0, 102), text: `MOD`
   pattern: 0
     capture: 0 - variable, start: (0, 99), end: (0, 102), text: `MOD`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 102), end: (0, 103), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 102), end: (0, 103), text: `(`
   pattern: 2
     capture: 2 - number, start: (0, 103), end: (0, 104), text: `8`
   pattern: 22
-    capture: 13 - operator, start: (0, 104), end: (0, 105), text: `-`
+    capture: 12 - operator, start: (0, 104), end: (0, 105), text: `-`
   pattern: 15
-    capture: 10 - function.call, start: (0, 105), end: (0, 112), text: `WEEKDAY`
+    capture: 9 - function.call, start: (0, 105), end: (0, 112), text: `WEEKDAY`
   pattern: 0
     capture: 0 - variable, start: (0, 105), end: (0, 112), text: `WEEKDAY`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 112), end: (0, 113), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 112), end: (0, 113), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 113), end: (0, 121), text: `firstDay`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 121), end: (0, 122), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 121), end: (0, 122), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 122), end: (0, 123), text: `2`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 123), end: (0, 124), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 123), end: (0, 124), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 124), end: (0, 125), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 124), end: (0, 125), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 125), end: (0, 126), text: `7`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 126), end: (0, 127), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 126), end: (0, 127), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 127), end: (0, 128), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 127), end: (0, 128), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 128), end: (0, 133), text: `audit`
+    capture: 11 - variable.parameter, start: (0, 128), end: (0, 133), text: `audit`
   pattern: 0
     capture: 0 - variable, start: (0, 128), end: (0, 133), text: `audit`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 133), end: (0, 134), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 133), end: (0, 134), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 134), end: (0, 138), text: `DATE`
+    capture: 9 - function.call, start: (0, 134), end: (0, 138), text: `DATE`
   pattern: 0
     capture: 0 - variable, start: (0, 134), end: (0, 138), text: `DATE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 138), end: (0, 139), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 138), end: (0, 139), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 139), end: (0, 149), text: `targetYear`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 149), end: (0, 150), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 149), end: (0, 150), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 150), end: (0, 152), text: `10`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 152), end: (0, 153), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 152), end: (0, 153), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 153), end: (0, 154), text: `1`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 154), end: (0, 155), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 154), end: (0, 155), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 155), end: (0, 156), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 155), end: (0, 156), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 156), end: (0, 164), text: `auditSun`
+    capture: 11 - variable.parameter, start: (0, 156), end: (0, 164), text: `auditSun`
   pattern: 0
     capture: 0 - variable, start: (0, 156), end: (0, 164), text: `auditSun`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 164), end: (0, 165), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 164), end: (0, 165), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 165), end: (0, 170), text: `audit`
   pattern: 22
-    capture: 13 - operator, start: (0, 170), end: (0, 171), text: `-`
+    capture: 12 - operator, start: (0, 170), end: (0, 171), text: `-`
   pattern: 15
-    capture: 10 - function.call, start: (0, 171), end: (0, 174), text: `MOD`
+    capture: 9 - function.call, start: (0, 171), end: (0, 174), text: `MOD`
   pattern: 0
     capture: 0 - variable, start: (0, 171), end: (0, 174), text: `MOD`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 174), end: (0, 175), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 174), end: (0, 175), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (0, 175), end: (0, 182), text: `WEEKDAY`
+    capture: 9 - function.call, start: (0, 175), end: (0, 182), text: `WEEKDAY`
   pattern: 0
     capture: 0 - variable, start: (0, 175), end: (0, 182), text: `WEEKDAY`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 182), end: (0, 183), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 182), end: (0, 183), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 183), end: (0, 188), text: `audit`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 188), end: (0, 189), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 188), end: (0, 189), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 189), end: (0, 190), text: `2`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 190), end: (0, 191), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 190), end: (0, 191), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 191), end: (0, 192), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 191), end: (0, 192), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 192), end: (0, 193), text: `7`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 193), end: (0, 194), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 193), end: (0, 194), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 194), end: (0, 195), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 194), end: (0, 195), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 195), end: (0, 201), text: `freeze`
+    capture: 11 - variable.parameter, start: (0, 195), end: (0, 201), text: `freeze`
   pattern: 0
     capture: 0 - variable, start: (0, 195), end: (0, 201), text: `freeze`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 201), end: (0, 202), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 201), end: (0, 202), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 202), end: (0, 210), text: `auditSun`
   pattern: 22
-    capture: 13 - operator, start: (0, 210), end: (0, 211), text: `-`
+    capture: 12 - operator, start: (0, 210), end: (0, 211), text: `-`
   pattern: 2
     capture: 2 - number, start: (0, 211), end: (0, 213), text: `21`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 213), end: (0, 214), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 213), end: (0, 214), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 214), end: (0, 220), text: `winEnd`
+    capture: 11 - variable.parameter, start: (0, 214), end: (0, 220), text: `winEnd`
   pattern: 0
     capture: 0 - variable, start: (0, 214), end: (0, 220), text: `winEnd`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 220), end: (0, 221), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 220), end: (0, 221), text: `,`
   pattern: 19
-    capture: 11 - function.builtin, start: (0, 221), end: (0, 227), text: `LAMBDA`
+    capture: 10 - function.builtin, start: (0, 221), end: (0, 227), text: `LAMBDA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 227), end: (0, 228), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 227), end: (0, 228), text: `(`
   pattern: 21
-    capture: 12 - variable.parameter, start: (0, 228), end: (0, 233), text: `start`
+    capture: 11 - variable.parameter, start: (0, 228), end: (0, 233), text: `start`
   pattern: 0
     capture: 0 - variable, start: (0, 228), end: (0, 233), text: `start`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 233), end: (0, 234), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 233), end: (0, 234), text: `,`
   pattern: 18
-    capture: 11 - function.builtin, start: (0, 234), end: (0, 237), text: `LET`
+    capture: 10 - function.builtin, start: (0, 234), end: (0, 237), text: `LET`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 237), end: (0, 238), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 237), end: (0, 238), text: `(`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 238), end: (0, 244), text: `endReg`
+    capture: 11 - variable.parameter, start: (0, 238), end: (0, 244), text: `endReg`
   pattern: 0
     capture: 0 - variable, start: (0, 238), end: (0, 244), text: `endReg`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 244), end: (0, 245), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 244), end: (0, 245), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 245), end: (0, 250), text: `start`
   pattern: 22
-    capture: 13 - operator, start: (0, 250), end: (0, 251), text: `+`
+    capture: 12 - operator, start: (0, 250), end: (0, 251), text: `+`
   pattern: 2
     capture: 2 - number, start: (0, 251), end: (0, 253), text: `13`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 253), end: (0, 254), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 253), end: (0, 254), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 254), end: (0, 257), text: `IFS`
+    capture: 9 - function.call, start: (0, 254), end: (0, 257), text: `IFS`
   pattern: 0
     capture: 0 - variable, start: (0, 254), end: (0, 257), text: `IFS`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 257), end: (0, 258), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 257), end: (0, 258), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 258), end: (0, 264), text: `endReg`
   pattern: 22
-    capture: 13 - operator, start: (0, 264), end: (0, 266), text: `>=`
+    capture: 12 - operator, start: (0, 264), end: (0, 266), text: `>=`
   pattern: 0
     capture: 0 - variable, start: (0, 266), end: (0, 274), text: `nextYear`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 274), end: (0, 275), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 274), end: (0, 275), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 275), end: (0, 283), text: `nextYear`
   pattern: 22
-    capture: 13 - operator, start: (0, 283), end: (0, 284), text: `-`
+    capture: 12 - operator, start: (0, 283), end: (0, 284), text: `-`
   pattern: 2
     capture: 2 - number, start: (0, 284), end: (0, 285), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 285), end: (0, 286), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 285), end: (0, 286), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 286), end: (0, 289), text: `AND`
+    capture: 9 - function.call, start: (0, 286), end: (0, 289), text: `AND`
   pattern: 0
     capture: 0 - variable, start: (0, 286), end: (0, 289), text: `AND`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 289), end: (0, 290), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 289), end: (0, 290), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 290), end: (0, 296), text: `endReg`
   pattern: 22
-    capture: 13 - operator, start: (0, 296), end: (0, 298), text: `>=`
+    capture: 12 - operator, start: (0, 296), end: (0, 298), text: `>=`
   pattern: 0
     capture: 0 - variable, start: (0, 298), end: (0, 304), text: `freeze`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 304), end: (0, 305), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 304), end: (0, 305), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 305), end: (0, 310), text: `start`
   pattern: 22
-    capture: 13 - operator, start: (0, 310), end: (0, 311), text: `<`
+    capture: 12 - operator, start: (0, 310), end: (0, 311), text: `<`
   pattern: 0
     capture: 0 - variable, start: (0, 311), end: (0, 317), text: `freeze`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 317), end: (0, 318), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 317), end: (0, 318), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 318), end: (0, 319), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 318), end: (0, 319), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 319), end: (0, 325), text: `freeze`
   pattern: 22
-    capture: 13 - operator, start: (0, 325), end: (0, 326), text: `-`
+    capture: 12 - operator, start: (0, 325), end: (0, 326), text: `-`
   pattern: 2
     capture: 2 - number, start: (0, 326), end: (0, 327), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 327), end: (0, 328), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 327), end: (0, 328), text: `,`
   pattern: 3
     capture: 3 - boolean.builtin, start: (0, 328), end: (0, 332), text: `TRUE`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 332), end: (0, 333), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 332), end: (0, 333), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 333), end: (0, 339), text: `endReg`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 339), end: (0, 340), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 339), end: (0, 340), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 340), end: (0, 341), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 340), end: (0, 341), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 341), end: (0, 342), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 341), end: (0, 342), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 342), end: (0, 343), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 342), end: (0, 343), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 343), end: (0, 349), text: `starts`
+    capture: 11 - variable.parameter, start: (0, 343), end: (0, 349), text: `starts`
   pattern: 0
     capture: 0 - variable, start: (0, 343), end: (0, 349), text: `starts`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 349), end: (0, 350), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 349), end: (0, 350), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 350), end: (0, 358), text: `SEQUENCE`
+    capture: 9 - function.call, start: (0, 350), end: (0, 358), text: `SEQUENCE`
   pattern: 0
     capture: 0 - variable, start: (0, 350), end: (0, 358), text: `SEQUENCE`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 358), end: (0, 359), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 358), end: (0, 359), text: `(`
   pattern: 2
     capture: 2 - number, start: (0, 359), end: (0, 361), text: `27`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 361), end: (0, 362), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 361), end: (0, 362), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 362), end: (0, 363), text: `1`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 363), end: (0, 364), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 363), end: (0, 364), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 364), end: (0, 372), text: `firstMon`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 372), end: (0, 373), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 372), end: (0, 373), text: `,`
   pattern: 2
     capture: 2 - number, start: (0, 373), end: (0, 375), text: `14`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 375), end: (0, 376), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 375), end: (0, 376), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 376), end: (0, 377), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 376), end: (0, 377), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 377), end: (0, 381), text: `ends`
+    capture: 11 - variable.parameter, start: (0, 377), end: (0, 381), text: `ends`
   pattern: 0
     capture: 0 - variable, start: (0, 377), end: (0, 381), text: `ends`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 381), end: (0, 382), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 381), end: (0, 382), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 382), end: (0, 385), text: `MAP`
+    capture: 9 - function.call, start: (0, 382), end: (0, 385), text: `MAP`
   pattern: 0
     capture: 0 - variable, start: (0, 382), end: (0, 385), text: `MAP`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 385), end: (0, 386), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 385), end: (0, 386), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 386), end: (0, 392), text: `starts`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 392), end: (0, 393), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 392), end: (0, 393), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 393), end: (0, 399), text: `winEnd`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 399), end: (0, 400), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 399), end: (0, 400), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 400), end: (0, 401), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 400), end: (0, 401), text: `,`
   pattern: 20
-    capture: 12 - variable.parameter, start: (0, 401), end: (0, 406), text: `valid`
+    capture: 11 - variable.parameter, start: (0, 401), end: (0, 406), text: `valid`
   pattern: 0
     capture: 0 - variable, start: (0, 401), end: (0, 406), text: `valid`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 406), end: (0, 407), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 406), end: (0, 407), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 407), end: (0, 419), text: `ARRAYFORMULA`
+    capture: 9 - function.call, start: (0, 407), end: (0, 419), text: `ARRAYFORMULA`
   pattern: 0
     capture: 0 - variable, start: (0, 407), end: (0, 419), text: `ARRAYFORMULA`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 419), end: (0, 420), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 419), end: (0, 420), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 420), end: (0, 426), text: `starts`
   pattern: 22
-    capture: 13 - operator, start: (0, 426), end: (0, 427), text: `<`
+    capture: 12 - operator, start: (0, 426), end: (0, 427), text: `<`
   pattern: 0
     capture: 0 - variable, start: (0, 427), end: (0, 435), text: `nextYear`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 435), end: (0, 436), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 435), end: (0, 436), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 436), end: (0, 437), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 436), end: (0, 437), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 437), end: (0, 443), text: `HSTACK`
+    capture: 9 - function.call, start: (0, 437), end: (0, 443), text: `HSTACK`
   pattern: 0
     capture: 0 - variable, start: (0, 437), end: (0, 443), text: `HSTACK`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 443), end: (0, 444), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 443), end: (0, 444), text: `(`
   pattern: 15
-    capture: 10 - function.call, start: (0, 444), end: (0, 450), text: `FILTER`
+    capture: 9 - function.call, start: (0, 444), end: (0, 450), text: `FILTER`
   pattern: 0
     capture: 0 - variable, start: (0, 444), end: (0, 450), text: `FILTER`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 450), end: (0, 451), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 450), end: (0, 451), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 451), end: (0, 457), text: `starts`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 457), end: (0, 458), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 457), end: (0, 458), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 458), end: (0, 463), text: `valid`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 463), end: (0, 464), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 463), end: (0, 464), text: `)`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 464), end: (0, 465), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 464), end: (0, 465), text: `,`
   pattern: 15
-    capture: 10 - function.call, start: (0, 465), end: (0, 471), text: `FILTER`
+    capture: 9 - function.call, start: (0, 465), end: (0, 471), text: `FILTER`
   pattern: 0
     capture: 0 - variable, start: (0, 465), end: (0, 471), text: `FILTER`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 471), end: (0, 472), text: `(`
+    capture: 13 - punctuation.bracket, start: (0, 471), end: (0, 472), text: `(`
   pattern: 0
     capture: 0 - variable, start: (0, 472), end: (0, 476), text: `ends`
   pattern: 27
-    capture: 9 - punctuation.delimiter, start: (0, 476), end: (0, 477), text: `,`
+    capture: 8 - punctuation.delimiter, start: (0, 476), end: (0, 477), text: `,`
   pattern: 0
     capture: 0 - variable, start: (0, 477), end: (0, 482), text: `valid`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 482), end: (0, 483), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 482), end: (0, 483), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 483), end: (0, 484), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 483), end: (0, 484), text: `)`
   pattern: 26
-    capture: 14 - punctuation.bracket, start: (0, 484), end: (0, 485), text: `)`
+    capture: 13 - punctuation.bracket, start: (0, 484), end: (0, 485), text: `)`

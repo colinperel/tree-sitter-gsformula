@@ -12,7 +12,10 @@
 
 (boolean) @boolean.builtin
 
-(error) @error
+; Sheets error literals (`#N/A`, `#REF!`, …) are valid builtin values, not
+; parse failures — and `@error` is not a Neovim highlight group (no default
+; link, no dotted parent to fall back to), so it rendered as plain text.
+(error) @constant.builtin
 
 ; ── references ──────────────────────────────────────────────────────────
 (reference) @variable.builtin

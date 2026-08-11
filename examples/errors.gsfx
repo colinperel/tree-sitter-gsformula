@@ -1,0 +1,6 @@
+=IFS(
+  ISNA(A1), #N/A,
+  ISERR(B1), #DIV/0!,
+  ISERROR(C1), IFERROR(C1, #REF!),
+  TRUE, #VALUE!
+)
