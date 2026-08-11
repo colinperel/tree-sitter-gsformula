@@ -218,12 +218,13 @@ which is why you push and wait before tagging.
 Six of the `examples/*.gsfx` are **not** free to edit. `gsfmt`'s CI has a
 `Fixture sync` job that diffs those six — `gnarly`, `monthly`, `payperiods`
 and their `.min` variants — against `gsfmt`'s `tests/data/`, which is
-**canonical**. Every other example is a standalone query-coverage file owned
-by this repo alone (see `examples/README.md` for the current set); edit
-freely, regenerating the query goldens in the same commit. It checks out this
-repo at a **pinned release tag** (bumped with each synced release pair), so
-day-to-day drift is caught by *this* repo's `Fixture sync` job instead, at the
-moment you push. Change `tests/data/` in `gsfmt` first, then mirror it here.
+**canonical**. That job checks out this repo at a **pinned release tag**
+(bumped with each synced release pair), so day-to-day drift is caught by
+*this* repo's `Fixture sync` job instead, at the moment you push. Change
+`tests/data/` in `gsfmt` first, then mirror it here. Every other example is
+a standalone query-coverage file owned by this repo alone (see
+`examples/README.md` for the current set); edit freely, regenerating the
+query goldens in the same commit.
 
 That fixture diff is the whole contract. `gsfmt` does **not** depend on this
 grammar: its `[dependencies]` is empty and it has its own lexer and parser, so
