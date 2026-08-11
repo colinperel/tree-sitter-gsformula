@@ -15,10 +15,12 @@ canonical copies live in the `gsfmt` repository (`gsfmt/tests/data/`),
 where the formatter generates them as goldens; the files here mirror
 those byte-for-byte and are not free to edit.
 
-Anything else (`errors.gsfx`) is a standalone query-coverage example:
-it exists so the query goldens exercise captures the mirrored fixtures
-never hit (error literals), has no `.min` pair and no gsfmt
-counterpart, and can be edited freely — regenerate the goldens in the
-same commit. Comma-decimal locale examples are deliberately absent:
-this grammar is dot-locale only — see the scope note in the top-level
-README.
+Anything else is a standalone query-coverage example, owned by this
+repo alone: it exists so the query goldens exercise captures the
+mirrored fixtures never hit — `errors.gsfx` covers error literals,
+`queries.gsfx` covers SQL injection into `QUERY` (both its capturing
+direct-string form and its non-capturing concatenated form). Standalone
+examples have no `.min` pair and no gsfmt counterpart, and can be
+edited freely — regenerate the goldens in the same commit. Comma-decimal
+locale examples are deliberately absent: this grammar is dot-locale
+only — see the scope note in the top-level README.
