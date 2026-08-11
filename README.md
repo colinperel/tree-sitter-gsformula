@@ -29,12 +29,15 @@ grammar rather than runtime detection would be required.
 
 ## Queries
 
-`queries/` ships highlights, indents, folds, locals, and textobjects —
-written
-for Neovim's capture conventions (`@function.builtin`,
-`@variable.parameter` on LET/LAMBDA binding sites, `@property` on chip
-fields). The indent query handles incomplete input: unclosed delimiters
-inside `ERROR` nodes still indent while you type.
+`queries/` ships highlights, indents, folds, locals, textobjects, and
+injections — written for Neovim's capture conventions
+(`@function.builtin`, `@variable.parameter` on LET/LAMBDA binding
+sites, `@property` on chip fields). The indent query handles incomplete
+input: unclosed delimiters inside `ERROR` nodes still indent while you
+type. The injections query hands `QUERY`'s second argument to a SQL
+parser when it is a direct string literal (the GViz query language is
+SQL-shaped enough to highlight well); queries assembled by `&`
+concatenation are left plain.
 
 ## Development
 

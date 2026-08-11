@@ -1,0 +1,11 @@
+examples/errors.gsfx
+examples/gnarly.gsfx
+examples/gnarly.min.gsfx
+examples/monthly.gsfx
+examples/monthly.min.gsfx
+examples/payperiods.gsfx
+examples/payperiods.min.gsfx
+examples/queries.gsfx
+  pattern: 0
+    capture: 0 - _head, start: (2, 14), end: (2, 19), text: `QUERY`
+    capture: injection.content, start: (3, 16), end: (6, 39)

@@ -287,3 +287,12 @@ examples/payperiods.min.gsfx
     capture: 0 - fold, start: (0, 444), end: (0, 464), text: `FILTER(starts,valid)`
   pattern: 0
     capture: 0 - fold, start: (0, 465), end: (0, 483), text: `FILTER(ends,valid)`
+examples/queries.gsfx
+  pattern: 0
+    capture: fold, start: (0, 1), end: (15, 1)
+  pattern: 0
+    capture: fold, start: (2, 14), end: (8, 15)
+  pattern: 0
+    capture: fold, start: (9, 14), end: (13, 15)
+  pattern: 0
+    capture: 0 - fold, start: (14, 2), end: (14, 17), text: `{direct; built}`

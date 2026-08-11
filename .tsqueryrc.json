@@ -33,6 +33,9 @@
       "indent.branch": "line that closes back to the opening indent",
       "indent.end": "ends an indented region"
     },
+    "injections": {
+      "injection.content": "string handed to another parser"
+    },
     "textobjects": {
       "function.inner": "call arguments",
       "function.outer": "whole call"

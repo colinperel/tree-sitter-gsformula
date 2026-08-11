@@ -963,3 +963,38 @@ examples/payperiods.min.gsfx
     capture: 4 - local.reference, start: (0, 472), end: (0, 476), text: `ends`
   pattern: 6
     capture: 4 - local.reference, start: (0, 477), end: (0, 482), text: `valid`
+examples/queries.gsfx
+  pattern: 0
+    capture: local.scope, start: (0, 1), end: (15, 1)
+  pattern: 2
+    capture: 1 - local.definition, start: (1, 2), end: (1, 12), text: `categories`
+  pattern: 3
+    capture: 2 - local.definition.var, start: (1, 2), end: (1, 12), text: `categories`
+  pattern: 6
+    capture: 4 - local.reference, start: (1, 2), end: (1, 12), text: `categories`
+  pattern: 2
+    capture: 1 - local.definition, start: (2, 2), end: (2, 8), text: `direct`
+  pattern: 3
+    capture: 2 - local.definition.var, start: (2, 2), end: (2, 8), text: `direct`
+  pattern: 6
+    capture: 4 - local.reference, start: (2, 2), end: (2, 8), text: `direct`
+  pattern: 6
+    capture: 4 - local.reference, start: (2, 14), end: (2, 19), text: `QUERY`
+  pattern: 6
+    capture: 4 - local.reference, start: (2, 30), end: (2, 31), text: `O`
+  pattern: 2
+    capture: 1 - local.definition, start: (9, 2), end: (9, 7), text: `built`
+  pattern: 3
+    capture: 2 - local.definition.var, start: (9, 2), end: (9, 7), text: `built`
+  pattern: 6
+    capture: 4 - local.reference, start: (9, 2), end: (9, 7), text: `built`
+  pattern: 6
+    capture: 4 - local.reference, start: (9, 14), end: (9, 19), text: `QUERY`
+  pattern: 6
+    capture: 4 - local.reference, start: (10, 26), end: (10, 27), text: `O`
+  pattern: 6
+    capture: 4 - local.reference, start: (11, 47), end: (11, 57), text: `categories`
+  pattern: 6
+    capture: 4 - local.reference, start: (14, 3), end: (14, 9), text: `direct`
+  pattern: 6
+    capture: 4 - local.reference, start: (14, 11), end: (14, 16), text: `built`
