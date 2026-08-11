@@ -74,8 +74,13 @@ jobs:
           test-node: true
           test-python: true
           test-go: true
-          # No Swift toolchain on the Linux/Windows runners.
-          test-swift: ${{runner.os == 'macOS'}}
+          # Off until the upstream action and runner image agree on a
+          # toolchain: on macos-latest the action installs Swift 6.1.3,
+          # which cannot build against the image's Xcode 26 SDK ("this
+          # SDK is not supported by the compiler"). The binding itself
+          # builds — `swift build` passes locally. Linux/Windows runners
+          # have no Swift toolchain at all.
+          test-swift: false
       # The one binding parser-test-action cannot exercise. One OS is
       # enough: the CMakeLists is platform-agnostic and the point is that
       # it configures and compiles at all.
