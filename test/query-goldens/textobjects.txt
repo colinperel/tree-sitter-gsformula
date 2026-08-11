@@ -1,3 +1,24 @@
+examples/errors.gsfx
+  pattern: 0
+    capture: function.outer, start: (0, 1), end: (5, 1)
+  pattern: 1
+    capture: function.inner, start: (1, 2), end: (4, 15)
+  pattern: 0
+    capture: 0 - function.outer, start: (1, 2), end: (1, 10), text: `ISNA(A1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (1, 7), end: (1, 9), text: `A1`
+  pattern: 0
+    capture: 0 - function.outer, start: (2, 2), end: (2, 11), text: `ISERR(B1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (2, 8), end: (2, 10), text: `B1`
+  pattern: 0
+    capture: 0 - function.outer, start: (3, 2), end: (3, 13), text: `ISERROR(C1)`
+  pattern: 1
+    capture: 1 - function.inner, start: (3, 10), end: (3, 12), text: `C1`
+  pattern: 0
+    capture: 0 - function.outer, start: (3, 15), end: (3, 33), text: `IFERROR(C1, #REF!)`
+  pattern: 1
+    capture: 1 - function.inner, start: (3, 23), end: (3, 32), text: `C1, #REF!`
 examples/gnarly.gsfx
   pattern: 6
     capture: function.outer, start: (0, 1), end: (10, 1)

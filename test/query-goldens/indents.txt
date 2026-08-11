@@ -1,3 +1,29 @@
+examples/errors.gsfx
+  pattern: 0
+    capture: indent.begin, start: (0, 1), end: (5, 1)
+  pattern: 0
+    capture: 0 - indent.begin, start: (1, 2), end: (1, 10), text: `ISNA(A1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (1, 9), end: (1, 10), text: `)`
+    capture: 2 - indent.end, start: (1, 9), end: (1, 10), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (2, 2), end: (2, 11), text: `ISERR(B1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (2, 10), end: (2, 11), text: `)`
+    capture: 2 - indent.end, start: (2, 10), end: (2, 11), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (3, 2), end: (3, 13), text: `ISERROR(C1)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (3, 12), end: (3, 13), text: `)`
+    capture: 2 - indent.end, start: (3, 12), end: (3, 13), text: `)`
+  pattern: 0
+    capture: 0 - indent.begin, start: (3, 15), end: (3, 33), text: `IFERROR(C1, #REF!)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (3, 32), end: (3, 33), text: `)`
+    capture: 2 - indent.end, start: (3, 32), end: (3, 33), text: `)`
+  pattern: 3
+    capture: 1 - indent.branch, start: (5, 0), end: (5, 1), text: `)`
+    capture: 2 - indent.end, start: (5, 0), end: (5, 1), text: `)`
 examples/gnarly.gsfx
   pattern: 0
     capture: indent.begin, start: (0, 1), end: (10, 1)

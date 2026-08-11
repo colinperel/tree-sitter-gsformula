@@ -1,3 +1,14 @@
+examples/errors.gsfx
+  pattern: 0
+    capture: fold, start: (0, 1), end: (5, 1)
+  pattern: 0
+    capture: 0 - fold, start: (1, 2), end: (1, 10), text: `ISNA(A1)`
+  pattern: 0
+    capture: 0 - fold, start: (2, 2), end: (2, 11), text: `ISERR(B1)`
+  pattern: 0
+    capture: 0 - fold, start: (3, 2), end: (3, 13), text: `ISERROR(C1)`
+  pattern: 0
+    capture: 0 - fold, start: (3, 15), end: (3, 33), text: `IFERROR(C1, #REF!)`
 examples/gnarly.gsfx
   pattern: 0
     capture: fold, start: (0, 1), end: (10, 1)
