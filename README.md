@@ -67,9 +67,26 @@ require("nvim-treesitter.parsers").get_parser_configs().gsformula = {
 ```
 
 or build it yourself (`tree-sitter build`) and drop the library on
-`runtimepath` as `parser/gsformula.so`. If a plugin manager provides the
-queries, avoid *also* copying them elsewhere on the runtimepath — two
-copies of the same query file double-apply patterns.
+`runtimepath` as `parser/gsformula.so`.
+
+Making the parser and queries discoverable is not the same as turning
+them on: core Neovim never starts tree-sitter highlighting by itself.
+nvim-treesitter's highlight module does it for you when enabled; on the
+manual path, start it per buffer:
+
+```lua
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "gsformula",
+  callback = function()
+    vim.treesitter.start()
+  end,
+})
+```
+
+Keep exactly one copy of each query file on the runtimepath: Neovim
+uses the first `highlights.scm` (etc.) it finds — later copies are
+ignored unless they opt in with `;; extends` — so a stale copy earlier
+on the runtimepath silently shadows the one this repo ships.
 
 What each query needs:
 
@@ -82,7 +99,7 @@ What each query needs:
 | `indents.scm` | nvim-treesitter's indent module |
 | `textobjects.scm` | nvim-treesitter-textobjects (or mini.ai) |
 
-`queries/gsformula/` is symlinks into the top-level `queries/`. On
+`queries/gsformula/` contains symlinks to the top-level `queries/`. On
 Windows, clone with `core.symlinks=true` (or copy the files) — without
 it git checks the links out as plain text files and the queries silently
 do nothing.
