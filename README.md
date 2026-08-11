@@ -52,7 +52,8 @@ lazy.nvim:
 ```
 
 The plugin does **not** install the parser itself. Either register it
-with nvim-treesitter and run `:TSInstall gsformula`:
+with nvim-treesitter (`master` branch — the `main` rewrite has a
+different registration API) and run `:TSInstall gsformula`:
 
 ```lua
 require("nvim-treesitter.parsers").get_parser_configs().gsformula = {
@@ -61,7 +62,7 @@ require("nvim-treesitter.parsers").get_parser_configs().gsformula = {
     files = { "src/parser.c" },
     branch = "main",
   },
-  filetype = "gsfx",
+  filetype = "gsformula",
 }
 ```
 
@@ -74,11 +75,17 @@ What each query needs:
 
 | Query | Works with |
 | --- | --- |
-| `highlights.scm`, `locals.scm` | core `vim.treesitter` — no plugin |
+| `highlights.scm` | core `vim.treesitter` — no plugin |
 | `injections.scm` | core, plus the `sql` parser for QUERY strings |
 | `folds.scm` | core `vim.treesitter.foldexpr()` |
+| `locals.scm` | locals-consuming plugins (nvim-treesitter-refactor and friends) — core Neovim ignores it |
 | `indents.scm` | nvim-treesitter's indent module |
 | `textobjects.scm` | nvim-treesitter-textobjects (or mini.ai) |
+
+`queries/gsformula/` is symlinks into the top-level `queries/`. On
+Windows, clone with `core.symlinks=true` (or copy the files) — without
+it git checks the links out as plain text files and the queries silently
+do nothing.
 
 ## Development
 
