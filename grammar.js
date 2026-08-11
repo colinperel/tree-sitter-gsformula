@@ -267,8 +267,10 @@ export default grammar({
     // `1.` (trailing dot, no fraction digits) is accepted: Sheets takes it
     // on entry and normalizes it to `1`, so rejecting it would error a
     // formula mid-edit that Sheets itself accepts. gsfmt's lexer accepts
-    // it too.
-    number: ($) => token(/[0-9]+(\.[0-9]*)?([eE][+-]?[0-9]+)?|\.[0-9]+/),
+    // it too. Both alternatives take an exponent — without it on the
+    // leading-dot form, the `E3` in `.5E3` misparses as a cell reference.
+    number: ($) =>
+      token(/[0-9]+(\.[0-9]*)?([eE][+-]?[0-9]+)?|\.[0-9]+([eE][+-]?[0-9]+)?/),
 
     boolean: ($) => token(prec(2, /[Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee]/)),
 
