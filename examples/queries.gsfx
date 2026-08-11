@@ -1,0 +1,16 @@
+=LET(
+  categories, "Ops|Eng",
+  direct,     QUERY(timelog!A:O,
+                "SELECT A, B, MIN(G), MAX(H)
+    WHERE I > 0
+    GROUP BY A, B
+    LABEL MIN(G) 'Start', MAX(H) 'End'",
+                1
+              ),
+  built,      QUERY(
+                timelog!A:O,
+                "SELECT A WHERE C MATCHES '" & categories & "'",
+                1
+              ),
+  {direct; built}
+)
