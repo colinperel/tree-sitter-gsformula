@@ -39,6 +39,47 @@ parser when it is a direct string literal (the GViz query language is
 SQL-shaped enough to highlight well); queries assembled by `&`
 concatenation are left plain.
 
+## Neovim
+
+The repo doubles as a Neovim plugin: `ftdetect/` registers the `.gsfx`
+extension as the `gsformula` filetype (Neovim ignores
+`tree-sitter.json`'s `file-types` — that field is CLI-only), and
+`queries/gsformula/` exposes the query files on the runtimepath. With
+lazy.nvim:
+
+```lua
+{ "colinperel/tree-sitter-gsformula" }
+```
+
+The plugin does **not** install the parser itself. Either register it
+with nvim-treesitter and run `:TSInstall gsformula`:
+
+```lua
+require("nvim-treesitter.parsers").get_parser_configs().gsformula = {
+  install_info = {
+    url = "https://github.com/colinperel/tree-sitter-gsformula",
+    files = { "src/parser.c" },
+    branch = "main",
+  },
+  filetype = "gsfx",
+}
+```
+
+or build it yourself (`tree-sitter build`) and drop the library on
+`runtimepath` as `parser/gsformula.so`. If a plugin manager provides the
+queries, avoid *also* copying them elsewhere on the runtimepath — two
+copies of the same query file double-apply patterns.
+
+What each query needs:
+
+| Query | Works with |
+| --- | --- |
+| `highlights.scm`, `locals.scm` | core `vim.treesitter` — no plugin |
+| `injections.scm` | core, plus the `sql` parser for QUERY strings |
+| `folds.scm` | core `vim.treesitter.foldexpr()` |
+| `indents.scm` | nvim-treesitter's indent module |
+| `textobjects.scm` | nvim-treesitter-textobjects (or mini.ai) |
+
 ## Development
 
 ```sh
