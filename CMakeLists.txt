@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-gsformula
-        VERSION "0.4.0"
+        VERSION "0.5.0"
         DESCRIPTION "Tree-sitter grammar for Google Sheets formulas"
         HOMEPAGE_URL "https://github.com/colinperel/tree-sitter-gsformula"
         LANGUAGES C)
