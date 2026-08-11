@@ -245,10 +245,6 @@ any real Tree-sitter consumer (the Neovim install), which is where to look.
   lists in `.github/workflows/ci.yml`. `workflow_dispatch` is unfiltered — it is
   the escape hatch for verifying a head the filters skipped, not a substitute
   for listing the path.
-- **The `Fuzz scanner` job runs on every CI trigger, but its fuzzer step is
-  conditional** on `src/scanner.c` having changed. There is no scanner in this
-  grammar today, so that step never fires; don't read the job's green as
-  coverage.
 
 ## Conventions
 
