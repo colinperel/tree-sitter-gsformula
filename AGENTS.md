@@ -215,9 +215,12 @@ which is why you push and wait before tagging.
 
 ## Cross-repo coupling
 
-`examples/*.gsfx` are **not** free to edit. `gsfmt`'s CI has a `Fixture sync`
-job that diffs six files — `gnarly`, `monthly`, `payperiods` and their `.min`
-variants — against `gsfmt`'s `tests/data/`, which is **canonical**. It checks out this
+Six of the `examples/*.gsfx` are **not** free to edit. `gsfmt`'s CI has a
+`Fixture sync` job that diffs those six — `gnarly`, `monthly`, `payperiods`
+and their `.min` variants — against `gsfmt`'s `tests/data/`, which is
+**canonical**. Other examples (`errors.gsfx`) are standalone query-coverage
+files owned by this repo alone; edit freely, regenerating the query goldens
+in the same commit. It checks out this
 repo at a **pinned release tag** (bumped with each synced release pair), so
 day-to-day drift is caught by *this* repo's `Fixture sync` job instead, at the
 moment you push. Change `tests/data/` in `gsfmt` first, then mirror it here.
