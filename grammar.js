@@ -224,7 +224,9 @@ export default grammar({
             ),
           ),
         ),
-        // ^ is right-associative
+        // ^ is right-associative in Sheets: =2^3^2 evaluates to 512
+        // (verified in the live app, 2026-08-11). Excel documents ^ as
+        // left-associative (64) — do not "fix" this to match Excel.
         prec.right(
           PREC.power,
           seq(
